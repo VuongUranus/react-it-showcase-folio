@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Link } from 'react-scroll';
+import { Button } from '@/components/ui/button';
 
 const Hero: React.FC = () => {
   return (
@@ -11,15 +12,25 @@ const Hero: React.FC = () => {
           I'm John, a<br />
           Web Developer
         </h1>
-        <p className="text-lightgray text-lg mb-12 max-w-lg">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit leo
-          quis ullamcorper quis id elementum convallis lacus gravida.
+        <p className="text-lightgray text-lg mb-8 max-w-lg">
+          Specialized in creating pixel-perfect web applications with beautiful interfaces.
+          I help turn your ideas into digital reality.
         </p>
+        
+        <div className="flex flex-wrap gap-4">
+          <Button className="bg-primaryblue hover:bg-primaryblue/90 text-white">
+            <a href="/portfolio" className="px-2">View My Work</a>
+          </Button>
+          <Button variant="outline" className="border-white hover:bg-white/10 text-white">
+            <a href="/contact" className="px-2">Contact Me</a>
+          </Button>
+        </div>
+        
         <Link
           to="aboutSection"
           smooth={true}
           duration={500}
-          className="animate-bounce-slow cursor-pointer inline-block"
+          className="animate-bounce-slow cursor-pointer inline-block mt-16"
         >
           <div className="w-16 h-16 rounded-full bg-primaryblue flex items-center justify-center">
             <ArrowDown size={24} color="white" />
@@ -31,7 +42,7 @@ const Hero: React.FC = () => {
         <img 
           src="/lovable-uploads/d165c27c-687a-4a1a-92f4-51428329364b.png" 
           alt="Developer Portrait" 
-          className="w-full max-w-md object-cover"
+          className="w-full max-w-md object-cover rounded-lg shadow-xl"
         />
       </div>
 
@@ -40,8 +51,8 @@ const Hero: React.FC = () => {
         <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.3s' }}>
           <h3 className="font-bold text-lg mb-2">ABOUT ME</h3>
           <p className="text-lightgray mb-4 max-w-xs">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit leo
-            quis ullamcorper quis id elementum convallis lacus gravida.
+            Passionate web developer with over 12 years of experience creating 
+            modern web applications and user interfaces.
           </p>
           <a href="/about" className="text-white flex items-center group">
             LEARN MORE 
@@ -52,8 +63,8 @@ const Hero: React.FC = () => {
         <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
           <h3 className="font-bold text-lg mb-2">MY WORK</h3>
           <p className="text-lightgray mb-4 max-w-xs">
-            Purus ut faucibus pulvinar elementum integer enim neque fermentum iaculis
-            eu non diam phasellus dolor consectetur.
+            Explore my latest projects including e-commerce platforms, 
+            dashboards, mobile apps and more.
           </p>
           <a href="/portfolio" className="text-white flex items-center group">
             BROWSE PORTFOLIO
@@ -75,9 +86,6 @@ const Hero: React.FC = () => {
             </a>
             <a href="#" className="hover:text-primaryblue transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" className="hover:text-primaryblue transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
             </a>
             <a href="#" className="hover:text-primaryblue transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Navbar: React.FC = () => {
@@ -20,6 +20,7 @@ const Navbar: React.FC = () => {
         <Link to="/about" className="hover:text-primaryblue transition-colors">About</Link>
         <Link to="/blog" className="hover:text-primaryblue transition-colors">Blog</Link>
         <Link to="/portfolio" className="hover:text-primaryblue transition-colors">Portfolio</Link>
+        <Link to="/contact" className="hover:text-primaryblue transition-colors">Contact</Link>
         <div className="relative group">
           <button className="hover:text-primaryblue transition-colors flex items-center gap-1">
             Pages
@@ -29,14 +30,9 @@ const Navbar: React.FC = () => {
           </button>
           <div className="absolute hidden group-hover:block bg-darkbg border border-gray-800 rounded-md p-2 mt-2 min-w-[150px] z-10">
             <Link to="#" className="block py-1 px-2 hover:text-primaryblue">Services</Link>
-            <Link to="#" className="block py-1 px-2 hover:text-primaryblue">Contact</Link>
             <Link to="#" className="block py-1 px-2 hover:text-primaryblue">FAQ</Link>
           </div>
         </div>
-        <Link to="#" className="hover:text-primaryblue transition-colors flex items-center gap-1">
-          <ShoppingCart size={18} />
-          <span>Cart (0)</span>
-        </Link>
       </div>
 
       {/* Mobile Menu Button */}
@@ -57,18 +53,14 @@ const Navbar: React.FC = () => {
             <Link to="/about" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>About</Link>
             <Link to="/blog" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Blog</Link>
             <Link to="/portfolio" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Portfolio</Link>
+            <Link to="/contact" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Contact</Link>
             <details className="py-2">
               <summary className="hover:text-primaryblue cursor-pointer">Pages</summary>
               <div className="ml-4 mt-2 flex flex-col gap-2">
                 <Link to="#" className="hover:text-primaryblue" onClick={() => setIsOpen(false)}>Services</Link>
-                <Link to="#" className="hover:text-primaryblue" onClick={() => setIsOpen(false)}>Contact</Link>
                 <Link to="#" className="hover:text-primaryblue" onClick={() => setIsOpen(false)}>FAQ</Link>
               </div>
             </details>
-            <Link to="#" className="py-2 hover:text-primaryblue flex items-center gap-1" onClick={() => setIsOpen(false)}>
-              <ShoppingCart size={18} />
-              <span>Cart (0)</span>
-            </Link>
           </div>
         </div>
       )}
