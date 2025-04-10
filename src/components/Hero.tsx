@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
 
       <div className="lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end">
         <img 
-          src="/lovable-uploads/d165c27c-687a-4a1a-92f4-51428329364b.png" 
+          src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png" 
           alt="Developer Portrait" 
           className="w-full max-w-md object-cover rounded-lg shadow-xl"
         />
