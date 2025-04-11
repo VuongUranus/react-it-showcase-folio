@@ -1,27 +1,84 @@
 
 import React, { useEffect, useRef } from 'react';
+import { css, html, nextjs, react, figma } from 'lucide-react';
 
-// Define the skill categories and items
-const skillCategories = [
+// Define the skill items with icons
+const skillItems = [
   {
-    name: "Frontend",
-    skills: ["React", "Vue.js", "Next.js", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "SCSS"]
+    name: "CSS",
+    icon: (props: any) => (
+      <div className="w-16 h-16 bg-blue-600 flex items-center justify-center rounded">
+        <div className="text-white font-bold text-2xl">3</div>
+      </div>
+    ),
+    text: "CSS"
   },
   {
-    name: "Backend",
-    skills: ["Node.js", "Express", "Python", "Django", "PHP", "Laravel", "Ruby on Rails", "Java", "Spring Boot"]
+    name: "Next.js",
+    icon: (props: any) => (
+      <div className="w-16 h-16 bg-white flex items-center justify-center rounded-full">
+        <div className="text-black font-bold text-xs">N</div>
+      </div>
+    ),
+    text: "Next JS"
   },
   {
-    name: "Database",
-    skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase", "Supabase", "Prisma", "Sequelize"]
+    name: "MUI",
+    icon: (props: any) => (
+      <div className="w-16 h-16 flex items-center justify-center">
+        <img 
+          src="/lovable-uploads/3561bad0-99ed-4032-a5f6-d83e8406d5ec.png" 
+          alt="MUI" 
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
+    text: "MUI"
   },
   {
-    name: "DevOps",
-    skills: ["Docker", "Kubernetes", "AWS", "Google Cloud", "Azure", "CI/CD", "Git", "GitHub Actions"]
+    name: "Tailwind",
+    icon: (props: any) => (
+      <div className="w-16 h-16 flex items-center justify-center">
+        <svg className="w-16 h-16" viewBox="0 0 248 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M25.517 0C18.712 0 14.46 3.382 12.758 10.146c2.552-3.382 5.529-4.65 8.931-3.805 1.941.482 3.329 1.882 4.864 3.432 2.502 2.524 5.398 5.445 11.722 5.445 6.804 0 11.057-3.382 12.758-10.145-2.551 3.382-5.528 4.65-8.93 3.804-1.942-.482-3.33-1.882-4.865-3.431C34.736 2.92 31.841 0 25.517 0zM12.758 15.218C5.954 15.218 1.701 18.6 0 25.364c2.552-3.382 5.529-4.65 8.93-3.805 1.942.482 3.33 1.882 4.865 3.432 2.502 2.524 5.397 5.445 11.722 5.445 6.804 0 11.057-3.381 12.758-10.145-2.552 3.382-5.529 4.65-8.931 3.805-1.941-.483-3.329-1.883-4.864-3.432-2.502-2.524-5.398-5.446-11.722-5.446z" fill="#38bdf8" />
+        </svg>
+      </div>
+    ),
+    text: "Tailwind CSS"
   },
   {
-    name: "Mobile",
-    skills: ["React Native", "Flutter", "Swift", "Kotlin"]
+    name: "PHP",
+    icon: (props: any) => (
+      <div className="w-16 h-16 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="w-16 h-16">
+          <path fill="#6181B6" d="M64 33.039C30.26 33.039 2.906 46.901 2.906 64S30.26 94.961 64 94.961 125.094 81.099 125.094 64 97.74 33.039 64 33.039zM48.103 70.032c-1.458 1.364-3.077 1.927-4.86 2.507-1.783.581-4.052.461-6.811.461h-6.253l-1.733 10h-7.301l6.515-34h16.275c3.004 0 5.25.119 6.454.923 1.835 1.209 2.722 3.368 2.722 6.49 0 8.211-2.175 13.619-5.008 13.619zm42.347-3.546c-1.153.432-2.568.612-4.583.612h-6.462l-2.647 15h-7.305l2.65-15h-6.002l-2.65 15h-7.303l6.646-34h13.275c4.578 0 7.801.576 9.879 1.764 3.108 1.785 4.692 5.249 4.692 9.732 0 2.496-.528 4.688-1.587 6.277-1.061 1.591-2.816 3.142-4.603 4.615zm23.55 9.095c-1.705 0-2.906-.237-4.228-.674-1.323-.436-2.432-1.039-3.394-1.845-.962-.805-1.715-1.772-2.432-2.728-.717-.957-1.243-1.925-1.591-2.728l6.616-2.512c.43.646.832 1.281 1.208 1.924.376.646.773 1.159 1.244 1.686.473.526.999.99 1.684 1.212.685.222 1.375.397 2.345.397 1.831 0 3.229-.543 4.315-1.39 1.084-.846 1.591-1.792 1.591-2.993 0-.598-.108-1.094-.324-1.518-.217-.424-.752-.78-1.591-1.095-.84-.317-1.998-.582-3.499-.871-1.96-.369-3.659-.994-5.045-1.518-1.244-.477-2.345-1.215-3.262-2.354-.915-1.139-1.375-2.56-1.375-4.482 0-2.014.43-3.809 1.375-5.393.945-1.582 2.209-2.807 3.767-3.726 1.684-.871 3.499-1.622 5.33-1.831a27.72 27.72 0 013.823-.369c2.022 0 4.061.301 5.976.957 1.915.656 3.337 1.622 4.422 2.808l-5.069 3.726c-.753-.795-1.483-1.338-2.228-1.622-.745-.283-1.705-.434-2.906-.434-1.297 0-2.367.328-3.288.957-.92.631-1.377 1.557-1.377 2.807 0 .765.27 1.376.806 1.831.537.457 1.191.824 2.153 1.14.962.318 2.209.689 3.716.984 2.022.396 3.689.902 5.068 1.339 1.377.437 2.553 1.096 3.607 1.831 1.054.736 1.809 1.702 2.345 2.807.537 1.106.773 2.354.773 3.809 0 2.947-.796 5.393-2.228 7.285-1.809 2.333-4.584 3.673-7.627 4.324-1.297.262-2.662.328-4.153.328z" />
+          <path fill="#fff" d="M92.8 61.729c.46-.286.645-.645.645-1.149 0-.748-.637-1.122-1.976-1.122h-3.5l-2.511 13.18h3.088L90.6 64.409h.561c.862 0 1.425.045 1.639.139zm-5.424-7.304h-16.042l-1.773 11.766h7.983l.561-2.899h-4.117l.387-2.899h3.82l.56-3.748h-3.988l.264-2.22h9.345zm-29.423 0l-9.345 34.024h7.983l2.208-11.766h3.988c1.425 0 2.425-.139 3.046-.416.62-.277 1.072-.803 1.548-1.567.476-.765.862-1.609 1.163-2.533.3-.923.524-2.055.524-3.333 0-1.842-.497-3.216-1.338-4.139-1.425-1.565-3.933-1.693-6.182-1.693h-3.595zm.523 5.471h1.163c1.676 0 2.899.307 2.899 2.091 0 1.188-.387 2.661-1.048 3.304-.523.507-1.325.645-2.261.645h-1.486l.733-6.04z" />
+        </svg>
+      </div>
+    ),
+    text: "PHP"
+  },
+  {
+    name: "React",
+    icon: (props: any) => (
+      <div className="w-16 h-16 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="w-16 h-16">
+          <path fill="#61DAFB" d="M64 81.7c7.3 7.1 16.2 12.7 26 15.6 1.6-3.6 3.2-7.3 4.6-11.1-6.5-1.9-12.9-4.5-19.1-7.7l-1 .8c-2.5 2.2-5.3 4-8.5 5.3-1.4 0-2.8-.1-4.1-.5-4.3-.9-8-3.8-10.2-7.8-1.8-3.2-2.2-6.8-1.6-10.3.3-2.2 1-4.3 2.1-6.2.3-.6.7-1.1 1.1-1.6-9.9-8.6-17.7-19-22.3-30.7-2.2.8-4.4 1.8-6.4 3-6.2 3.6-9.6 9.7-9.4 16.6.3 6.9 4.1 13.1 10.6 16.9 4.9 2.8 10.6 4 16.2 3.5 3.6-.3 7.1-1.1 10.4-2.6.5-.3 1.1-.5 1.6-.8-1.6 1.6-3.3 3.1-5.1 4.5-5.7 4.1-12.4 6.7-19.4 7.4-3.8.4-7.6.2-11.3-.7C29 97.4 21.3 93.2 16.7 87 12 80.7 10 73 10.8 65.3c.5-5.2 2-10.2 4.7-14.6 2.5-4.1 5.9-7.6 9.9-10.3 10.3-7.1 23.2-10.1 35.7-8.6 2 .2 4 .5 6 1-9.6-9.9-16.4-21.9-19.8-35.1C37.8 2.5 34.9 8.3 34 14.8c-1.5 9.5.3 19.3 5.5 27.7 3.8 6.1 9.1 11.1 15.6 14.5 8.5 4.3 18.2 6 27.6 4.5 9.5-1.4 18.3-6.2 24.9-13.4 6-6.5 10.3-14.5 12.6-23.3 1.9-7.3 2.3-15.1 1.2-22.6-.8-4.8-2.5-9.3-4.9-13.5-.2-.5-.6-.9-.9-1.4-3.6 37.2-27.3 69-61.6 81.5z" />
+        </svg>
+      </div>
+    ),
+    text: "React"
+  },
+  {
+    name: "Node.js",
+    icon: (props: any) => (
+      <div className="w-16 h-16 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="w-16 h-16">
+          <path fill="#83CD29" d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z" />
+        </svg>
+      </div>
+    ),
+    text: "Node.js"
   }
 ];
 
@@ -54,46 +111,34 @@ const SkillsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="section-padding bg-black/20 py-16">
+    <section className="section-padding py-16 bg-black">
       <div className="max-w-7xl mx-auto mb-10">
         <h2 className="heading-line text-4xl font-bold mb-8">My Skills</h2>
-        <p className="text-lightgray max-w-2xl mb-12">
-          Professional expertise and technologies I've mastered throughout my career.
-        </p>
       </div>
       
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden py-8">
         <div 
           ref={scrollRef}
           className="flex overflow-x-scroll scrollbar-none py-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {/* Duplicate content for seamless scrolling */}
-          {[...skillCategories, ...skillCategories].map((category, catIndex) => (
+          {[...skillItems, ...skillItems].map((skill, index) => (
             <div 
-              key={`${category.name}-${catIndex}`} 
-              className="flex-none px-8"
+              key={`${skill.name}-${index}`} 
+              className="flex-none px-10"
             >
-              <div className="bg-black/30 rounded-lg p-6 min-w-[300px]">
-                <h3 className="text-xl font-bold text-primaryblue mb-4">{category.name}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span 
-                      key={`${skill}-${catIndex}-${skillIndex}`}
-                      className="bg-black/40 text-white px-3 py-1 rounded-full text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-col items-center justify-center">
+                {skill.icon({})}
+                <span className="text-center mt-2 text-white">{skill.text}</span>
               </div>
             </div>
           ))}
         </div>
         
         {/* Gradient overlays for fade effect */}
-        <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-darkbg to-transparent"></div>
-        <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-darkbg to-transparent"></div>
+        <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-black to-transparent"></div>
+        <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-black to-transparent"></div>
       </div>
     </section>
   );
