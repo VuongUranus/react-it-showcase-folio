@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
     <nav className="py-4 px-6 lg:px-24 flex justify-between items-center">
       <Link to="/" className="flex items-center gap-2">
         <span className="text-primaryblue text-2xl font-bold">&lt;/&gt;</span>
-        <span className="text-xl font-semibold">Developer X</span>
+        <span className="text-xl font-semibold">Vuong Dev</span>
       </Link>
 
       {/* Desktop Navigation */}
