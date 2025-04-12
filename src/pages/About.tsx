@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -415,87 +414,71 @@ const About: React.FC = () => {
                       </h3>
                       
                       <div className="space-y-6">
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                                <Code size={12} className="text-blue-500" />
-                              </div>
-                              React / Next.js
-                            </span>
-                            <span>95%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
+                              <Code size={12} className="text-blue-500" />
+                            </div>
+                            <span className="font-semibold">React / Next.js</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-primaryblue h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "95%" }}
-                              transition={{ duration: 1, delay: 0.2 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 5 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                                <Terminal size={12} className="text-blue-500" />
-                              </div>
-                              TypeScript
-                            </span>
-                            <span>90%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
+                              <Terminal size={12} className="text-blue-500" />
+                            </div>
+                            <span className="font-semibold">TypeScript</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-primaryblue h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "90%" }}
-                              transition={{ duration: 1, delay: 0.4 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 5 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                                <MonitorSmartphone size={12} className="text-blue-500" />
-                              </div>
-                              Angular
-                            </span>
-                            <span>85%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
+                              <MonitorSmartphone size={12} className="text-blue-500" />
+                            </div>
+                            <span className="font-semibold">Angular</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-primaryblue h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "85%" }}
-                              transition={{ duration: 1, delay: 0.6 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                                <Globe size={12} className="text-blue-500" />
-                              </div>
-                              Tailwind CSS
-                            </span>
-                            <span>95%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
+                              <Globe size={12} className="text-blue-500" />
+                            </div>
+                            <span className="font-semibold">Tailwind CSS</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-primaryblue h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "95%" }}
-                              transition={{ duration: 1, delay: 0.8 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 5 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                       </div>
@@ -515,87 +498,71 @@ const About: React.FC = () => {
                       </h3>
                       
                       <div className="space-y-6">
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                                <Terminal size={12} className="text-green-500" />
-                              </div>
-                              Node.js
-                            </span>
-                            <span>90%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
+                              <Terminal size={12} className="text-green-500" />
+                            </div>
+                            <span className="font-semibold">Node.js</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-green-500 h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "90%" }}
-                              transition={{ duration: 1, delay: 0.2 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-green-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                                <Terminal size={12} className="text-green-500" />
-                              </div>
-                              Python / Django
-                            </span>
-                            <span>85%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
+                              <Terminal size={12} className="text-green-500" />
+                            </div>
+                            <span className="font-semibold">Python / Django</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-green-500 h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "85%" }}
-                              transition={{ duration: 1, delay: 0.4 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-green-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                                <Database size={12} className="text-green-500" />
-                              </div>
-                              PostgreSQL / MongoDB
-                            </span>
-                            <span>85%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
+                              <Database size={12} className="text-green-500" />
+                            </div>
+                            <span className="font-semibold">PostgreSQL / MongoDB</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-green-500 h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "85%" }}
-                              transition={{ duration: 1, delay: 0.6 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-green-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-semibold flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                                <Globe size={12} className="text-green-500" />
-                              </div>
-                              Docker / Kubernetes
-                            </span>
-                            <span>75%</span>
+                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
+                          <div className="flex items-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
+                              <Globe size={12} className="text-green-500" />
+                            </div>
+                            <span className="font-semibold">Docker / Kubernetes</span>
                           </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <motion.div 
-                              className="bg-green-500 h-2 rounded-full" 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: "75%" }}
-                              transition={{ duration: 1, delay: 0.8 }}
-                              viewport={{ once: true }}
-                            ></motion.div>
+                          <div className="flex mt-2 gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div 
+                                key={i}
+                                className={`h-1.5 rounded-full flex-1 ${i < 3 ? 'bg-green-500/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
                           </div>
                         </div>
                       </div>
@@ -607,10 +574,10 @@ const About: React.FC = () => {
           </div>
         </section>
         
-        {/* Work Experience Section - we've refactored and enhanced this */}
+        {/* Work Experience Section */}
         <WorkSection />
         
-        {/* Portfolio showcase section - enhanced with animations */}
+        {/* Portfolio showcase section */}
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
             <motion.div
@@ -655,7 +622,7 @@ const About: React.FC = () => {
                             <Badge className="bg-gray-700">TypeScript</Badge>
                           </div>
                           <h3 className="text-xl font-bold mb-1">{`Project Title ${item}`}</h3>
-                          <p className="text-gray-300 text-sm">Web Application Design & Development</p>
+                          <p className="text-lightgray text-sm">Web Application Design & Development</p>
                         </div>
                       </div>
                     </div>
@@ -681,7 +648,7 @@ const About: React.FC = () => {
           </div>
         </section>
         
-        {/* Testimonials section - enhanced with card effects */}
+        {/* Testimonials section */}
         <section className="py-24 bg-black/30 relative overflow-hidden">
           {/* Background decorative elements */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-primaryblue/5 rounded-full blur-3xl"></div>
@@ -776,7 +743,7 @@ const About: React.FC = () => {
           </div>
         </section>
         
-        {/* Contact section with enhanced design */}
+        {/* Contact section */}
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

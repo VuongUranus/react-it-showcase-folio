@@ -140,10 +140,18 @@ const AboutSection: React.FC = () => {
                         <motion.li 
                           key={i} 
                           variants={itemVariants}
-                          className="flex items-center text-lightgray"
+                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
                         >
                           <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          {item}
+                          <span className="flex-grow">{item}</span>
+                          <div className="flex gap-0.5">
+                            {[...Array(5)].map((_, j) => (
+                              <div 
+                                key={j} 
+                                className={`h-1 w-4 rounded-full ${j < (5 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
+                          </div>
                         </motion.li>
                       ))}
                     </ul>
@@ -158,10 +166,18 @@ const AboutSection: React.FC = () => {
                         <motion.li 
                           key={i} 
                           variants={itemVariants}
-                          className="flex items-center text-lightgray"
+                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
                         >
                           <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          {item}
+                          <span className="flex-grow">{item}</span>
+                          <div className="flex gap-0.5">
+                            {[...Array(5)].map((_, j) => (
+                              <div 
+                                key={j} 
+                                className={`h-1 w-4 rounded-full ${j < (5 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
+                          </div>
                         </motion.li>
                       ))}
                     </ul>
@@ -176,10 +192,18 @@ const AboutSection: React.FC = () => {
                         <motion.li 
                           key={i} 
                           variants={itemVariants}
-                          className="flex items-center text-lightgray"
+                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
                         >
                           <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          {item}
+                          <span className="flex-grow">{item}</span>
+                          <div className="flex gap-0.5">
+                            {[...Array(5)].map((_, j) => (
+                              <div 
+                                key={j} 
+                                className={`h-1 w-4 rounded-full ${j < (4 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
+                          </div>
                         </motion.li>
                       ))}
                     </ul>
@@ -194,10 +218,18 @@ const AboutSection: React.FC = () => {
                         <motion.li 
                           key={i} 
                           variants={itemVariants}
-                          className="flex items-center text-lightgray"
+                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
                         >
                           <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          {item}
+                          <span className="flex-grow">{item}</span>
+                          <div className="flex gap-0.5">
+                            {[...Array(5)].map((_, j) => (
+                              <div 
+                                key={j} 
+                                className={`h-1 w-4 rounded-full ${j < (4 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
+                              ></div>
+                            ))}
+                          </div>
                         </motion.li>
                       ))}
                     </ul>
