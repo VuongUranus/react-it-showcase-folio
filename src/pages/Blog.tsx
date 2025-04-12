@@ -195,14 +195,17 @@ const Blog: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button 
-                variant="outline" 
-                className="border-primaryblue text-white hover:bg-primaryblue"
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Load More Articles
-              </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-primaryblue text-white hover:bg-primaryblue"
+                >
+                  Load More Articles
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </section>

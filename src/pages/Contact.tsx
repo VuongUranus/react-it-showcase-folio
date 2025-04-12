@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
@@ -197,14 +196,17 @@ const Contact: React.FC = () => {
                     transition={{ delay: 0.5 }}
                     whileHover={{ scale: 1.01 }}
                   >
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-primaryblue hover:bg-primaryblue/90"
+                    <motion.div
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Send Message
-                    </Button>
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-primaryblue hover:bg-primaryblue/90"
+                      >
+                        Send Message
+                      </Button>
+                    </motion.div>
                   </motion.div>
                 </form>
               </motion.div>
