@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
 
         <div style={{
         animationDelay: '0.6s'
-      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800/[0.23]">
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800/60">
           <h3 className="font-bold text-lg mb-2 text-white">MY WORK</h3>
           <p className="text-lightgray mb-4">
             Projects include scalable chat systems, resilient microservice platforms, and custom tools for monitoring and deployment using CI/CD practices and advanced logging strategies.
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
 
         <div style={{
         animationDelay: '0.9s'
-      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800">
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800/60">
           <h3 className="font-bold text-lg mb-4 text-white">FOLLOW ME</h3>
           <div className="flex gap-4">
             <a href="https://www.facebook.com/uranus.georgium" target='_blank' className="text-lightgray hover:text-primaryblue transition-colors">
