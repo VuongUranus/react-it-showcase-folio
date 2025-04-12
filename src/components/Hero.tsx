@@ -7,6 +7,15 @@ import { Button } from '@/components/ui/button';
 const Hero: React.FC = () => {
   return (
     <section className="min-h-[90vh] flex flex-col lg:flex-row items-center justify-center lg:justify-evenly section-padding">
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: "url('/lovable-uploads/71300caa-9de8-491a-8d75-c7ee392c731e.png')",
+            transform: "scale(1.1)"
+          }}
+        ></div>
+      </div>
       <div className="lg:w-1/2 z-10">
         <div className="rounded-full overflow-hidden w-20 h-20 mb-10 border-2">
           <img
@@ -60,7 +69,7 @@ const Hero: React.FC = () => {
         <div className="animate-fade-in opacity-0 p-4 rounded-lg" style={{ animationDelay: '0.6s' }}>
           <h3 className="font-bold text-lg mb-2 text-white">MY WORK</h3>
           <p className="text-lightgray mb-4">
-              Projects include scalable chat systems, resilient microservice platforms, and custom tools for monitoring and deployment using CI/CD practices and advanced logging strategies.
+            Projects include scalable chat systems, resilient microservice platforms, and custom tools for monitoring and deployment using CI/CD practices and advanced logging strategies.
           </p>
           <a href="/portfolio" className="text-primaryblue flex items-center group hover:text-white transition-colors">
             BROWSE PORTFOLIO
@@ -89,6 +98,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
     </section>
   );
 };

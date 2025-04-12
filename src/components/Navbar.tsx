@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="py-4 px-6 lg:px-24 flex justify-between items-center">
+    <nav className="py-4 px-6 lg:px-24 flex justify-between items-center z-10">
       <Link to="/" className="flex items-center gap-2">
         <span className="text-primaryblue text-2xl font-bold">&lt;/&gt;</span>
         <span className="text-xl font-semibold">Vuong Dev</span>
