@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
       <div className="hidden lg:flex flex-col gap-8 lg:w-2/5 max-w-sm">
         <div style={{
         animationDelay: '0.3s'
-      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800">
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800/[0.21]">
           <h3 className="font-bold text-lg mb-2 text-white">ABOUT ME</h3>
           <p className="text-lightgray mb-4">
             Software Engineer specialized in building real-time, high-performance distributed systems. Proficient in Golang, PostgreSQL, Elasticsearch, Hazelcast, Kafka, and NATS. Passionate about clean architecture and efficient systems.
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
 
         <div style={{
         animationDelay: '0.6s'
-      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800">
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800/[0.23]">
           <h3 className="font-bold text-lg mb-2 text-white">MY WORK</h3>
           <p className="text-lightgray mb-4">
             Projects include scalable chat systems, resilient microservice platforms, and custom tools for monitoring and deployment using CI/CD practices and advanced logging strategies.
