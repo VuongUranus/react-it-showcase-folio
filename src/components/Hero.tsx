@@ -1,28 +1,18 @@
-
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { Button } from '@/components/ui/button';
-
 const Hero: React.FC = () => {
-  return (
-    <section className="min-h-[90vh] flex flex-col lg:flex-row items-center justify-center lg:justify-evenly section-padding">
+  return <section className="min-h-[90vh] flex flex-col lg:flex-row items-center justify-center lg:justify-evenly section-padding">
       <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: "url('/lovable-uploads/71300caa-9de8-491a-8d75-c7ee392c731e.png')",
-            transform: "scale(1.1)"
-          }}
-        ></div>
+        <div className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20" style={{
+        backgroundImage: "url('/lovable-uploads/71300caa-9de8-491a-8d75-c7ee392c731e.png')",
+        transform: "scale(1.1)"
+      }}></div>
       </div>
       <div className="lg:w-1/2 z-10">
         <div className="rounded-full overflow-hidden w-20 h-20 mb-10 border-2">
-          <img
-            src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png"
-            alt="Developer Portrait"
-            className="w-full h-full object-cover"
-          />
+          <img src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png" alt="Developer Portrait" className="w-full h-full object-cover" />
         </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
           I'm Vuong, a<br />
@@ -41,12 +31,7 @@ const Hero: React.FC = () => {
           </Button>
         </div>
 
-        <Link
-          to="aboutSection"
-          smooth={true}
-          duration={500}
-          className="animate-bounce-slow cursor-pointer inline-block mt-16"
-        >
+        <Link to="aboutSection" smooth={true} duration={500} className="animate-bounce-slow cursor-pointer inline-block mt-16">
           <div className="w-16 h-16 rounded-full bg-primaryblue flex items-center justify-center">
             <ArrowDown size={24} color="white" />
           </div>
@@ -55,7 +40,9 @@ const Hero: React.FC = () => {
 
       {/* Right side information panels - adjusted position to avoid overlap */}
       <div className="hidden lg:flex flex-col gap-8 lg:w-2/5 max-w-sm">
-        <div className="animate-fade-in opacity-0 p-4 rounded-lg" style={{ animationDelay: '0.3s' }}>
+        <div style={{
+        animationDelay: '0.3s'
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800">
           <h3 className="font-bold text-lg mb-2 text-white">ABOUT ME</h3>
           <p className="text-lightgray mb-4">
             Software Engineer specialized in building real-time, high-performance distributed systems. Proficient in Golang, PostgreSQL, Elasticsearch, Hazelcast, Kafka, and NATS. Passionate about clean architecture and efficient systems.
@@ -66,7 +53,9 @@ const Hero: React.FC = () => {
           </a>
         </div>
 
-        <div className="animate-fade-in opacity-0 p-4 rounded-lg" style={{ animationDelay: '0.6s' }}>
+        <div style={{
+        animationDelay: '0.6s'
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800">
           <h3 className="font-bold text-lg mb-2 text-white">MY WORK</h3>
           <p className="text-lightgray mb-4">
             Projects include scalable chat systems, resilient microservice platforms, and custom tools for monitoring and deployment using CI/CD practices and advanced logging strategies.
@@ -77,7 +66,9 @@ const Hero: React.FC = () => {
           </a>
         </div>
 
-        <div className="animate-fade-in opacity-0 p-4 rounded-lg" style={{ animationDelay: '0.9s' }}>
+        <div style={{
+        animationDelay: '0.9s'
+      }} className="animate-fade-in opacity-0 p-4 rounded-lg bg-gray-800">
           <h3 className="font-bold text-lg mb-4 text-white">FOLLOW ME</h3>
           <div className="flex gap-4">
             <a href="https://www.facebook.com/uranus.georgium" target='_blank' className="text-lightgray hover:text-primaryblue transition-colors">
@@ -99,8 +90,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
