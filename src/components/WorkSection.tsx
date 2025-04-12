@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Building, Radio, Camera, Layout, Briefcase, Code, Palette, GanttChart } from 'lucide-react';
+import { Building, Server, Database, Search, MessageSquare, Terminal, Package, GitBranch } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const CompanyLogo: React.FC<{ 
@@ -8,33 +8,34 @@ const CompanyLogo: React.FC<{
   icon: string;
   description: string;
   period: string;
-}> = ({ name, icon, description, period }) => {
+  technologies: string[];
+}> = ({ name, icon, description, period, technologies }) => {
   let IconComponent;
   
   switch(icon) {
     case "building":
       IconComponent = Building;
       break;
-    case "radio":
-      IconComponent = Radio;
+    case "server":
+      IconComponent = Server;
       break;
-    case "camera":
-      IconComponent = Camera;
+    case "database":
+      IconComponent = Database;
       break;
-    case "layout":
-      IconComponent = Layout;
+    case "search":
+      IconComponent = Search;
       break;
-    case "briefcase":
-      IconComponent = Briefcase;
+    case "message-square":
+      IconComponent = MessageSquare;
       break;
-    case "code":
-      IconComponent = Code;
+    case "terminal":
+      IconComponent = Terminal;
       break;
-    case "palette":
-      IconComponent = Palette;
+    case "package":
+      IconComponent = Package;
       break;
-    case "gantt":
-      IconComponent = GanttChart;
+    case "git-branch":
+      IconComponent = GitBranch;
       break;
     default:
       IconComponent = Building;
@@ -56,7 +57,19 @@ const CompanyLogo: React.FC<{
             <p className="text-sm text-primaryblue">{period}</p>
           </div>
         </div>
-        <p className="text-lightgray text-sm mt-2">{description}</p>
+        <p className="text-lightgray text-sm mt-2 mb-4">{description}</p>
+        <div className="mt-auto">
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((tech, index) => (
+              <span 
+                key={index} 
+                className="inline-block bg-primaryblue/10 text-primaryblue text-xs px-2 py-1 rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -95,12 +108,12 @@ const WorkSection: React.FC = () => {
           <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">MY EXPERIENCE</div>
           <h2 className="text-4xl font-bold mb-6">Professional Journey</h2>
           <p className="text-lightgray max-w-2xl mx-auto">
-            A look at the companies and projects I've had the privilege to work with throughout my career.
+            My career as a backend engineer focusing on building scalable, high-performance systems.
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -108,37 +121,61 @@ const WorkSection: React.FC = () => {
         >
           <motion.div variants={itemVariants}>
             <CompanyLogo 
-              name="Venture Technologies" 
-              icon="building"
-              description="Led development teams and managed enterprise-scale web applications for digital transformation."
-              period="2019 - Present"
+              name="Backend Tech Solutions" 
+              icon="server"
+              description="Led development of scalable microservices architecture with Golang, handling high-volume data processing pipelines and API integrations."
+              period="2021 - Present"
+              technologies={["Golang", "Kafka", "PostgreSQL", "Docker", "Kubernetes"]}
             />
           </motion.div>
           
           <motion.div variants={itemVariants}>
             <CompanyLogo 
-              name="Creative Studio" 
-              icon="camera" 
-              description="Created innovative UX/UI designs and implemented front-end solutions for clients."
-              period="2017 - 2019"
+              name="Data Systems Inc" 
+              icon="database" 
+              description="Developed and optimized database solutions for enterprise clients, implementing sharding strategies and performance tuning for large-scale systems."
+              period="2020 - 2021"
+              technologies={["PostgreSQL", "ScyllaDB", "Elasticsearch", "Hazelcast"]}
             />
           </motion.div>
           
           <motion.div variants={itemVariants}>
             <CompanyLogo 
-              name="Tech Innovation" 
-              icon="code" 
-              description="Developed scalable applications using modern frameworks and cloud-based solutions."
-              period="2015 - 2017"
+              name="Cloud Infrastructure Services" 
+              icon="terminal" 
+              description="Implemented monitoring and logging solutions for cloud-based applications. Built automation tools for infrastructure deployment."
+              period="2019 - 2020"
+              technologies={["Golang", "Linux", "Grafana", "Graylog", "Jenkins"]}
             />
           </motion.div>
           
           <motion.div variants={itemVariants}>
             <CompanyLogo 
-              name="Digital Solutions" 
-              icon="palette" 
-              description="Created responsive websites and e-commerce platforms for various industry clients."
-              period="2012 - 2015"
+              name="Real-time Analytics Corp" 
+              icon="search" 
+              description="Designed and developed real-time analytics systems processing millions of events per minute using event-driven architecture."
+              period="2018 - 2019"
+              technologies={["Kafka", "NATS", "Elasticsearch", "Airflow"]}
+            />
+          </motion.div>
+          
+          <motion.div variants={itemVariants}>
+            <CompanyLogo 
+              name="DevOps Innovations" 
+              icon="git-branch" 
+              description="Implemented CI/CD pipelines and containerization strategies for accelerating software delivery cycles."
+              period="2017 - 2018"
+              technologies={["Docker", "Jenkins", "Linux", "Bash"]}
+            />
+          </motion.div>
+          
+          <motion.div variants={itemVariants}>
+            <CompanyLogo 
+              name="Open Source Contributions" 
+              icon="package" 
+              description="Active contributor to several open source projects in the Golang ecosystem, focusing on performance optimizations and reliability."
+              period="2017 - Present"
+              technologies={["Golang", "Open Source", "Git"]}
             />
           </motion.div>
         </motion.div>
