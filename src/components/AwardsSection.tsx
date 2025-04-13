@@ -1,8 +1,8 @@
-
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Award, Trophy } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 const awards = [
   {
@@ -35,19 +35,70 @@ const awards = [
 ];
 
 const AwardsSection: React.FC = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.3,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        damping: 15,
+        duration: 1
+      }
+    }
+  };
+
   return (
-    <section className="section-padding py-20 bg-black">
+    <section ref={sectionRef} className="section-padding py-20 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
-          <div className="flex items-center">
+        <motion.div
+          className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants} className="flex items-center">
             <Trophy size={30} className="text-blue-500 mr-4" />
             <h2 className="text-4xl font-bold text-blue-500">Honors & Awards</h2>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
-        <div className="space-y-8">
+        <motion.div
+          className="space-y-8"
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+        >
           {awards.map((award, index) => (
-            <div key={index} className="rounded-lg overflow-hidden">
+            <motion.div 
+              key={index}
+              variants={itemVariants} 
+              className="rounded-lg overflow-hidden"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Left side - Certificate Information */}
                 <div className="bg-gray-800 p-6">
@@ -145,9 +196,9 @@ const AwardsSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Badge, FileCheck } from 'lucide-react';
 import { 
   Carousel, 
@@ -8,6 +8,7 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 const certificates = [
   {
@@ -80,38 +81,90 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
 };
 
 const CertificatesSection: React.FC = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        damping: 15,
+        duration: 1
+      }
+    }
+  };
+
   return (
-    <section className="section-padding bg-black/20 py-20">
+    <section ref={sectionRef} className="section-padding bg-black/20 py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
-          <div>
+        <motion.div 
+          className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants}>
             <h2 className="heading-line text-4xl font-bold">Certificates</h2>
             <p className="text-lightgray mt-4 max-w-xl">
               Professional certifications that validate my expertise and technical knowledge.
             </p>
-          </div>
-          <Badge size={80} className="text-primaryblue/20 mt-6 md:mt-0" />
-        </div>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Badge size={80} className="text-primaryblue/20 mt-6 md:mt-0" />
+          </motion.div>
+        </motion.div>
         
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true
-          }}
-          className="w-full"
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
         >
-          <CarouselContent className="-ml-4">
-            {certificates.map((certificate, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <CertificateCard {...certificate} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex justify-center mt-8 gap-4">
-            <CarouselPrevious className="static transform-none mx-2" />
-            <CarouselNext className="static transform-none mx-2" />
-          </div>
-        </Carousel>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {certificates.map((certificate, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <motion.div variants={itemVariants}>
+                    <CertificateCard {...certificate} />
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-8 gap-4">
+              <CarouselPrevious className="static transform-none mx-2" />
+              <CarouselNext className="static transform-none mx-2" />
+            </div>
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );

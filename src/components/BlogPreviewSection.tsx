@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 // Blog post sample data (same as used in Blog.tsx)
 const blogPosts = [
@@ -67,26 +68,77 @@ const BlogCard: React.FC<(typeof blogPosts)[0]> = ({
 };
 
 const BlogPreviewSection: React.FC = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.3,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        damping: 15,
+        duration: 0.8
+      }
+    }
+  };
+
   return (
-    <section className="section-padding bg-black/20 py-20">
+    <section ref={sectionRef} className="section-padding bg-black/20 py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-12">
-          <div>
+        <motion.div 
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-12"
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants}>
             <h2 className="heading-line text-4xl font-bold">Blog & Articles</h2>
             <p className="text-lightgray mt-4 max-w-xl">
               My thoughts and insights on web development, design, and technology.
             </p>
-          </div>
-          <Button className="bg-primaryblue hover:bg-primaryblue/90 mt-6 sm:mt-0" asChild>
-            <Link to="/blog">View All Articles</Link>
-          </Button>
-        </div>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Button className="bg-primaryblue hover:bg-primaryblue/90 mt-6 sm:mt-0" asChild>
+              <Link to="/blog">View All Articles</Link>
+            </Button>
+          </motion.div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <BlogCard key={post.id} {...post} />
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+        >
+          {blogPosts.map((post, index) => (
+            <motion.div key={post.id} variants={itemVariants}>
+              <BlogCard {...post} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

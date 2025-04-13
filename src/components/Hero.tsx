@@ -95,24 +95,28 @@ const Hero: React.FC = () => {
           className="flex flex-wrap gap-4"
         >
           <motion.div variants={itemVariants}>
-            <Button 
-              className="bg-primaryblue hover:bg-primaryblue/90 text-white"
+            <motion.div 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href="#" target='_blank' className="px-2">Get My Resume</a>
-            </Button>
+              <Button className="bg-primaryblue hover:bg-primaryblue/90 text-white">
+                <a href="#" target='_blank' className="px-2">Get My Resume</a>
+              </Button>
+            </motion.div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Button 
-              variant="outline" 
-              className="border-white hover:bg-white/10 text-black hover:text-white"
+            <motion.div 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href="/contact" className="px-2">Contact Me</a>
-            </Button>
+              <Button 
+                variant="outline" 
+                className="border-white hover:bg-white/10 text-black hover:text-white"
+              >
+                <a href="/contact" className="px-2">Contact Me</a>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
 
