@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Server, Database, Terminal, Cloud, GitBranch, HardDrive, Network } from 'lucide-react';
+import { ArrowRight, Server, Database, Terminal, Cloud, GitBranch, HardDrive, Network, Smartphone, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from 'framer-motion';
@@ -25,6 +25,49 @@ const AboutSection: React.FC = () => {
     }
   };
 
+  // Define tech categories with their icons and technologies
+  const techCategories = [
+    {
+      name: "Frontend",
+      icon: <Terminal size={20} className="text-primaryblue" />,
+      techs: ["React", "TypeScript", "Angular", "Tailwind CSS"]
+    },
+    {
+      name: "Backend", 
+      icon: <Database size={20} className="text-primaryblue" />,
+      techs: ["Node.js", "Python", "PostgreSQL", "MongoDB"]
+    },
+    {
+      name: "DevOps",
+      icon: <HardDrive size={20} className="text-primaryblue" />,
+      techs: ["Docker", "Kubernetes", "AWS", "CI/CD"]
+    },
+    {
+      name: "Mobile",
+      icon: <Smartphone size={20} className="text-primaryblue" />,
+      techs: ["React Native", "Flutter", "Swift", "Kotlin"]
+    }
+  ];
+
+  const techImages = {
+    "React": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "TypeScript": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+    "Angular": "https://angular.io/assets/images/logos/angular/angular.svg",
+    "Tailwind CSS": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
+    "Node.js": "https://nodejs.org/static/images/logo.svg",
+    "Python": "https://www.python.org/static/community_logos/python-logo.png",
+    "PostgreSQL": "https://www.postgresql.org/media/img/about/press/elephant.png",
+    "MongoDB": "https://www.mongodb.com/assets/images/global/leaf.svg",
+    "Docker": "https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png",
+    "Kubernetes": "https://kubernetes.io/images/favicon.png",
+    "AWS": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "CI/CD": "https://about.gitlab.com/images/ci/gitlab-ci-cd-logo_2x.png",
+    "React Native": "https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/HEAD/images/react-native-logo.png",
+    "Flutter": "https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png",
+    "Swift": "https://developer.apple.com/swift/images/swift-og.png",
+    "Kotlin": "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png"
+  };
+
   return (
     <section id="aboutSection" className="section-padding bg-black/20 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -38,7 +81,7 @@ const AboutSection: React.FC = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             <h2 className="vertical-line text-lg font-bold mb-4">ABOUT ME</h2>
             <h3 className="text-4xl md:text-5xl font-bold mb-8">
@@ -54,7 +97,7 @@ const AboutSection: React.FC = () => {
               <TabsList className="bg-black/30 mb-6">
                 <TabsTrigger value="experience" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Experience</TabsTrigger>
                 <TabsTrigger value="education" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Education</TabsTrigger>
-                {/* <TabsTrigger value="skills" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Skills</TabsTrigger> */}
+                <TabsTrigger value="skills" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Skills</TabsTrigger>
               </TabsList>
 
               <TabsContent value="experience" className="text-lightgray space-y-4">
@@ -128,112 +171,40 @@ const AboutSection: React.FC = () => {
                   variants={containerVariants} 
                   initial="hidden" 
                   animate="visible"
-                  className="grid grid-cols-2 gap-4"
+                  className="grid grid-cols-2 gap-6"
                 >
-                  <div>
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <Terminal size={18} className="mr-2 text-primaryblue" /> 
-                      <span>Languages & Core</span>
-                    </h4>
-                    <ul className="list-none space-y-2">
-                      {["Golang", "SQL", "Bash/Shell", "Python", "REST APIs"].map((item, i) => (
-                        <motion.li 
-                          key={i} 
-                          variants={itemVariants}
-                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
-                        >
-                          <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          <span className="flex-grow">{item}</span>
-                          <div className="flex gap-0.5">
-                            {[...Array(5)].map((_, j) => (
-                              <div 
-                                key={j} 
-                                className={`h-1 w-4 rounded-full ${j < (5 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <Database size={18} className="mr-2 text-primaryblue" /> 
-                      <span>Data & Storage</span>
-                    </h4>
-                    <ul className="list-none space-y-2">
-                      {["PostgreSQL", "ScyllaDB", "Elasticsearch", "Hazelcast", "Redis"].map((item, i) => (
-                        <motion.li 
-                          key={i} 
-                          variants={itemVariants}
-                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
-                        >
-                          <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          <span className="flex-grow">{item}</span>
-                          <div className="flex gap-0.5">
-                            {[...Array(5)].map((_, j) => (
-                              <div 
-                                key={j} 
-                                className={`h-1 w-4 rounded-full ${j < (5 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-4">
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <HardDrive size={18} className="mr-2 text-primaryblue" /> 
-                      <span>Infrastructure</span>
-                    </h4>
-                    <ul className="list-none space-y-2">
-                      {["Docker", "Kubernetes", "Jenkins", "Linux", "Airflow"].map((item, i) => (
-                        <motion.li 
-                          key={i} 
-                          variants={itemVariants}
-                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
-                        >
-                          <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          <span className="flex-grow">{item}</span>
-                          <div className="flex gap-0.5">
-                            {[...Array(5)].map((_, j) => (
-                              <div 
-                                key={j} 
-                                className={`h-1 w-4 rounded-full ${j < (4 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-4">
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <Network size={18} className="mr-2 text-primaryblue" /> 
-                      <span>Messaging & Monitoring</span>
-                    </h4>
-                    <ul className="list-none space-y-2">
-                      {["Kafka", "NATS", "Grafana", "Graylog", "Prometheus"].map((item, i) => (
-                        <motion.li 
-                          key={i} 
-                          variants={itemVariants}
-                          className="flex items-center text-lightgray p-2 hover:bg-black/20 rounded-md transition-colors duration-300"
-                        >
-                          <div className="w-2 h-2 bg-primaryblue rounded-full mr-2"></div>
-                          <span className="flex-grow">{item}</span>
-                          <div className="flex gap-0.5">
-                            {[...Array(5)].map((_, j) => (
-                              <div 
-                                key={j} 
-                                className={`h-1 w-4 rounded-full ${j < (4 - i % 2) ? 'bg-primaryblue/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
+                  {techCategories.map((category, idx) => (
+                    <motion.div 
+                      key={category.name}
+                      variants={itemVariants}
+                      className="bg-black/20 p-4 rounded-lg border border-gray-800"
+                    >
+                      <h4 className="font-bold mb-3 flex items-center">
+                        <span className="w-8 h-8 rounded-full bg-primaryblue/20 flex items-center justify-center mr-2">
+                          {category.icon}
+                        </span>
+                        {category.name}
+                      </h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        {category.techs.map((tech) => (
+                          <motion.div
+                            key={tech}
+                            whileHover={{ scale: 1.05 }}
+                            className="bg-black/30 rounded-md p-2 flex flex-col items-center hover:shadow-[0_0_10px_rgba(59,130,246,0.2)] transition-all duration-300"
+                          >
+                            <div className="h-10 flex items-center justify-center mb-1">
+                              <img 
+                                src={techImages[tech as keyof typeof techImages]} 
+                                alt={tech} 
+                                className="h-8 w-auto object-contain"
+                              />
+                            </div>
+                            <span className="text-xs font-medium">{tech}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
                 </motion.div>
               </TabsContent>
             </Tabs>
@@ -251,7 +222,7 @@ const AboutSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3"
               alt="Developer workspace with code"
               className="w-full h-64 object-cover rounded-lg shadow-lg"

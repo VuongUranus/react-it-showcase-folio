@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WorkSection from '@/components/WorkSection';
+import TechLogoGrid from '@/components/TechLogoGrid';
 import {
   ArrowRight,
   Mail,
@@ -19,7 +20,11 @@ import {
   Github,
   Twitter,
   Linkedin,
-  Instagram
+  Instagram,
+  Smartphone,
+  Server,
+  Cloud,
+  HardDrive
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -39,6 +44,121 @@ const About: React.FC = () => {
     initial: {},
     animate: { transition: { staggerChildren: 0.1 } }
   };
+
+  const techCategories = [
+    {
+      name: "Frontend Development",
+      icon: <Terminal size={16} className="text-primaryblue" />,
+      technologies: [
+        {
+          name: "React / Next.js",
+          logo: "/lovable-uploads/9edc981a-6aaf-4763-a959-330ec332d42c.png"
+        },
+        {
+          name: "TypeScript",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        },
+        {
+          name: "Angular",
+          logo: "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          name: "Tailwind CSS",
+          logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+        },
+        {
+          name: "Vue.js",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+        },
+        {
+          name: "SASS",
+          logo: "https://sass-lang.com/assets/img/logos/logo.svg"
+        }
+      ]
+    },
+    {
+      name: "Backend Development",
+      icon: <Database size={16} className="text-primaryblue" />,
+      technologies: [
+        {
+          name: "Node.js",
+          logo: "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          name: "Python / Django",
+          logo: "https://www.djangoproject.com/m/img/logos/django-logo-negative.png"
+        },
+        {
+          name: "PostgreSQL",
+          logo: "https://www.postgresql.org/media/img/about/press/elephant.png"
+        },
+        {
+          name: "MongoDB",
+          logo: "https://www.mongodb.com/assets/images/global/leaf.svg"
+        },
+        {
+          name: "GraphQL",
+          logo: "https://graphql.org/img/logo.svg"
+        },
+        {
+          name: "Express.js",
+          logo: "https://expressjs.com/images/express-facebook-share.png"
+        }
+      ]
+    },
+    {
+      name: "DevOps & Infrastructure",
+      icon: <Server size={16} className="text-primaryblue" />,
+      technologies: [
+        {
+          name: "Docker",
+          logo: "https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"
+        },
+        {
+          name: "Kubernetes",
+          logo: "https://kubernetes.io/images/favicon.png"
+        },
+        {
+          name: "AWS",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+        },
+        {
+          name: "Firebase",
+          logo: "https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png"
+        },
+        {
+          name: "Netlify",
+          logo: "https://www.netlify.com/v3/img/components/logomark.png"
+        },
+        {
+          name: "Vercel",
+          logo: "https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png"
+        }
+      ]
+    },
+    {
+      name: "Mobile Development",
+      icon: <Smartphone size={16} className="text-primaryblue" />,
+      technologies: [
+        {
+          name: "React Native",
+          logo: "https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/HEAD/images/react-native-logo.png"
+        },
+        {
+          name: "Flutter",
+          logo: "https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png"
+        },
+        {
+          name: "Swift",
+          logo: "https://developer.apple.com/swift/images/swift-og.png"
+        },
+        {
+          name: "Kotlin",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png"
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-darkbg">
@@ -126,7 +246,6 @@ const About: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <div className="relative">
-                  {/* Decorative element - animated floating circles */}
                   <motion.div
                     className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-primaryblue/10 z-0"
                     animate={{
@@ -141,7 +260,6 @@ const About: React.FC = () => {
                     }}
                   ></motion.div>
 
-                  {/* Main image with fancy border */}
                   <div className="relative z-10 rounded-2xl overflow-hidden border-2 border-primaryblue/30 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
                     <div className={`transition-opacity duration-1000 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
                       <img
@@ -153,7 +271,6 @@ const About: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Decorative element - animated floating circles */}
                   <motion.div
                     className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-primaryblue/10 z-0"
                     animate={{
@@ -168,7 +285,6 @@ const About: React.FC = () => {
                     }}
                   ></motion.div>
 
-                  {/* Tech stack badges floating */}
                   <motion.div
                     className="absolute -right-16 top-10 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10"
                     animate={{
@@ -215,7 +331,6 @@ const About: React.FC = () => {
 
         {/* About me section with skills showcase */}
         <section className="py-24 bg-black/30 relative overflow-hidden">
-          {/* Background grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#17141430_1px,transparent_1px),linear-gradient(to_bottom,#17141430_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
@@ -225,7 +340,7 @@ const About: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-50px" }}
                 >
                   <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">ABOUT ME</div>
                   <h2 className="text-4xl font-bold mb-8 leading-tight">
@@ -399,174 +514,8 @@ const About: React.FC = () => {
                     </motion.div>
                   </TabsContent>
 
-                  <TabsContent value="skills" className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
-                    >
-                      <h3 className="text-2xl font-bold mb-6 flex items-center">
-                        <span className="inline-block w-8 h-8 rounded-full bg-primaryblue/20 flex items-center justify-center mr-3">
-                          <Terminal size={16} className="text-primaryblue" />
-                        </span>
-                        Frontend Development
-                      </h3>
-
-                      <div className="space-y-6">
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                              <Code size={12} className="text-blue-500" />
-                            </div>
-                            <span className="font-semibold">React / Next.js</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 5 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                              <Terminal size={12} className="text-blue-500" />
-                            </div>
-                            <span className="font-semibold">TypeScript</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 5 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                              <MonitorSmartphone size={12} className="text-blue-500" />
-                            </div>
-                            <span className="font-semibold">Angular</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center">
-                              <Globe size={12} className="text-blue-500" />
-                            </div>
-                            <span className="font-semibold">Tailwind CSS</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 5 ? 'bg-blue-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
-                      className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
-                    >
-                      <h3 className="text-2xl font-bold mb-6 flex items-center">
-                        <span className="inline-block w-8 h-8 rounded-full bg-primaryblue/20 flex items-center justify-center mr-3">
-                          <Database size={16} className="text-primaryblue" />
-                        </span>
-                        Backend Development
-                      </h3>
-
-                      <div className="space-y-6">
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                              <Terminal size={12} className="text-green-500" />
-                            </div>
-                            <span className="font-semibold">Node.js</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-green-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                              <Terminal size={12} className="text-green-500" />
-                            </div>
-                            <span className="font-semibold">Python / Django</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-green-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                              <Database size={12} className="text-green-500" />
-                            </div>
-                            <span className="font-semibold">PostgreSQL / MongoDB</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 4 ? 'bg-green-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="group transition-all duration-300 hover:bg-black/30 p-3 rounded-lg">
-                          <div className="flex items-center gap-3 mb-1">
-                            <div className="w-6 h-6 rounded-full bg-green-600/20 flex items-center justify-center">
-                              <Globe size={12} className="text-green-500" />
-                            </div>
-                            <span className="font-semibold">Docker / Kubernetes</span>
-                          </div>
-                          <div className="flex mt-2 gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <div 
-                                key={i}
-                                className={`h-1.5 rounded-full flex-1 ${i < 3 ? 'bg-green-500/40' : 'bg-gray-700'}`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
+                  <TabsContent value="skills">
+                    <TechLogoGrid categories={techCategories} />
                   </TabsContent>
                 </Tabs>
               </div>
@@ -650,7 +599,6 @@ const About: React.FC = () => {
         
         {/* Testimonials section */}
         <section className="py-24 bg-black/30 relative overflow-hidden">
-          {/* Background decorative elements */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-primaryblue/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-primaryblue/5 rounded-full blur-3xl"></div>
 
