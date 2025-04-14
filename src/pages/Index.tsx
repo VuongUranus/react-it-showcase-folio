@@ -28,7 +28,7 @@ const Index: React.FC = () => {
 
   return (
     <motion.div 
-      className="min-h-screen flex flex-col bg-background text-foreground dark:bg-black"
+      className="min-h-screen flex flex-col bg-background text-foreground dark:bg-darkbg dark:text-white"
       initial="initial"
       animate="animate"
       variants={pageVariants}
@@ -37,11 +37,11 @@ const Index: React.FC = () => {
       <Hero />
       <AboutSection />
       <SkillsSection />
+      <WorkSection />
       <AwardsSection />
       <CertificatesSection />
       <TestimonialsSection />
       <BlogPreviewSection />
-      <WorkSection />
       <Footer />
     </motion.div>
   );

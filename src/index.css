@@ -85,13 +85,34 @@
     display: block;
     width: 60px;
     height: 4px;
-    background-color: white;
-    margin-bottom: 20px;
+    @apply bg-primaryblue mb-5;
   }
   
   .vertical-line::before {
     content: '/';
     @apply text-primaryblue font-bold mr-2;
+  }
+
+  /* Thêm các class hữu ích cho thiết kế nhất quán */
+  .glass-effect {
+    @apply bg-white/10 dark:bg-black/30 backdrop-blur-md border border-white/10 dark:border-white/5;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primaryblue to-primaryblue-light bg-clip-text text-transparent;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+  }
+  
+  .section-subtitle {
+    @apply text-lightgray dark:text-lightgray-light mb-12 max-w-2xl;
+  }
+
+  /* Card styles */
+  .card-style {
+    @apply bg-white/5 dark:bg-darkbg-lighter border border-gray-200 dark:border-gray-800 rounded-lg p-6 transition-all hover:shadow-md;
   }
 }
 
@@ -113,5 +134,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Thêm hiệu ứng hover nhất quán */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)];
   }
 }

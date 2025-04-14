@@ -6,41 +6,24 @@ import {
   ArrowRight,
   Mail,
   Phone,
-  Briefcase,
-  GraduationCap,
-  Code,
-  Medal,
-  Terminal,
-  Globe,
-  MonitorSmartphone,
-  Database,
-  Camera,
-  PaintBucket,
-  Github,
+  Facebook,
   Twitter,
   Linkedin,
   Instagram,
-  Smartphone,
-  Server,
-  Cloud,
-  HardDrive,
-  Award,
-  FacebookIcon,
-  ServerIcon,
-  Facebook,
+  Github,
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#1A1F2C] py-16 px-6 md:px-12 lg:px-24">
+    <footer className="bg-darkbg-lighter py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Top Section with Profile and Contact */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-10">
           {/* Profile Section */}
           <div className="flex items-center gap-5">
-            <Avatar className="h-24 w-24 border-2">
+            <Avatar className="h-24 w-24 border-2 border-primaryblue">
               <AvatarImage src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png" alt="Doan Minh Vuong" />
-              <AvatarFallback>JC</AvatarFallback>
+              <AvatarFallback>DV</AvatarFallback>
             </Avatar>
             <div>
               <h2 className="text-3xl font-bold">Doan Minh Vuong</h2>
@@ -59,14 +42,20 @@ const Footer: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lightgray mb-2">EMAIL ME:</p>
-                <a href="mailto:contact@john.com" className="text-white text-lg border-b border-gray-700 pb-1 flex items-center gap-2 hover:border-primaryblue transition-colors">
+                <a 
+                  href="mailto:minhvuongday@gmail.com" 
+                  className="text-white text-lg border-b border-gray-700 pb-1 flex items-center gap-2 hover:border-primaryblue transition-colors hover:text-primaryblue"
+                >
                   minhvuongday@gmail.com <ArrowRight size={16} />
                 </a>
               </div>
 
               <div>
                 <p className="text-lightgray mb-2">CALL ME:</p>
-                <a href="tel:+84767129183" className="text-white text-lg border-b border-gray-700 pb-1 flex items-center gap-2 hover:border-primaryblue transition-colors">
+                <a 
+                  href="tel:+84767129183" 
+                  className="text-white text-lg border-b border-gray-700 pb-1 flex items-center gap-2 hover:border-primaryblue transition-colors hover:text-primaryblue"
+                >
                   +84 767 129 183 <ArrowRight size={16} />
                 </a>
               </div>
@@ -77,20 +66,40 @@ const Footer: React.FC = () => {
         {/* Social Icons */}
         <div className="mb-16">
           <div className="flex gap-6">
-            <a href="https://www.facebook.com/uranus.georgium" target='_blank' className="text-white hover:text-primaryblue transition-colors">
-              <Facebook />
+            <a 
+              href="https://www.facebook.com/uranus.georgium" 
+              target='_blank' 
+              className="text-white hover:text-primaryblue transition-colors hover-lift"
+            >
+              <Facebook className="w-6 h-6" />
             </a>
-            <a href="https://x.com/onMinhVng10" target='_blank' className="text-white hover:text-primaryblue transition-colors">
-              <Twitter />
+            <a 
+              href="https://x.com/onMinhVng10" 
+              target='_blank' 
+              className="text-white hover:text-primaryblue transition-colors hover-lift"
+            >
+              <Twitter className="w-6 h-6" />
             </a>
-            <a href="https://www.instagram.com/min_vuon/" target='_blank' className="text-white hover:text-primaryblue transition-colors">
-              <Instagram />
+            <a 
+              href="https://www.instagram.com/min_vuon/" 
+              target='_blank' 
+              className="text-white hover:text-primaryblue transition-colors hover-lift"
+            >
+              <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://www.linkedin.com/in/doan-minh-vuong/" target='_blank' className="text-white hover:text-primaryblue transition-colors">
-              <Linkedin />
+            <a 
+              href="https://www.linkedin.com/in/doan-minh-vuong/" 
+              target='_blank' 
+              className="text-white hover:text-primaryblue transition-colors hover-lift"
+            >
+              <Linkedin className="w-6 h-6" />
             </a>
-            <a href="https://github.com/VuongUranus" target='_blank' className="text-white hover:text-primaryblue transition-colors">
-              <Github />
+            <a 
+              href="https://github.com/VuongUranus" 
+              target='_blank' 
+              className="text-white hover:text-primaryblue transition-colors hover-lift"
+            >
+              <Github className="w-6 h-6" />
             </a>
           </div>
         </div>
