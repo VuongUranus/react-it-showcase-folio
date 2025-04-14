@@ -10,6 +10,7 @@ import CertificatesSection from '@/components/CertificatesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import BlogPreviewSection from '@/components/BlogPreviewSection';
 import WorkSection from '@/components/WorkSection';
+import MusicPlayer from '@/components/MusicPlayer';
 import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
@@ -42,6 +43,7 @@ const Index: React.FC = () => {
       <TestimonialsSection />
       <BlogPreviewSection />
       <WorkSection />
+      <MusicPlayer />
       <Footer />
     </motion.div>
   );
