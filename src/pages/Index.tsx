@@ -28,7 +28,7 @@ const Index: React.FC = () => {
 
   return (
     <motion.div 
-      className="min-h-screen flex flex-col bg-background text-foreground dark:bg-darkbg dark:text-white"
+      className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300"
       initial="initial"
       animate="animate"
       variants={pageVariants}

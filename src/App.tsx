@@ -17,28 +17,37 @@ import { useEffect } from "react";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Đảm bảo rằng màu nền được áp dụng đúng cho toàn bộ trang
+  // Apply background color to entire document
   useEffect(() => {
-    // Áp dụng màu nền cho phần tử html để tránh flickering khi chuyển theme
-    document.documentElement.classList.add('bg-background', 'dark:bg-darkbg');
+    // Apply background class to html and body elements
+    document.documentElement.classList.add('bg-background');
+    document.body.classList.add('min-h-screen', 'bg-background', 'text-foreground', 'transition-colors', 'duration-300');
+    
+    // Clean up function
+    return () => {
+      document.documentElement.classList.remove('bg-background');
+      document.body.classList.remove('min-h-screen', 'bg-background', 'text-foreground', 'transition-colors', 'duration-300');
+    };
   }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ThemeProvider defaultTheme="system" enableSystem>
         <BrowserRouter>
           <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/portfolio/:slug" element={<ProjectPage />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+              <Toaster />
+              <Sonner />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/portfolio/:slug" element={<ProjectPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </div>
           </TooltipProvider>
         </BrowserRouter>
       </ThemeProvider>

@@ -73,7 +73,12 @@
   }
 
   body {
-    @apply bg-background text-foreground dark:bg-darkbg dark:text-white;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  /* Theme transition */
+  *, ::before, ::after {
+    @apply transition-colors duration-300;
   }
   
   .section-padding {
@@ -93,7 +98,7 @@
     @apply text-primaryblue font-bold mr-2;
   }
 
-  /* Thêm các class hữu ích cho thiết kế nhất quán */
+  /* Glass effect styling */
   .glass-effect {
     @apply bg-white/10 dark:bg-black/30 backdrop-blur-md border border-white/10 dark:border-white/5;
   }
@@ -136,7 +141,7 @@
     }
   }
 
-  /* Thêm hiệu ứng hover nhất quán */
+  /* Hover effects */
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-1;
   }

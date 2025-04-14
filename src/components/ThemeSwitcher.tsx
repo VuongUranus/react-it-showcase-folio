@@ -20,32 +20,51 @@ export const ThemeSwitcher = () => {
   }, []);
 
   if (!mounted) {
-    return null;
+    return (
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        className="focus-visible:ring-0 focus-visible:ring-offset-0 relative w-9 h-9"
+      >
+        <Sun className="h-5 w-5" />
+        <span className="sr-only">Loading theme</span>
+      </Button>
+    );
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button 
-          variant="ghost" 
+          variant="outline" 
           size="icon" 
-          className="focus-visible:ring-0 focus-visible:ring-offset-0 relative"
+          className="bg-background border-border hover:bg-accent hover:text-accent-foreground relative w-9 h-9"
         >
-          <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          {theme === 'light' && <Sun className="h-5 w-5" />}
+          {theme === 'dark' && <Moon className="h-5 w-5" />}
+          {(theme === 'system' || !theme) && <Laptop className="h-5 w-5" />}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="glass-effect">
-        <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer hover:text-primaryblue">
+      <DropdownMenuContent align="end" className="w-36 glass-effect">
+        <DropdownMenuItem 
+          onClick={() => setTheme("light")} 
+          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+        >
           <Sun className="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer hover:text-primaryblue">
+        <DropdownMenuItem 
+          onClick={() => setTheme("dark")} 
+          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+        >
           <Moon className="mr-2 h-4 w-4" />
           <span>Dark</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer hover:text-primaryblue">
+        <DropdownMenuItem 
+          onClick={() => setTheme("system")} 
+          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+        >
           <Laptop className="mr-2 h-4 w-4" />
           <span>System</span>
         </DropdownMenuItem>
