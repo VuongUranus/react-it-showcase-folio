@@ -69,7 +69,7 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="aboutSection" className="section-padding bg-black/20 relative overflow-hidden">
+    <section id="aboutSection" className="section-padding relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#17141430_1px,transparent_1px),linear-gradient(to_bottom,#17141430_1px,transparent_1px)] bg-[size:4rem_4rem] -z-10"></div>
       <div className="absolute top-0 right-0 w-72 h-72 bg-primaryblue/5 rounded-full blur-3xl -z-10"></div>

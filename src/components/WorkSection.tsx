@@ -126,7 +126,7 @@ const WorkSection: React.FC = () => {
         </motion.div>
 
         <div className="flex justify-center mt-12">
-          <Button asChild className="bg-transparent border border-white hover:bg-white/10">
+          <Button asChild>
             <a href="/portfolio">View All Projects <ArrowRight size={16} className="ml-2" /></a>
           </Button>
         </div>

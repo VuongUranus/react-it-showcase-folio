@@ -125,7 +125,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <main className="flex-1">
@@ -183,14 +183,14 @@ const About: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <Button className="bg-primaryblue hover:bg-blue-600 transition-colors" size="lg">
-                    Download Resume
+                  <Button variant="default" size="lg">
+                    Get My Resume
                   </Button>
 
-                  <Button variant="outline" className="border-white/30 hover:bg-white/10 hover:text-white transition-colors text-black" size="lg"
+                  <Button variant="secondary" size="lg"
                     onClick={() => window.location.href = '/portfolio'}
                   >
-                    My Portfolio <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1 text-black" />
+                    My Portfolio
                   </Button>
                 </div>
               </motion.div>
@@ -286,7 +286,7 @@ const About: React.FC = () => {
         </section>
 
         {/* About me section with skills showcase */}
-        <section className="py-24 bg-black/30 relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#17141430_1px,transparent_1px),linear-gradient(to_bottom,#17141430_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">

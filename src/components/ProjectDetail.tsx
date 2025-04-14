@@ -23,7 +23,7 @@ interface ProjectDetailProps {
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1">

@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.2 }}
           transition={{
-            duration: 1.5,
+            duration: 0.5,
             ease: "easeOut"
           }}
           className="w-full h-full bg-cover bg-center bg-no-repeat"
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button className="bg-primaryblue hover:bg-primaryblue/90 text-white">
+              <Button>
                 <a href="#" target='_blank' className="px-2">Get My Resume</a>
               </Button>
             </motion.div>
@@ -111,8 +111,8 @@ const Hero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-                variant="outline"
-                className="border-white hover:bg-white/10 text-black hover:text-white"
+                variant="secondary"
+                className="border-white hover:bg-white/10"
               >
                 <a href="/contact" className="px-2">Contact Me</a>
               </Button>

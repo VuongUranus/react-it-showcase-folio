@@ -100,7 +100,7 @@ const BlogPreviewSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding bg-black/20">
+    <section ref={sectionRef} className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="mb-12"

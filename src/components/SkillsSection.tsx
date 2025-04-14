@@ -144,7 +144,7 @@ const SkillsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="section-padding py-16 bg-black">
+    <section className="section-padding py-16">
       <div className="max-w-7xl mx-auto mb-10 px-6 md:px-12 lg:px-24">
         <h2 className="heading-line text-4xl font-bold mb-8">My Skills</h2>
         <p className="text-lightgray max-w-2xl mb-8">
@@ -173,8 +173,8 @@ const SkillsSection: React.FC = () => {
         </div>
         
         {/* Gradient overlays for fade effect */}
-        <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-black to-transparent"></div>
-        <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-black to-transparent"></div>
+        <div className="absolute top-0 left-0 h-full w-16 dark:bg-gradient-to-r bg-gradient-to-r dark:from-black from-white to-transparent"></div>
+        <div className="absolute top-0 right-0 h-full w-16 dark:bg-gradient-to-l bg-gradient-to-l dark:from-black from-white to-transparent"></div>
       </div>
     </section>
   );

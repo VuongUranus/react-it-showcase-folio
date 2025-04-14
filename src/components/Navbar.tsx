@@ -26,10 +26,10 @@ const Navbar: React.FC = () => {
           <button className="hover:text-primaryblue transition-colors flex items-center gap-1">
             Pages
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 8L3 5H9L6 8Z" fill="currentColor"/>
+              <path d="M6 8L3 5H9L6 8Z" fill="currentColor" />
             </svg>
           </button>
-          <div className="absolute hidden group-hover:block bg-darkbg border border-gray-800 rounded-md p-2 mt-2 min-w-[150px] z-10 dark:bg-gray-900">
+          <div className="absolute hidden group-hover:block border border-gray-800 rounded-md p-2 mt-2 min-w-[150px] z-10 dark:bg-gray-900">
             <Link to="#" className="block py-1 px-2 hover:text-primaryblue">Services</Link>
             <Link to="#" className="block py-1 px-2 hover:text-primaryblue">FAQ</Link>
           </div>
@@ -40,9 +40,9 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Button */}
       <div className="md:hidden flex items-center gap-2">
         <ThemeSwitcher />
-        <Button 
-          variant="ghost" 
-          size="icon" 
+        <Button
+          variant="ghost"
+          size="icon"
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 right-0 left-0 bg-darkbg border-t border-gray-800 z-50 dark:bg-gray-900">
+        <div className="md:hidden absolute top-16 right-0 left-0 bg-gray-900 border-t border-gray-800 z-50 dark:bg-gray-900">
           <div className="flex flex-col p-4">
             <Link to="/" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/about" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>About</Link>

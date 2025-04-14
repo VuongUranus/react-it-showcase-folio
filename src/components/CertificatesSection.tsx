@@ -121,7 +121,7 @@ const CertificatesSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding py-20 bg-background dark:bg-black">
+    <section ref={sectionRef} className="section-padding py-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
