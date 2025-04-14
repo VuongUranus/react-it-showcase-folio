@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Badge, FileCheck } from 'lucide-react';
+import { Badge, FileCheck, ShieldCheck } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -46,7 +46,7 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
   link
 }) => {
   return (
-    <div className="relative bg-black/30 dark:bg-black/50 rounded-lg overflow-hidden h-[400px] group">
+    <div className="relative dark:bg-black/50 backdrop-blur rounded-lg overflow-hidden h-[400px] group">
       <div className="absolute inset-0">
         <img
           src={image}
@@ -130,7 +130,7 @@ const CertificatesSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="heading-line text-4xl font-bold text-foreground dark:text-white">Certificates</h2>
+            <h2 className="heading-line text-4xl font-bold text-foreground dark:text-white"> Certificates</h2>
             <p className="text-muted-foreground dark:text-lightgray mt-4 max-w-xl">
               Professional certifications that validate my expertise and technical knowledge.
             </p>

@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           {/* Profile Section */}
           <div className="flex items-center gap-5">
             <Avatar className="h-24 w-24 border-2">
-              <AvatarImage src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png" alt="Doan Minh Vuong" />
+              <AvatarImage src="https://img.icons8.com/?size=512&id=44442&format=png" alt="Doan Minh Vuong" />
               <AvatarFallback>JC</AvatarFallback>
             </Avatar>
             <div>

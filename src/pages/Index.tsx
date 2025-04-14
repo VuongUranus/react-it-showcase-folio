@@ -1,52 +1,48 @@
-
 import React from 'react';
-import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import AboutSection from '@/components/AboutSection';
-import SkillsSection from '@/components/SkillsSection';
-import AwardsSection from '@/components/AwardsSection';
-import CertificatesSection from '@/components/CertificatesSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import BlogPreviewSection from '@/components/BlogPreviewSection';
-import WorkSection from '@/components/WorkSection';
-import MusicPlayer from '@/components/MusicPlayer';
 import Footer from '@/components/Footer';
+import WorkSection from '@/components/WorkSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import CertificatesSection from '@/components/CertificatesSection';
+import AwardsSection from '@/components/AwardsSection';
+import MusicPlayer from '@/components/MusicPlayer';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import ContactSection from '@/components/ContactSection';
+import BlogPreviewSection from '@/components/BlogPreviewSection';
 
-const Index: React.FC = () => {
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
+const About: React.FC = () => {
   return (
-    <motion.div 
-      className="min-h-screen flex flex-col bg-background text-foreground dark:bg-black"
-      initial="initial"
-      animate="animate"
-      variants={pageVariants}
-    >
+    <div className="min-h-screen flex flex-col dark:bg-black">
       <Navbar />
-      <MusicPlayer />
-      <Hero />
-      <AboutSection />
-      <SkillsSection />
-      <WorkSection />
-      <AwardsSection />
-      <CertificatesSection />
-      <TestimonialsSection />
-      <BlogPreviewSection />
+      <main className="flex-1">
+        {/* Hero section with parallax effect */}
+        <HeroSection />
+
+        {/* About me section with skills showcase */}
+        <AboutSection />
+
+        {/* Portfolio showcase section */}
+        <WorkSection />
+
+        {/* Awards Section */}
+        <AwardsSection />
+
+        {/* Certificates Section */}
+        <CertificatesSection />
+
+        {/* Testimonials Section */}
+        <TestimonialsSection />
+
+        {/* Blog preview section */}
+        <BlogPreviewSection />
+
+        {/* Contact section */}
+        <ContactSection />
+      </main>
       <Footer />
-    </motion.div>
+    </div>
   );
 };
 
-export default Index;
+export default About;

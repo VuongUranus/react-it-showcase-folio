@@ -6,29 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {
-  ArrowRight,
-  Mail,
-  Phone,
-  Briefcase,
-  GraduationCap,
-  Code,
-  Medal,
-  Terminal,
-  Globe,
-  MonitorSmartphone,
-  Database,
-  Camera,
-  PaintBucket,
   Github,
   Twitter,
   Linkedin,
   Instagram,
-  Smartphone,
-  Server,
-  Cloud,
-  HardDrive,
-  Award,
-  FacebookIcon,
   Facebook
 } from 'lucide-react';
 

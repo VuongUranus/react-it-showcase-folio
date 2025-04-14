@@ -103,8 +103,8 @@ const WorkSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6">
                       <div className="flex gap-2 mb-3">
-                        <Badge className="bg-primaryblue">React</Badge>
-                        <Badge className="bg-gray-700">TypeScript</Badge>
+                        <Badge className="bg-primaryblue">Golang</Badge>
+                        <Badge className="bg-gray-700">Postgresql</Badge>
                       </div>
                       <h3 className="text-xl font-bold mb-1">{`Project Title ${item}`}</h3>
                       <p className="text-lightgray text-sm">Web Application Design & Development</p>

@@ -7,30 +7,30 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 
 // Blog post sample data (same structure as in Blog.tsx but fewer posts)
 const blogPosts = [
-  // {
-  //   id: 1,
-  //   title: "The Future of Web Development in 2025",
-  //   excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
-  //   date: "April 5, 2025",
-  //   category: "ARTICLES",
-  //   slug: "future-web-development-2025"
-  // },
-  // {
-  //   id: 2,
-  //   title: "How to Master Frontend Frameworks",
-  //   excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
-  //   date: "March 20, 2025",
-  //   category: "TUTORIALS",
-  //   slug: "master-frontend-frameworks"
-  // },
-  // {
-  //   id: 3,
-  //   title: "Building Scalable Backend Systems",
-  //   excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
-  //   date: "March 8, 2025",
-  //   category: "ARTICLES",
-  //   slug: "scalable-backend-systems"
-  // }
+  {
+    id: 1,
+    title: "The Future of Web Development in 2025",
+    excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
+    date: "April 5, 2025",
+    category: "ARTICLES",
+    slug: "future-web-development-2025"
+  },
+  {
+    id: 2,
+    title: "How to Master Frontend Frameworks",
+    excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
+    date: "March 20, 2025",
+    category: "TUTORIALS",
+    slug: "master-frontend-frameworks"
+  },
+  {
+    id: 3,
+    title: "Building Scalable Backend Systems",
+    excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
+    date: "March 8, 2025",
+    category: "ARTICLES",
+    slug: "scalable-backend-systems"
+  }
 ];
 
 const BlogCard: React.FC<{

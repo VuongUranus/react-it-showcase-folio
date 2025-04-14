@@ -8,7 +8,12 @@ const awards = [
   {
     title: "Top contributing employee in the IT department 2024",
     department: "IT Department",
-    description: "Integrated BHX chat system and Zalo messaging, optimized core WebSocket (-30% resources), and integrated SSO/anti-theft for stable operations.",
+    description: `
+      - Integrated the chat system for BHX.
+      - Connected Zalo and messaging for improved customer service coordination.
+      - Optimized core websocket, reducing resource usage by over 30%.
+      - Integrated websocket for SSO and anti-theft features, ensuring stable operation.
+    `    ,
     notes: "Recognized for outstanding contributions to the team",
     date: "Awarded: Jan 2025",
     certificateImage: "/lovable-uploads/award.png", // This is a placeholder, the actual image shows an award certificate
@@ -68,7 +73,7 @@ const AwardsSection: React.FC = () => {
             <h2 className="text-4xl font-bold">Honors & Awards</h2>
           </motion.div>
         </motion.div>
-        
+
         <motion.div
           className="space-y-8"
           initial="hidden"
@@ -76,19 +81,19 @@ const AwardsSection: React.FC = () => {
           variants={containerVariants}
         >
           {awards.map((award, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              variants={itemVariants} 
+              variants={itemVariants}
               className="rounded-lg overflow-hidden"
             >
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Left side - Certificate Information */}
                 <div className="bg-gray-800 p-6">
                   {award.certificateImage ? (
-                    <div className="h-80 flex items-center justify-center">
-                      <img 
-                        src={award.certificateImage} 
-                        alt={`${award.title} Certificate`} 
+                    <div className="flex items-center justify-center">
+                      <img
+                        src={award.certificateImage}
+                        alt={`${award.title} Certificate`}
                         className="max-h-full object-contain"
                       />
                     </div>
@@ -99,7 +104,7 @@ const AwardsSection: React.FC = () => {
                         <p className="text-yellow-300 text-sm">- Năm 2024 -</p>
                         <p className="text-white font-bold mt-4">DANH HIỆU NHÂN VIÊN VƯỢT TRỘI</p>
                         <p className="text-yellow-400 text-xl mt-2">192581 - Web Developer</p>
-                        
+
                         <div className="mt-8 space-y-4 text-left">
                           <div className="flex items-center">
                             <div className="rounded-full bg-gray-600 p-1 mr-2">
@@ -110,7 +115,7 @@ const AwardsSection: React.FC = () => {
                               <span className="text-white font-medium text-sm">Chuyên Viên</span>
                             </div>
                           </div>
-                          
+
                           <div className="flex items-center">
                             <div className="rounded-full bg-gray-600 p-1 mr-2">
                               <Award size={16} className="text-white" />
@@ -120,7 +125,7 @@ const AwardsSection: React.FC = () => {
                               <span className="text-white font-medium text-sm">Web Development</span>
                             </div>
                           </div>
-                          
+
                           <div className="flex items-center">
                             <div className="rounded-full bg-gray-600 p-1 mr-2">
                               <Award size={16} className="text-white" />
@@ -131,7 +136,7 @@ const AwardsSection: React.FC = () => {
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="mt-8 text-left">
                           <p className="text-white font-medium">Ghi nhận đánh giá:</p>
                           <p className="text-white/70 text-sm mt-1">- Hoàn thành phần core và box sản phẩm.</p>
@@ -141,7 +146,7 @@ const AwardsSection: React.FC = () => {
                     </div>
                   )}
                 </div>
-                
+
                 {/* Right side - Award Details */}
                 <div className="bg-[#0a1930] p-8 flex flex-col">
                   <div className="flex-grow flex flex-col items-center justify-center text-center">
@@ -156,22 +161,22 @@ const AwardsSection: React.FC = () => {
                         </div>
                       </div>
                     )}
-                  
+
                     <h3 className="text-yellow-500 text-2xl font-bold mb-2 mt-2">{award.title}</h3>
                     <p className="text-gray-400 mb-6">{award.department}</p>
-                    
-                    <p className="text-white mb-6">
+
+                    <p className="text-white mb-6 whitespace-pre-line">
                       {award.description}
                     </p>
-                    
+
                     <p className="text-gray-400 mb-4">
                       {award.notes}
                     </p>
-                    
+
                     <p className="text-blue-400 font-medium mt-auto">
                       {award.date}
                     </p>
-                    
+
                     <Button className="bg-purple-600 hover:bg-purple-700 text-white w-full mt-6">
                       See More Details
                     </Button>

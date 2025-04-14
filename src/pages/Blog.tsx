@@ -138,12 +138,12 @@ const Blog: React.FC = () => {
     : blogPosts.slice(2).filter(post => post.category.toLowerCase() === filter);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#1A1F2C]">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-[#1A1F2C] py-24 px-6 md:px-12 lg:px-24">
+        <section className=" py-24 px-6 md:px-12 lg:px-24">
           <div className="max-w-7xl mx-auto">
             <motion.h1 
               className="text-5xl md:text-6xl font-bold mb-6"
@@ -157,7 +157,7 @@ const Blog: React.FC = () => {
         </section>
         
         {/* Featured Articles */}
-        <section className="bg-[#1A1F2C] px-6 md:px-12 lg:px-24">
+        <section className="px-6 md:px-12 lg:px-24">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-gray-800 pb-12">
               {featuredPosts.map(post => (
@@ -168,7 +168,7 @@ const Blog: React.FC = () => {
         </section>
         
         {/* Main Blog Content */}
-        <section className="bg-[#1A1F2C] py-16 px-6 md:px-12 lg:px-24">
+        <section className="py-16 px-6 md:px-12 lg:px-24">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
               {/* Sidebar */}
@@ -223,7 +223,7 @@ const Blog: React.FC = () => {
                     <Input 
                       type="email" 
                       placeholder="Your email address" 
-                      className="bg-[#1A1F2C] border-gray-700 focus:border-primaryblue"
+                      className="border-gray-700 focus:border-primaryblue"
                     />
                     <Button className="w-full flex items-center justify-center gap-2 bg-primaryblue hover:bg-primaryblue/90">
                       Subscribe now <ArrowRight className="w-4 h-4" />
