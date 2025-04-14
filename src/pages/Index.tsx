@@ -35,15 +35,15 @@ const Index: React.FC = () => {
       variants={pageVariants}
     >
       <Navbar />
+      <MusicPlayer />
       <Hero />
       <AboutSection />
       <SkillsSection />
+      <WorkSection />
       <AwardsSection />
       <CertificatesSection />
       <TestimonialsSection />
       <BlogPreviewSection />
-      <WorkSection />
-      <MusicPlayer />
       <Footer />
     </motion.div>
   );
