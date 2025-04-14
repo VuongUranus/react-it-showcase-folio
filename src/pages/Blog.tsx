@@ -10,70 +10,70 @@ import { Link } from 'react-router-dom';
 
 // Blog post sample data with categories
 const blogPosts = [
-  // {
-  //   id: 1,
-  //   title: "The Future of Web Development in 2025",
-  //   excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
-  //   date: "April 5, 2025",
-  //   category: "ARTICLES",
-  //   slug: "future-web-development-2025"
-  // },
-  // {
-  //   id: 2,
-  //   title: "How to Master Frontend Frameworks",
-  //   excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
-  //   date: "March 20, 2025",
-  //   category: "TUTORIALS",
-  //   slug: "master-frontend-frameworks"
-  // },
-  // {
-  //   id: 3,
-  //   title: "Building Scalable Backend Systems",
-  //   excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
-  //   date: "March 8, 2025",
-  //   category: "ARTICLES",
-  //   slug: "scalable-backend-systems"
-  // },
-  // {
-  //   id: 4,
-  //   title: "DevOps Principles for Developers",
-  //   excerpt: "Essential DevOps practices that every developer should understand and implement.",
-  //   date: "February 25, 2025",
-  //   category: "TUTORIALS",
-  //   slug: "devops-principles"
-  // },
-  // {
-  //   id: 5,
-  //   title: "Creating Accessible Web Applications",
-  //   excerpt: "How to ensure your web applications are accessible to all users, including those with disabilities.",
-  //   date: "February 10, 2025",
-  //   category: "ARTICLES",
-  //   slug: "accessible-web-applications"
-  // },
-  // {
-  //   id: 6,
-  //   title: "TypeScript Best Practices for 2025",
-  //   excerpt: "The latest best practices for writing clean, maintainable TypeScript code in your projects.",
-  //   date: "January 30, 2025",
-  //   category: "TUTORIALS",
-  //   slug: "typescript-best-practices-2025"
-  // },
-  // {
-  //   id: 7,
-  //   title: "7 Great Web Development Languages to Learn this Year",
-  //   excerpt: "A curated list of programming languages that will boost your career in web development.",
-  //   date: "January 15, 2025",
-  //   category: "ARTICLES",
-  //   slug: "web-development-languages"
-  // },
-  // {
-  //   id: 8,
-  //   title: "8 Tips to Improve your Web Development Skills in 2025",
-  //   excerpt: "Practical tips and strategies to level up your web development skills this year.",
-  //   date: "January 5, 2025",
-  //   category: "ARTICLES",
-  //   slug: "improve-web-development-skills"
-  // }
+  {
+    id: 1,
+    title: "The Future of Web Development in 2025",
+    excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
+    date: "April 5, 2025",
+    category: "ARTICLES",
+    slug: "future-web-development-2025"
+  },
+  {
+    id: 2,
+    title: "How to Master Frontend Frameworks",
+    excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
+    date: "March 20, 2025",
+    category: "TUTORIALS",
+    slug: "master-frontend-frameworks"
+  },
+  {
+    id: 3,
+    title: "Building Scalable Backend Systems",
+    excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
+    date: "March 8, 2025",
+    category: "ARTICLES",
+    slug: "scalable-backend-systems"
+  },
+  {
+    id: 4,
+    title: "DevOps Principles for Developers",
+    excerpt: "Essential DevOps practices that every developer should understand and implement.",
+    date: "February 25, 2025",
+    category: "TUTORIALS",
+    slug: "devops-principles"
+  },
+  {
+    id: 5,
+    title: "Creating Accessible Web Applications",
+    excerpt: "How to ensure your web applications are accessible to all users, including those with disabilities.",
+    date: "February 10, 2025",
+    category: "ARTICLES",
+    slug: "accessible-web-applications"
+  },
+  {
+    id: 6,
+    title: "TypeScript Best Practices for 2025",
+    excerpt: "The latest best practices for writing clean, maintainable TypeScript code in your projects.",
+    date: "January 30, 2025",
+    category: "TUTORIALS",
+    slug: "typescript-best-practices-2025"
+  },
+  {
+    id: 7,
+    title: "7 Great Web Development Languages to Learn this Year",
+    excerpt: "A curated list of programming languages that will boost your career in web development.",
+    date: "January 15, 2025",
+    category: "ARTICLES",
+    slug: "web-development-languages"
+  },
+  {
+    id: 8,
+    title: "8 Tips to Improve your Web Development Skills in 2025",
+    excerpt: "Practical tips and strategies to level up your web development skills this year.",
+    date: "January 5, 2025",
+    category: "ARTICLES",
+    slug: "improve-web-development-skills"
+  }
 ];
 
 interface BlogCardProps {
