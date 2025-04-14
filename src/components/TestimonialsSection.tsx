@@ -1,47 +1,32 @@
 
 import React, { useRef, useEffect } from 'react';
 import { Quote } from 'lucide-react';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
 } from '@/components/ui/carousel';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 const testimonials = [
   {
-    text: "John transformed our outdated website into a modern, responsive platform that's increased our conversion rate by 40%. His attention to detail and user experience expertise made all the difference.",
-    author: "Sarah Johnson",
-    position: "CEO, TechStart Inc.",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3"
-  },
-  {
-    text: "Working with John was an absolute pleasure. He understood our vision immediately and delivered a product that exceeded our expectations. His technical knowledge and communication skills are exceptional.",
-    author: "Michael Chen",
-    position: "Product Manager, InnovateCo",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3"
-  },
-  {
-    text: "John's ability to translate complex requirements into elegant code is remarkable. He not only built us a beautiful website but also optimized it for performance and SEO. We've seen a significant increase in organic traffic since launch.",
-    author: "Emily Rodriguez",
-    position: "Marketing Director, GrowthFirm",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3"
-  },
-  {
-    text: "I've worked with many developers over my 15-year career, and John stands out as one of the best. His problem-solving abilities and proactive approach to challenges made our project run smoothly from start to finish.",
-    author: "David Park",
-    position: "CTO, TechInnovate",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3"
+    text: `Only one word that comes to mind when I think of Minh Vuong, and that’s TALENT. 
+I worked with Vuong at Mobile World Investment. During his time on my team, he became both my teammate and my friend. 
+As a key role in the textbase- streaming system, he has all the essential characteristics: responsive, positive, analytical, and inspiring. Vuong doesn’t just develop and operate the system, he guides and encourages others in the team. 
+Thanks, Vuong! You made my time at MWG a pleasure.`,
+    author: "Thien Hang",
+    position: "Data Engineer, MLOps Engineer, AdTech",
+    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQEKcV4Qq040Cg/profile-displayphoto-shrink_400_400/B4DZPEbtZNHQAg-/0/1734167420128?e=1750291200&v=beta&t=AjcJz-NggF_hIzreuyoYpYOa-3LRATQuco9hH4wVDxQ"
   }
 ];
 
-const TestimonialCard: React.FC<(typeof testimonials)[0]> = ({ 
-  text, 
-  author, 
-  position, 
-  avatar 
+const TestimonialCard: React.FC<(typeof testimonials)[0]> = ({
+  text,
+  author,
+  position,
+  avatar
 }) => {
   return (
     <div className="bg-black/30 p-6 rounded-lg h-full flex flex-col">
@@ -109,10 +94,10 @@ const TestimonialsSection: React.FC = () => {
         >
           <motion.h2 variants={itemVariants} className="heading-line text-4xl font-bold mb-4">Testimonials</motion.h2>
           <motion.p variants={itemVariants} className="text-lightgray max-w-2xl mb-16">
-            What clients say about my work and collaboration experience.
+            What people say about my work and collaboration experience.
           </motion.p>
         </motion.div>
-        
+
         <motion.div
           initial="hidden"
           animate={controls}

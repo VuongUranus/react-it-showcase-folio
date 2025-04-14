@@ -5,6 +5,32 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  Briefcase,
+  GraduationCap,
+  Code,
+  Medal,
+  Terminal,
+  Globe,
+  MonitorSmartphone,
+  Database,
+  Camera,
+  PaintBucket,
+  Github,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Smartphone,
+  Server,
+  Cloud,
+  HardDrive,
+  Award,
+  FacebookIcon,
+  Facebook
+} from 'lucide-react';
 
 const Contact: React.FC = () => {
   const pageVariants = {
@@ -35,19 +61,19 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <motion.div 
-      className="min-h-screen flex flex-col"
+    <motion.div
+      className="min-h-screen flex flex-col bg-black"
       variants={pageVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <Navbar />
-      
+
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
-            <motion.h1 
+            <motion.h1
               className="heading-line text-5xl md:text-6xl font-bold mb-10"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -55,35 +81,35 @@ const Contact: React.FC = () => {
             >
               Contact Me
             </motion.h1>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div
                 variants={itemVariants}
               >
-                <motion.h2 
+                <motion.h2
                   className="text-2xl font-bold mb-6"
                   variants={formControlVariants}
                   transition={{ delay: 0.1 }}
                 >
                   Get In Touch
                 </motion.h2>
-                <motion.p 
+                <motion.p
                   className="text-lightgray mb-8"
                   variants={formControlVariants}
                   transition={{ delay: 0.2 }}
                 >
-                  Have a project in mind or want to discuss a potential collaboration? 
+                  Have a project in mind or want to discuss a potential collaboration?
                   I'm always open to new opportunities and challenges.
                 </motion.p>
-                
+
                 <div className="space-y-6">
-                  <motion.div 
+                  <motion.div
                     className="flex items-start"
                     variants={formControlVariants}
                     transition={{ delay: 0.3 }}
                     whileHover={{ x: 5 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="bg-primaryblue/20 p-3 rounded-full mr-4"
                       whileHover={{ scale: 1.1, backgroundColor: "rgba(59,130,246,0.3)" }}
                     >
@@ -93,17 +119,17 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h3 className="font-bold mb-1">Phone</h3>
-                      <p className="text-lightgray">+1 (555) 123-4567</p>
+                      <p className="text-lightgray">+84 767 129 183</p>
                     </div>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="flex items-start"
                     variants={formControlVariants}
                     transition={{ delay: 0.4 }}
                     whileHover={{ x: 5 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="bg-primaryblue/20 p-3 rounded-full mr-4"
                       whileHover={{ scale: 1.1, backgroundColor: "rgba(59,130,246,0.3)" }}
                     >
@@ -114,17 +140,17 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h3 className="font-bold mb-1">Email</h3>
-                      <p className="text-lightgray">hello@developerx.com</p>
+                      <p className="text-lightgray">minhvuongday@gmail.com</p>
                     </div>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="flex items-start"
                     variants={formControlVariants}
                     transition={{ delay: 0.5 }}
                     whileHover={{ x: 5 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="bg-primaryblue/20 p-3 rounded-full mr-4"
                       whileHover={{ scale: 1.1, backgroundColor: "rgba(59,130,246,0.3)" }}
                     >
@@ -135,18 +161,38 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h3 className="font-bold mb-1">Location</h3>
-                      <p className="text-lightgray">San Francisco, CA, USA</p>
+                      <p className="text-lightgray">Ho Chi Minh City, Vietnam</p>
                     </div>
                   </motion.div>
+                  <div className="flex gap-4">
+                    {[
+                      { name: "facebook", icon: <Facebook size={18} />, link: "https://www.facebook.com/uranus.georgium" },
+                      { name: "github", icon: <Github size={18} />, link: "https://github.com/VuongUranus" },
+                      { name: "twitter", icon: <Twitter size={18} />, link: "https://x.com/onMinhVng10" },
+                      { name: "linkedin", icon: <Linkedin size={18} />, link: "https://www.linkedin.com/in/doan-minh-vuong/" },
+                      { name: "instagram", icon: <Instagram size={18} />, link: "https://www.instagram.com/min_vuon/" }
+                    ].map((social, index) => (
+                      <motion.a
+                        key={index}
+                        href={social.link}
+                        target='_blank'
+                        className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-colors hover:bg-primaryblue"
+                        whileHover={{ y: -5, scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {social.icon}
+                      </motion.a>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="bg-black/20 p-8 rounded-lg"
                 variants={itemVariants}
                 transition={{ delay: 0.3 }}
               >
-                <motion.h2 
+                <motion.h2
                   className="text-2xl font-bold mb-6"
                   variants={formControlVariants}
                 >
@@ -185,9 +231,9 @@ const Contact: React.FC = () => {
                     whileHover={{ y: -2 }}
                   >
                     <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
-                    <Textarea 
-                      id="message" 
-                      className="bg-black/30 border-gray-700 min-h-[150px]" 
+                    <Textarea
+                      id="message"
+                      className="bg-black/30 border-gray-700 min-h-[150px]"
                       placeholder="Tell me about your project or idea..."
                     />
                   </motion.div>
@@ -200,8 +246,8 @@ const Contact: React.FC = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <Button 
-                        type="submit" 
+                      <Button
+                        type="submit"
                         className="w-full bg-primaryblue hover:bg-primaryblue/90"
                       >
                         Send Message
@@ -214,7 +260,7 @@ const Contact: React.FC = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </motion.div>
   );

@@ -7,30 +7,30 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 
 // Blog post sample data (same structure as in Blog.tsx but fewer posts)
 const blogPosts = [
-  {
-    id: 1,
-    title: "The Future of Web Development in 2025",
-    excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
-    date: "April 5, 2025",
-    category: "ARTICLES",
-    slug: "future-web-development-2025"
-  },
-  {
-    id: 2,
-    title: "How to Master Frontend Frameworks",
-    excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
-    date: "March 20, 2025",
-    category: "TUTORIALS",
-    slug: "master-frontend-frameworks"
-  },
-  {
-    id: 3,
-    title: "Building Scalable Backend Systems",
-    excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
-    date: "March 8, 2025",
-    category: "ARTICLES",
-    slug: "scalable-backend-systems"
-  }
+  // {
+  //   id: 1,
+  //   title: "The Future of Web Development in 2025",
+  //   excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
+  //   date: "April 5, 2025",
+  //   category: "ARTICLES",
+  //   slug: "future-web-development-2025"
+  // },
+  // {
+  //   id: 2,
+  //   title: "How to Master Frontend Frameworks",
+  //   excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
+  //   date: "March 20, 2025",
+  //   category: "TUTORIALS",
+  //   slug: "master-frontend-frameworks"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Building Scalable Backend Systems",
+  //   excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
+  //   date: "March 8, 2025",
+  //   category: "ARTICLES",
+  //   slug: "scalable-backend-systems"
+  // }
 ];
 
 const BlogCard: React.FC<{
@@ -39,28 +39,28 @@ const BlogCard: React.FC<{
   date: string;
   category: string;
   slug: string;
-}> = ({ 
-  title, 
-  date, 
+}> = ({
+  title,
+  date,
   category,
   slug
 }) => {
-  return (
-    <article className="border-t border-gray-800 py-6 group">
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-2">
-        <span>{date}</span>
-        <span className="mx-2">•</span>
-        <span className="uppercase">{category}</span>
-      </div>
-      <h3 className="text-xl font-bold group-hover:text-primaryblue transition-colors">
-        <Link to={`/blog/${slug}`} className="flex items-center justify-between">
-          <span>{title}</span>
-          <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-        </Link>
-      </h3>
-    </article>
-  );
-};
+    return (
+      <article className="border-t border-gray-800 py-6 group">
+        <div className="flex items-center gap-2 text-sm text-gray-400 mb-2">
+          <span>{date}</span>
+          <span className="mx-2">•</span>
+          <span className="uppercase">{category}</span>
+        </div>
+        <h3 className="text-xl font-bold group-hover:text-primaryblue transition-colors">
+          <Link to={`/blog/${slug}`} className="flex items-center justify-between">
+            <span>{title}</span>
+            <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+          </Link>
+        </h3>
+      </article>
+    );
+  };
 
 const BlogPreviewSection: React.FC = () => {
   const sectionRef = useRef(null);
@@ -102,26 +102,26 @@ const BlogPreviewSection: React.FC = () => {
   return (
     <section ref={sectionRef} className="section-padding bg-black/20">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="mb-12"
           initial="hidden"
           animate={controls}
           variants={containerVariants}
         >
-          <motion.h2 
-            variants={itemVariants} 
+          <motion.h2
+            variants={itemVariants}
             className="heading-line text-4xl font-bold mb-6"
           >
             Blog & Articles
           </motion.h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div variants={itemVariants}>
               <p className="text-lightgray max-w-xl">
-                My thoughts and insights on web development, design, and technology.
+                My thoughts and insights on backend development, system design, and scalable architecture.
               </p>
             </motion.div>
-            
+
             <motion.div variants={itemVariants} className="flex justify-start lg:justify-end">
               <Button className="bg-primaryblue hover:bg-primaryblue/90 flex items-center gap-2" asChild>
                 <Link to="/blog">
@@ -132,7 +132,7 @@ const BlogPreviewSection: React.FC = () => {
             </motion.div>
           </div>
         </motion.div>
-        
+
         <motion.div
           initial="hidden"
           animate={controls}

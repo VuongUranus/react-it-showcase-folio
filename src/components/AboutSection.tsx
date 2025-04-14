@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -33,7 +33,7 @@ const AboutSection: React.FC = () => {
       techs: ["React", "TypeScript", "Angular", "Tailwind CSS"]
     },
     {
-      name: "Backend", 
+      name: "Backend",
       icon: <Database size={20} className="text-primaryblue" />,
       techs: ["Node.js", "Python", "PostgreSQL", "MongoDB"]
     },
@@ -74,7 +74,7 @@ const AboutSection: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#17141430_1px,transparent_1px),linear-gradient(to_bottom,#17141430_1px,transparent_1px)] bg-[size:4rem_4rem] -z-10"></div>
       <div className="absolute top-0 right-0 w-72 h-72 bg-primaryblue/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primaryblue/5 rounded-full blur-3xl -z-10"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
@@ -88,7 +88,7 @@ const AboutSection: React.FC = () => {
               I build scalable backend systems
             </h3>
             <p className="text-lightgray mb-6">
-              I'm a passionate backend developer with nearly 3 years of experience creating 
+              I'm a passionate backend developer with nearly 3 years of experience creating
               reliable, high-performance distributed systems. My expertise spans technologies like Golang,
               PostgreSQL, Elasticsearch, message brokers, and containerization solutions.
             </p>
@@ -97,31 +97,31 @@ const AboutSection: React.FC = () => {
               <TabsList className="bg-black/30 mb-6">
                 <TabsTrigger value="experience" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Experience</TabsTrigger>
                 <TabsTrigger value="education" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Education</TabsTrigger>
-                <TabsTrigger value="skills" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Skills</TabsTrigger>
+                {/* <TabsTrigger value="skills" className="data-[state=active]:bg-primaryblue data-[state=active]:text-white">Skills</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="experience" className="text-lightgray space-y-4">
-                <motion.div 
+                <motion.div
                   className="border-l-2 border-primaryblue pl-4 pb-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <h4 className="font-bold">Senior Backend Developer</h4>
-                  <p className="text-sm text-primaryblue mb-1">2022 - Present</p>
+                  <h4 className="font-bold">Permanent employee at Mobile World Group (TheGioiDiDong)</h4>
+                  <p className="text-sm text-primaryblue mb-1">Nov 2022 - Present</p>
                   <p>Led the development of scalable microservices with Golang and Kafka, improving system throughput by 40%.</p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="border-l-2 border-gray-700 pl-4 pb-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                 >
-                  <h4 className="font-bold">Backend Engineer</h4>
-                  <p className="text-sm text-primaryblue mb-1">2021 - 2022</p>
+                  <h4 className="font-bold">Fresher at Mobile World Group (TheGioiDiDong)</h4>
+                  <p className="text-sm text-primaryblue mb-1">Jul 2022 - Nov 2022</p>
                   <p>Developed distributed data processing systems using PostgreSQL, ScyllaDB, and Elasticsearch.</p>
                 </motion.div>
-                <motion.div 
+                {/* <motion.div 
                   className="border-l-2 border-gray-700 pl-4 pb-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -130,21 +130,21 @@ const AboutSection: React.FC = () => {
                   <h4 className="font-bold">Junior DevOps Engineer</h4>
                   <p className="text-sm text-primaryblue mb-1">2020 - 2021</p>
                   <p>Implemented CI/CD pipelines and container orchestration for microservices architecture.</p>
-                </motion.div>
+                </motion.div> */}
               </TabsContent>
 
               <TabsContent value="education" className="text-lightgray space-y-4">
-                <motion.div 
+                <motion.div
                   className="border-l-2 border-primaryblue pl-4 pb-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <h4 className="font-bold">Master's in Computer Science</h4>
-                  <p className="text-sm text-primaryblue mb-1">2018 - 2020</p>
-                  <p>University of Technology, Specialization in Distributed Systems</p>
+                  <h4 className="font-bold">Bachelor's Degree in Software Engineering</h4>
+                  <p className="text-sm text-primaryblue mb-1">Aug 2019 - Oct 2024</p>
+                  <p>SaiGon University - SGU</p>
                 </motion.div>
-                <motion.div 
+                {/* <motion.div 
                   className="border-l-2 border-gray-700 pl-4 pb-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -163,10 +163,10 @@ const AboutSection: React.FC = () => {
                   <h4 className="font-bold">Professional Certifications</h4>
                   <p className="text-sm text-primaryblue mb-1">2020 - Present</p>
                   <p>Golang Advanced Developer, Kubernetes Administrator, AWS Solutions Architect</p>
-                </motion.div>
+                </motion.div> */}
               </TabsContent>
-              
-              <TabsContent value="skills">
+
+              {/* <TabsContent value="skills">
                 <motion.div 
                   variants={containerVariants} 
                   initial="hidden" 
@@ -206,7 +206,7 @@ const AboutSection: React.FC = () => {
                     </motion.div>
                   ))}
                 </motion.div>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
 
             <Button variant="link" className="group text-white px-0 py-0 hover:no-underline mt-6" asChild>
@@ -216,9 +216,9 @@ const AboutSection: React.FC = () => {
               </a>
             </Button>
           </motion.div>
-          
+
           <div className="flex flex-col gap-8">
-            <motion.img 
+            <motion.img
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -228,32 +228,32 @@ const AboutSection: React.FC = () => {
               className="w-full h-64 object-cover rounded-lg shadow-lg"
             />
             <div className="grid grid-cols-2 gap-4">
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
                 className="bg-black/30 p-6 rounded-lg border border-gray-800 hover:border-primaryblue hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
               >
                 <div className="flex items-center mb-2">
                   <Server className="text-primaryblue mr-3" size={24} />
-                  <div className="text-3xl font-bold text-primaryblue">3+</div>
+                  <div className="text-3xl font-bold text-primaryblue">2+</div>
                 </div>
                 <h4 className="text-xl font-medium mb-2">Years of<br />experience</h4>
                 <p className="text-lightgray text-sm">
                   Building scalable backend systems and distributed applications.
                 </p>
               </motion.div>
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
                 className="bg-black/30 p-6 rounded-lg border border-gray-800 hover:border-primaryblue hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
               >
                 <div className="flex items-center mb-2">
                   <GitBranch className="text-primaryblue mr-3" size={24} />
-                  <div className="text-3xl font-bold text-primaryblue">20+</div>
+                  <div className="text-3xl font-bold text-primaryblue">10+</div>
                 </div>
-                <h4 className="text-xl font-medium mb-2">Open Source<br />Contributions</h4>
+                <h4 className="text-xl font-medium mb-2">Company Project<br />Contributions</h4>
                 <p className="text-lightgray text-sm">
-                  Active contributor to the Golang ecosystem and tools.
+                  Contributed to the development, maintenance, and optimization of internal company projects.
                 </p>
               </motion.div>
             </div>

@@ -24,13 +24,19 @@ import {
   Smartphone,
   Server,
   Cloud,
-  HardDrive
+  HardDrive,
+  Award,
+  FacebookIcon,
+  ServerIcon,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion } from 'framer-motion';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import CertificatesSection from '@/components/CertificatesSection';
+import AwardsSection from '@/components/AwardsSection';
 
 const About: React.FC = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -47,62 +53,32 @@ const About: React.FC = () => {
 
   const techCategories = [
     {
-      name: "Frontend Development",
-      icon: <Terminal size={16} className="text-primaryblue" />,
-      technologies: [
-        {
-          name: "React / Next.js",
-          logo: "/lovable-uploads/9edc981a-6aaf-4763-a959-330ec332d42c.png"
-        },
-        {
-          name: "TypeScript",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
-        },
-        {
-          name: "Angular",
-          logo: "https://angular.io/assets/images/logos/angular/angular.svg"
-        },
-        {
-          name: "Tailwind CSS",
-          logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
-        },
-        {
-          name: "Vue.js",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
-        },
-        {
-          name: "SASS",
-          logo: "https://sass-lang.com/assets/img/logos/logo.svg"
-        }
-      ]
-    },
-    {
       name: "Backend Development",
       icon: <Database size={16} className="text-primaryblue" />,
       technologies: [
         {
-          name: "Node.js",
-          logo: "https://nodejs.org/static/images/logo.svg"
-        },
-        {
-          name: "Python / Django",
-          logo: "https://www.djangoproject.com/m/img/logos/django-logo-negative.png"
+          name: "Golang",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg"
         },
         {
           name: "PostgreSQL",
-          logo: "https://www.postgresql.org/media/img/about/press/elephant.png"
+          logo: "/lovable-uploads/Postgresql_elephant.svg.png"
         },
         {
-          name: "MongoDB",
-          logo: "https://www.mongodb.com/assets/images/global/leaf.svg"
+          name: "Kafka",
+          logo: "/lovable-uploads/kafka.png"
         },
         {
-          name: "GraphQL",
-          logo: "https://graphql.org/img/logo.svg"
+          name: "Elasticsearch",
+          logo: "/lovable-uploads/elasticsearch.png"
         },
         {
-          name: "Express.js",
-          logo: "https://expressjs.com/images/express-facebook-share.png"
+          name: "NATS",
+          logo: "/lovable-uploads/nats.png"
+        },
+        {
+          name: "ScyllaDB",
+          logo: "/lovable-uploads/scylladb.webp"
         }
       ]
     },
@@ -115,53 +91,41 @@ const About: React.FC = () => {
           logo: "https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"
         },
         {
-          name: "Kubernetes",
-          logo: "https://kubernetes.io/images/favicon.png"
+          name: "Jenkins",
+          logo: "https://jenkins.io/images/logos/jenkins/jenkins.svg"
         },
         {
-          name: "AWS",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+          name: "Linux",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg"
         },
         {
-          name: "Firebase",
-          logo: "https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png"
-        },
-        {
-          name: "Netlify",
-          logo: "https://www.netlify.com/v3/img/components/logomark.png"
-        },
-        {
-          name: "Vercel",
-          logo: "https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png"
+          name: "Marathon",
+          logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRglg-AyDQWfXZYydp2_lf0fdUoI1nFJ_dovg&s"
         }
       ]
     },
     {
-      name: "Mobile Development",
+      name: "Monitoring & Logging",
       icon: <Smartphone size={16} className="text-primaryblue" />,
       technologies: [
         {
-          name: "React Native",
-          logo: "https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/HEAD/images/react-native-logo.png"
+          name: "Graylog",
+          logo: "/lovable-uploads/graylog.png"
         },
         {
-          name: "Flutter",
-          logo: "https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png"
+          name: "Prometheus",
+          logo: "/lovable-uploads/prometheus.png"
         },
         {
-          name: "Swift",
-          logo: "https://developer.apple.com/swift/images/swift-og.png"
-        },
-        {
-          name: "Kotlin",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png"
+          name: "Grafana",
+          logo: "https://blog.kakaocdn.net/dn/MzHBg/btsDAvHdxhj/cPBFBbGRDsLg0yCWKzDpFK/img.png"
         }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-darkbg">
+    <div className="min-h-screen flex flex-col bg-black">
       <Navbar />
 
       <main className="flex-1">
@@ -172,7 +136,7 @@ const About: React.FC = () => {
             <div
               className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
               style={{
-                backgroundImage: "url('/lovable-uploads/71300caa-9de8-491a-8d75-c7ee392c731e.png')",
+                backgroundImage: "url('/lovable-uploads/macbook.jpg')",
                 transform: "scale(1.1)"
               }}
             ></div>
@@ -188,8 +152,8 @@ const About: React.FC = () => {
               >
                 <div className="w-24 h-1 bg-primaryblue mb-10"></div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-                  Creative <span className="text-gradient">Developer</span><br />
-                  <span className="text-primaryblue">&amp; Designer</span>
+                  Software <span className="text-gradient">Engineer</span><br />
+                  <span className="text-primaryblue">&amp; Architect</span>
                 </h1>
                 <p className="text-lightgray text-lg mb-10 leading-relaxed">
                   I create exceptional digital experiences through clean code and innovative design,
@@ -200,7 +164,7 @@ const About: React.FC = () => {
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                     <div className="flex items-center">
                       <div className="relative">
-                        <span className="text-5xl font-bold text-primaryblue">12</span>
+                        <span className="text-5xl font-bold text-primaryblue">2</span>
                         <span className="text-primaryblue text-2xl font-bold ml-2 absolute top-0 right-[-20px]">+</span>
                       </div>
                     </div>
@@ -210,21 +174,11 @@ const About: React.FC = () => {
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                     <div className="flex items-center">
                       <div className="relative">
-                        <span className="text-5xl font-bold text-primaryblue">150</span>
+                        <span className="text-5xl font-bold text-primaryblue">5</span>
                         <span className="text-primaryblue text-2xl font-bold ml-2 absolute top-0 right-[-20px]">+</span>
                       </div>
                     </div>
-                    <p className="text-sm text-lightgray mt-1">Successful<br />projects</p>
-                  </motion.div>
-
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                    <div className="flex items-center">
-                      <div className="relative">
-                        <span className="text-5xl font-bold text-primaryblue">80</span>
-                        <span className="text-primaryblue text-2xl font-bold ml-2 absolute top-0 right-[-20px]">+</span>
-                      </div>
-                    </div>
-                    <p className="text-sm text-lightgray mt-1">Happy<br />clients</p>
+                    <p className="text-sm text-lightgray mt-1">Company<br />projects</p>
                   </motion.div>
                 </div>
 
@@ -233,8 +187,10 @@ const About: React.FC = () => {
                     Download Resume
                   </Button>
 
-                  <Button variant="outline" className="border-white/30 hover:bg-white/10 transition-colors" size="lg">
-                    My Portfolio <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                  <Button variant="outline" className="border-white/30 hover:bg-white/10 hover:text-white transition-colors text-black" size="lg"
+                    onClick={() => window.location.href = '/portfolio'}
+                  >
+                    My Portfolio <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1 text-black" />
                   </Button>
                 </div>
               </motion.div>
@@ -263,7 +219,7 @@ const About: React.FC = () => {
                   <div className="relative z-10 rounded-2xl overflow-hidden border-2 border-primaryblue/30 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
                     <div className={`transition-opacity duration-1000 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
                       <img
-                        src="/lovable-uploads/c5509d48-3a36-4a3f-a77b-bc350953e2b8.png"
+                        src="/lovable-uploads/cv.png"
                         alt="Developer Portrait"
                         className="w-80 h-96 object-cover"
                         onLoad={() => setIsImageLoaded(true)}
@@ -286,7 +242,7 @@ const About: React.FC = () => {
                   ></motion.div>
 
                   <motion.div
-                    className="absolute -right-16 top-10 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10"
+                    className="absolute -right-16 top-10 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 z-10"
                     animate={{
                       y: [0, -10, 0],
                     }}
@@ -300,12 +256,12 @@ const About: React.FC = () => {
                       <div className="w-8 h-8 rounded-full bg-primaryblue/20 flex items-center justify-center">
                         <Code size={16} className="text-primaryblue" />
                       </div>
-                      <div className="text-sm font-medium">React Dev</div>
+                      <div className="text-sm font-medium">Golang</div>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="absolute -left-16 bottom-12 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10"
+                    className="absolute -left-16 bottom-12 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 z-10"
                     animate={{
                       y: [0, 10, 0],
                     }}
@@ -318,9 +274,9 @@ const About: React.FC = () => {
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-full bg-primaryblue/20 flex items-center justify-center">
-                        <PaintBucket size={16} className="text-primaryblue" />
+                        <ServerIcon size={16} className="text-primaryblue" />
                       </div>
-                      <div className="text-sm font-medium">UI Designer</div>
+                      <div className="text-sm font-medium">Software Engineer</div>
                     </div>
                   </motion.div>
                 </div>
@@ -348,12 +304,15 @@ const About: React.FC = () => {
                     and Problem Solver
                   </h2>
                   <p className="text-lightgray mb-8 leading-relaxed">
-                    I'm a full-stack developer who loves turning complex problems into elegant solutions.
-                    With expertise in modern front-end frameworks and robust back-end technologies,
-                    I build scalable applications that provide exceptional user experiences while meeting business goals.
+                    I’m a Software Engineer with nearly 3 years of experience in building distributed systems and designing
+                    microservice architectures for real-time chat platforms. I focus on stability, performance, and scalability, and I
+                    work primarily with Golang, PostgreSQL, Elasticsearch, Hazelcast, Kafka, and NATS. With a foundational
+                    understanding of CI/CD processes, I manage system operations through logging and monitoring. Driven by a
+                    growth mindset and a passion for programming, I aim to create impactful technology solutions while
+                    advancing my career.
                   </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <motion.div
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.3 }}
@@ -377,7 +336,7 @@ const About: React.FC = () => {
                       <h3 className="text-xl font-bold mb-2">Backend</h3>
                       <p className="text-lightgray text-sm">Node.js, Python, PostgreSQL, MongoDB, GraphQL</p>
                     </motion.div>
-                  </div>
+                  </div> */}
                 </motion.div>
               </div>
 
@@ -404,16 +363,19 @@ const About: React.FC = () => {
                     >
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold">Senior Frontend Developer</h3>
-                          <p className="text-primaryblue">Venture Technologies</p>
+                          <h3 className="text-2xl font-bold">Permanent employee</h3>
+                          <p className="text-primaryblue">Mobile World Group (TheGioiDiDong)</p>
                         </div>
-                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">2019 - Present</Badge>
+                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">Nov 2022 - Present</Badge>
                       </div>
                       <ul className="list-disc list-inside text-lightgray space-y-2 ml-4">
-                        <li>Led a team of 5 developers to create responsive web applications</li>
-                        <li>Improved application performance by 40% through code optimization</li>
-                        <li>Implemented CI/CD pipelines that reduced deployment time by 60%</li>
-                        <li>Mentored junior developers and conducted code reviews</li>
+                        <li>I led the development of internal chat and customer support systems, greatly enhancing
+                          communication and productivity.</li>
+                        <li>I designed a secure WebSocket-based layer for virtual machine access (SSH, RDP, VNC),
+                          enabling seamless operations.</li>
+                        <li>Additionally, I implemented monitoring solutions using Graylog and Grafana for rapid issue
+                          resolution and collaborated with cross-functional teams to deliver large-scale solutions that
+                          surpassed our organizational goals...</li>
                       </ul>
                     </motion.div>
 
@@ -425,37 +387,16 @@ const About: React.FC = () => {
                     >
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold">Full Stack Developer</h3>
-                          <p className="text-primaryblue">React Innovation Labs</p>
+                          <h3 className="text-2xl font-bold">Fresher Developer</h3>
+                          <p className="text-primaryblue">Mobile World Group (TheGioiDiDong)</p>
                         </div>
-                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">2015 - 2019</Badge>
+                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">Jul 2022 - Nov 2022</Badge>
                       </div>
                       <ul className="list-disc list-inside text-lightgray space-y-2 ml-4">
-                        <li>Developed and maintained web applications using React, Node.js, and MongoDB</li>
-                        <li>Implemented RESTful APIs and GraphQL endpoints for better data fetching</li>
-                        <li>Collaborated with designers to implement pixel-perfect UI components</li>
-                        <li>Managed deployments and server configurations for multiple projects</li>
-                      </ul>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.4 }}
-                      className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
-                    >
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold">Web Developer</h3>
-                          <p className="text-primaryblue">Digital Studio</p>
-                        </div>
-                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">2012 - 2015</Badge>
-                      </div>
-                      <ul className="list-disc list-inside text-lightgray space-y-2 ml-4">
-                        <li>Created responsive websites and e-commerce platforms for diverse clients</li>
-                        <li>Optimized websites for SEO and performance</li>
-                        <li>Implemented payment gateways and shopping cart functionality</li>
-                        <li>Provided technical support and maintenance for client websites</li>
+                        <li>Implemented minor backend features and contributed to bug fixes in existing systems.</li>
+                        <li>Supported senior engineers in designing and testing scalable APIs.</li>
+                        <li>Participated in code reviews and team discussions, gradually gaining confidence in clean code and system design.</li>
+                        <li>Actively learned and applied best practices in backend development and system design through real-world tasks.</li>
                       </ul>
                     </motion.div>
                   </TabsContent>
@@ -473,43 +414,17 @@ const About: React.FC = () => {
                             <GraduationCap size={28} className="text-primaryblue" />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold">Master's in Computer Science</h3>
-                            <p className="text-primaryblue">University of Technology</p>
+                            <h3 className="text-2xl font-bold">Bachelor's Degree in Software Engineering</h3>
+                            <p className="text-primaryblue">SaiGon University - SGU</p>
                           </div>
                         </div>
-                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">2010 - 2012</Badge>
+                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">Aug 2019 - Oct 2024</Badge>
                       </div>
-                      <p className="text-lightgray mb-4 mt-4">Specialized in Advanced Web Technologies and Machine Learning.</p>
+                      <p className="text-lightgray mb-4 mt-4">Major in Information Technology.</p>
                       <div className="flex flex-wrap gap-2">
-                        <Badge variant="outline" className="text-white">GPA: 3.9/4.0</Badge>
-                        <Badge variant="outline" className="text-white">Research Assistant</Badge>
-                        <Badge variant="outline" className="text-white">Dean's List</Badge>
-                      </div>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
-                      className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
-                    >
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="flex items-start gap-4">
-                          <div className="w-16 h-16 rounded-xl bg-primaryblue/20 flex items-center justify-center flex-shrink-0">
-                            <GraduationCap size={28} className="text-primaryblue" />
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold">Bachelor's in Software Engineering</h3>
-                            <p className="text-primaryblue">State University</p>
-                          </div>
-                        </div>
-                        <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">2006 - 2010</Badge>
-                      </div>
-                      <p className="text-lightgray mb-4 mt-4">Focus on Software Development and Database Management.</p>
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="outline" className="text-white">GPA: 3.8/4.0</Badge>
-                        <Badge variant="outline" className="text-white">Academic Scholarship</Badge>
-                        <Badge variant="outline" className="text-white">Computer Science Club President</Badge>
+                        <Badge variant="outline" className="text-white">GPA: 7.18/10</Badge>
+                        {/* <Badge variant="outline" className="text-white">Research Assistant</Badge> */}
+                        {/* <Badge variant="outline" className="text-white">Dean's List</Badge> */}
                       </div>
                     </motion.div>
                   </TabsContent>
@@ -522,175 +437,19 @@ const About: React.FC = () => {
             </div>
           </div>
         </section>
-        
-        {/* Work Experience Section */}
-        <WorkSection />
-        
+
         {/* Portfolio showcase section */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">MY WORK</div>
-              <h2 className="text-4xl font-bold mb-6">Featured Projects</h2>
-              <p className="text-lightgray max-w-2xl mx-auto">
-                A selection of my recent work across different industries and technologies.
-                Each project represents unique challenges and innovative solutions.
-              </p>
-            </motion.div>
+        <WorkSection />
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              {[1, 2, 3].map((item) => (
-                <motion.div
-                  key={item}
-                  variants={fadeInUp}
-                  className="group"
-                >
-                  <Card className="overflow-hidden border-gray-800 bg-black/30 transition-all duration-300 hover:border-primaryblue hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                    <div className="relative overflow-hidden h-64">
-                      <img
-                        src={`/lovable-uploads/49493ab1-737b-4e21-a11d-5c399fed5bfd.png`}
-                        alt={`Project ${item}`}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div className="p-6">
-                          <div className="flex gap-2 mb-3">
-                            <Badge className="bg-primaryblue">React</Badge>
-                            <Badge className="bg-gray-700">TypeScript</Badge>
-                          </div>
-                          <h3 className="text-xl font-bold mb-1">{`Project Title ${item}`}</h3>
-                          <p className="text-lightgray text-sm">Web Application Design & Development</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold mb-3">{`Project Title ${item}`}</h3>
-                      <p className="text-lightgray mb-4 text-sm">
-                        A modern web application with advanced features and optimized performance.
-                      </p>
-                      <Button variant="link" className="group text-primaryblue px-0 hover:no-underline">
-                        View Project <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-                      </Button>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
+        {/* Awards Section */}
+        <AwardsSection />
 
-            <div className="flex justify-center mt-12">
-              <Button asChild className="bg-transparent border border-white hover:bg-white/10">
-                <a href="/portfolio">View All Projects <ArrowRight size={16} className="ml-2" /></a>
-              </Button>
-            </div>
-          </div>
-        </section>
-        
-        {/* Testimonials section */}
-        <section className="py-24 bg-black/30 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-primaryblue/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primaryblue/5 rounded-full blur-3xl"></div>
+        {/* Certificates Section */}
+        <CertificatesSection />
 
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">TESTIMONIALS</div>
-              <h2 className="text-4xl font-bold mb-6">Client Feedback</h2>
-              <p className="text-lightgray max-w-2xl mx-auto">
-                Here's what some of my clients have to say about working with me
-                and the solutions I've delivered for their businesses.
-              </p>
-            </motion.div>
+        {/* Testimonials Section */}
+        <TestimonialsSection />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Sarah Johnson",
-                  role: "Marketing Director",
-                  company: "TechVision",
-                  quote: "John delivered our project on time and exceeded our expectations. His technical skills and attention to detail are impressive.",
-                  avatar: "/lovable-uploads/3561bad0-99ed-4032-a5f6-d83e8406d5ec.png"
-                },
-                {
-                  name: "Michael Chen",
-                  role: "CEO",
-                  company: "Startup Inc.",
-                  quote: "Working with John was a pleasure. He understood our business needs and translated them into an exceptional web application.",
-                  avatar: "/lovable-uploads/71300caa-9de8-491a-8d75-c7ee392c731e.png"
-                },
-                {
-                  name: "Emily Rodriguez",
-                  role: "Product Manager",
-                  company: "Enterprise Solutions",
-                  quote: "John's expertise in React and database optimization helped us reduce loading times by 60%. Our customers love the new experience.",
-                  avatar: "/lovable-uploads/d165c27c-687a-4a1a-92f4-51428329364b.png"
-                }
-              ].map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                >
-                  <Card className="bg-black/20 border-gray-800 h-full flex flex-col hover:border-primaryblue/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300">
-                    <div className="p-8">
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                          <img
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                          <p className="text-primaryblue text-sm">{testimonial.role}</p>
-                        </div>
-                      </div>
-
-                      <svg className="text-primaryblue mb-6 opacity-40" width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 7H7C5.89543 7 5 7.89543 5 9V11C5 12.1046 5.89543 13 7 13H9C10.1046 13 11 13.8954 11 15V17C11 18.1046 10.1046 19 9 19H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M22 7H18C16.8954 7 16 7.89543 16 9V11C16 12.1046 16.8954 13 18 13H20C21.1046 13 22 13.8954 22 15V17C22 18.1046 21.1046 19 20 19H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-
-                      <p className="text-lightgray mb-8 italic">{testimonial.quote}</p>
-
-                      <div className="flex items-center mt-auto">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <svg key={i} className="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
-                        </div>
-                        <p className="text-sm text-gray-400 ml-2">{testimonial.company}</p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-        
         {/* Contact section */}
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
@@ -719,7 +478,7 @@ const About: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Phone</p>
-                      <p className="font-semibold">+1 (555) 123-4567</p>
+                      <p className="font-semibold">+84 767 129 183</p>
                     </div>
                   </motion.div>
 
@@ -733,7 +492,7 @@ const About: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-semibold">contact@johndoe.com</p>
+                      <p className="font-semibold">minhvuongday@gmail.com</p>
                     </div>
                   </motion.div>
 
@@ -747,21 +506,23 @@ const About: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Website</p>
-                      <p className="font-semibold">www.johndoe.com</p>
+                      <p className="font-semibold">www.doanminhvuong.com</p>
                     </div>
                   </motion.div>
                 </div>
 
                 <div className="flex gap-4">
                   {[
-                    { name: "github", icon: <Github size={18} /> },
-                    { name: "twitter", icon: <Twitter size={18} /> },
-                    { name: "linkedin", icon: <Linkedin size={18} /> },
-                    { name: "instagram", icon: <Instagram size={18} /> }
+                    { name: "facebook", icon: <FacebookIcon size={18} />, link: "https://www.facebook.com/uranus.georgium" },
+                    { name: "github", icon: <Github size={18} />, link: "https://github.com/VuongUranus" },
+                    { name: "twitter", icon: <Twitter size={18} />, link: "https://x.com/onMinhVng10" },
+                    { name: "linkedin", icon: <Linkedin size={18} />, link: "https://www.linkedin.com/in/doan-minh-vuong/" },
+                    { name: "instagram", icon: <Instagram size={18} />, link: "https://www.instagram.com/min_vuon/" }
                   ].map((social, index) => (
                     <motion.a
                       key={index}
-                      href="#"
+                      href={social.link}
+                      target='_blank'
                       className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-colors hover:bg-primaryblue"
                       whileHover={{ y: -5, scale: 1.1 }}
                       transition={{ duration: 0.3 }}

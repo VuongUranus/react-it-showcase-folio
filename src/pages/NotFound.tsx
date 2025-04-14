@@ -20,7 +20,7 @@ const NotFound = () => {
     <div className="bg-[#1A1F2C] min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="flex-1 flex items-center justify-center relative px-6 md:px-12 lg:px-24 overflow-hidden">
+      <div className="flex-1 flex items-center justify-center relative px-6 md:px-12 lg:px-24 overflow-hidden min-h-screen">
         {/* Large 404 watermark in background */}
         <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
           <h1 className="text-[30rem] font-bold text-white">404</h1>

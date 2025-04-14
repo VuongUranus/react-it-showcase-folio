@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 10
@@ -31,51 +31,51 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <motion.section 
+    <motion.section
       initial="hidden"
       animate="visible"
       variants={containerVariants}
       className="min-h-[90vh] flex flex-col lg:flex-row items-center justify-center lg:justify-evenly section-padding relative overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.2 }}
-          transition={{ 
-            duration: 1.5, 
-            ease: "easeOut" 
+          transition={{
+            duration: 1.5,
+            ease: "easeOut"
           }}
-          className="w-full h-full bg-cover bg-center bg-no-repeat" 
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/lovable-uploads/71300caa-9de8-491a-8d75-c7ee392c731e.png')",
+            backgroundImage: "url('/lovable-uploads/macbook.jpg')",
             transform: "scale(1.1)"
           }}
         ></motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         className="lg:w-1/2 z-10 relative"
       >
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="rounded-full overflow-hidden w-20 h-20 mb-10 border-2"
         >
-          <motion.img 
+          <motion.img
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ 
-              type: "spring", 
+            transition={{
+              type: "spring",
               stiffness: 200,
-              damping: 10 
+              damping: 10
             }}
-            src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png" 
-            alt="Developer Portrait" 
-            className="w-full h-full object-cover" 
+            src="/lovable-uploads/7c19216a-b579-415d-bf90-f65d5887a2da.png"
+            alt="Developer Portrait"
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           variants={itemVariants}
           className="text-5xl md:text-6xl font-bold mb-6 text-white"
         >
@@ -83,19 +83,19 @@ const Hero: React.FC = () => {
           Software Engineer
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           variants={itemVariants}
           className="text-lightgray text-lg mb-8 max-w-lg"
         >
           With nearly 3 years of experience in building distributed systems and designing microservice architectures for real-time chat platforms. I focus on performance, stability, and scalability to bring impactful technology to life.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           className="flex flex-wrap gap-4"
         >
           <motion.div variants={itemVariants}>
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -106,12 +106,12 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-white hover:bg-white/10 text-black hover:text-white"
               >
                 <a href="/contact" className="px-2">Contact Me</a>
@@ -120,16 +120,16 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ 
-            opacity: 1, 
+          animate={{
+            opacity: 1,
             y: 0,
-            transition: { 
+            transition: {
               delay: 1,
               type: "spring",
-              stiffness: 100 
+              stiffness: 100
             }
           }}
         >
@@ -141,51 +141,50 @@ const Hero: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         className="hidden lg:flex flex-col gap-8 lg:w-2/5 max-w-sm"
       >
         {[
-          { 
-            title: "ABOUT ME", 
+          {
+            title: "ABOUT ME",
             text: "Software Engineer specialized in building real-time, high-performance distributed systems. Proficient in Golang, PostgreSQL, Elasticsearch, Hazelcast, Kafka, and NATS. Passionate about clean architecture and efficient systems.",
             link: "/about",
             delay: 0.3
           },
-          { 
-            title: "MY WORK", 
+          {
+            title: "MY WORK",
             text: "Projects include scalable chat systems, resilient microservice platforms, and custom tools for monitoring and deployment using CI/CD practices and advanced logging strategies.",
             link: "/portfolio",
             delay: 0.6
           },
-          { 
-            title: "FOLLOW ME", 
+          {
+            title: "FOLLOW ME",
             text: "Social Media Links",
             link: null,
             delay: 0.9
           }
         ].map((panel, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             variants={itemVariants}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ 
-              opacity: 1, 
+            animate={{
+              opacity: 1,
               y: 0,
-              transition: { 
+              transition: {
                 delay: panel.delay,
                 type: "spring",
-                stiffness: 100 
+                stiffness: 100
               }
             }}
-            className={`p-4 rounded-lg ${
-              index === 0 ? 'bg-gray-800/[0.21]' : 
-              index === 1 ? 'bg-gray-800/60' : 
-              'bg-gray-800/60'
-            }`}
+            className={`p-4 rounded-lg z-10 ${index === 0 ? 'bg-gray-800/[0.21]' :
+              index === 1 ? 'bg-gray-800/60' :
+                'bg-gray-800/60'
+              }`}
           >
             <h3 className="font-bold text-lg mb-2 text-white">{panel.title}</h3>
-            
+
             {panel.title === "FOLLOW ME" ? (
               <div className="flex gap-4">
                 {[
@@ -195,24 +194,24 @@ const Hero: React.FC = () => {
                   { href: "https://www.linkedin.com/in/doan-minh-vuong/", icon: "linkedin" },
                   { href: "https://github.com/VuongUranus", icon: "github" }
                 ].map((social, socialIndex) => (
-                  <motion.a 
+                  <motion.a
                     key={socialIndex}
-                    href={social.href} 
-                    target='_blank' 
+                    href={social.href}
+                    target='_blank'
                     className="text-lightgray hover:text-primaryblue transition-colors"
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className={`lucide lucide-${social.icon}`}
                     >
                       {social.icon === "facebook" && <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />}
@@ -224,7 +223,15 @@ const Hero: React.FC = () => {
                           <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                         </>
                       )}
-                      {social.icon === "linkedin" && <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />}
+                      {social.icon === "linkedin" && (
+                        <>
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                          <rect width="4" height="12" x="2" y="9" />
+                          <circle cx="4" cy="4" r="2" />
+                        </>
+
+                      )
+                      }
                       {social.icon === "github" && (
                         <>
                           <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -238,8 +245,8 @@ const Hero: React.FC = () => {
             ) : (
               <>
                 <p className="text-lightgray mb-4">{panel.text}</p>
-                <a 
-                  href={panel.link} 
+                <a
+                  href={panel.link}
                   className="text-primaryblue flex items-center group hover:text-white transition-colors"
                 >
                   {panel.title === "ABOUT ME" ? "LEARN MORE" : "BROWSE PORTFOLIO"}

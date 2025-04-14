@@ -6,32 +6,14 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 
 const awards = [
   {
-    title: "Top Contributing Employee",
-    department: "IT Department • Avakids Project",
-    description: "Contributed to the successful launch of the Avakids app in September 2024",
+    title: "Top contributing employee in the IT department 2024",
+    department: "IT Department",
+    description: "Integrated BHX chat system and Zalo messaging, optimized core WebSocket (-30% resources), and integrated SSO/anti-theft for stable operations.",
     notes: "Recognized for outstanding contributions to the team",
     date: "Awarded: Jan 2025",
-    certificateImage: "/lovable-uploads/3561bad0-99ed-4032-a5f6-d83e8406d5ec.png", // This is a placeholder, the actual image shows an award certificate
+    certificateImage: "/lovable-uploads/award.png", // This is a placeholder, the actual image shows an award certificate
     medalImage: true // This will render the medal graphic on the right side
   },
-  {
-    title: "Web Developer of the Year",
-    department: "WebTech Global Awards",
-    description: "Recognized for outstanding contributions to responsive web design and accessibility",
-    notes: "Selected among 500+ developers worldwide",
-    date: "Awarded: Nov 2024",
-    certificateImage: "", // Add your certificate image path here
-    medalImage: true
-  },
-  {
-    title: "Excellence in Frontend Development",
-    department: "React Community Awards",
-    description: "Acknowledged for creating efficient and reusable component libraries",
-    notes: "Recognized for contributions to open-source React projects",
-    date: "Awarded: Aug 2024",
-    certificateImage: "", // Add your certificate image path here
-    medalImage: true
-  }
 ];
 
 const AwardsSection: React.FC = () => {
@@ -73,7 +55,7 @@ const AwardsSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding py-20 bg-black">
+    <section ref={sectionRef} className="section-padding py-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
@@ -82,8 +64,8 @@ const AwardsSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="flex items-center">
-            <Trophy size={30} className="text-blue-500 mr-4" />
-            <h2 className="text-4xl font-bold text-blue-500">Honors & Awards</h2>
+            <Trophy size={30} className="mr-4" />
+            <h2 className="text-4xl font-bold">Honors & Awards</h2>
           </motion.div>
         </motion.div>
         

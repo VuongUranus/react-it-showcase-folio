@@ -1,59 +1,56 @@
 
 import React, { useRef, useEffect } from 'react';
 import { Badge, FileCheck } from 'lucide-react';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
 } from '@/components/ui/carousel';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 const certificates = [
   {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2024",
-    credentialId: "AWS-SA-123456",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3"
+    title: "Programming with Golang",
+    issuer: "Edureka",
+    date: "April 4, 2025",
+    credentialId: "P2Z4FHGJL3IQ",
+    image: "/lovable-uploads/golang_cert.jpeg",
+    link: "https://www.coursera.org/account/accomplishments/verify/P2Z4FHGJL3IQ"
   },
   {
-    title: "Google Professional Cloud Developer",
-    issuer: "Google Cloud",
-    date: "2023",
-    credentialId: "GCP-PCD-789012",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3"
+    title: "Elasticsearch 8 and the Elastic Stack: In-Depth and Hands-On",
+    issuer: "Packt",
+    date: "April 4, 2025",
+    credentialId: "WKV8P4LOM9Z5",
+    image: "/lovable-uploads/elasticsearch_cert.jpeg",
+    link: "https://www.coursera.org/account/accomplishments/specialization/WKV8P4LOM9Z5"
   },
   {
-    title: "Meta Frontend Developer Professional Certificate",
-    issuer: "Meta (Facebook)",
-    date: "2023",
-    credentialId: "META-FD-345678",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3"
-  },
-  {
-    title: "Microsoft Certified: Azure Developer Associate",
-    issuer: "Microsoft",
-    date: "2022",
-    credentialId: "MS-ADA-901234",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3"
+    title: "Kafka Fundamentals",
+    issuer: "LearnKartS",
+    date: "April 7, 2025",
+    credentialId: "GXIRCETW59KP",
+    image: "/lovable-uploads/kafka_cert.jpeg",
+    link: "https://www.coursera.org/account/accomplishments/verify/GXIRCETW59KP"
   }
 ];
 
-const CertificateCard: React.FC<(typeof certificates)[0]> = ({ 
-  title, 
-  issuer, 
-  date, 
-  credentialId, 
-  image 
+const CertificateCard: React.FC<(typeof certificates)[0]> = ({
+  title,
+  issuer,
+  date,
+  credentialId,
+  image,
+  link
 }) => {
   return (
     <div className="relative bg-black/30 rounded-lg overflow-hidden h-[400px] group">
       <div className="absolute inset-0">
-        <img 
-          src={image} 
-          alt={title} 
+        <img
+          src={image}
+          alt={title}
           className="w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity duration-300"
         />
       </div>
@@ -71,9 +68,14 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
             <span className="text-sm text-white/60">Credential ID</span>
             <span className="text-sm text-white/80">{credentialId}</span>
           </div>
-          <button className="mt-4 w-full py-2 border border-primaryblue text-primaryblue rounded hover:bg-primaryblue hover:text-white transition-colors">
+          <a
+            className="inline-flex items-center justify-center mt-4 w-full py-2 border border-primaryblue text-primaryblue rounded hover:bg-primaryblue hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primaryblue focus:ring-offset-2"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View Certificate
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -119,9 +121,9 @@ const CertificatesSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding bg-black/20 py-20">
+    <section ref={sectionRef} className="section-padding py-20">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
           initial="hidden"
           animate={controls}
@@ -137,7 +139,7 @@ const CertificatesSection: React.FC = () => {
             <Badge size={80} className="text-primaryblue/20 mt-6 md:mt-0" />
           </motion.div>
         </motion.div>
-        
+
         <motion.div
           initial="hidden"
           animate={controls}
