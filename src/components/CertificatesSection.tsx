@@ -28,12 +28,12 @@ const certificates = [
     link: "https://www.coursera.org/account/accomplishments/specialization/WKV8P4LOM9Z5"
   },
   {
-    title: "Kafka Fundamentals",
+    title: "Apache Kafka Specialization",
     issuer: "LearnKartS",
-    date: "April 7, 2025",
-    credentialId: "GXIRCETW59KP",
+    date: "April 14, 2025",
+    credentialId: "WHMZRBH32BZ6",
     image: "/lovable-uploads/kafka_cert.jpeg",
-    link: "https://www.coursera.org/account/accomplishments/verify/GXIRCETW59KP"
+    link: "https://www.coursera.org/account/accomplishments/specialization/WHMZRBH32BZ6"
   }
 ];
 
