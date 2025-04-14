@@ -46,7 +46,7 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
   link
 }) => {
   return (
-    <div className="relative bg-black/30 rounded-lg overflow-hidden h-[400px] group">
+    <div className="relative bg-black/30 dark:bg-black/50 rounded-lg overflow-hidden h-[400px] group">
       <div className="absolute inset-0">
         <img
           src={image}
@@ -60,13 +60,13 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
             <FileCheck className="text-primaryblue h-8 w-8" />
             <span className="text-primaryblue text-sm font-medium">{date}</span>
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-          <p className="text-lightgray">{issuer}</p>
+          <h3 className="text-xl font-bold text-white dark:text-white mb-2">{title}</h3>
+          <p className="text-lightgray dark:text-lightgray">{issuer}</p>
         </div>
         <div className="mt-auto">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-white/60">Credential ID</span>
-            <span className="text-sm text-white/80">{credentialId}</span>
+            <span className="text-sm text-foreground/60 dark:text-white/60">Credential ID</span>
+            <span className="text-sm text-foreground/80 dark:text-white/80">{credentialId}</span>
           </div>
           <a
             className="inline-flex items-center justify-center mt-4 w-full py-2 border border-primaryblue text-primaryblue rounded hover:bg-primaryblue hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primaryblue focus:ring-offset-2"
@@ -121,7 +121,7 @@ const CertificatesSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding py-20">
+    <section ref={sectionRef} className="section-padding py-20 bg-background dark:bg-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
@@ -130,8 +130,8 @@ const CertificatesSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="heading-line text-4xl font-bold">Certificates</h2>
-            <p className="text-lightgray mt-4 max-w-xl">
+            <h2 className="heading-line text-4xl font-bold text-foreground dark:text-white">Certificates</h2>
+            <p className="text-muted-foreground dark:text-lightgray mt-4 max-w-xl">
               Professional certifications that validate my expertise and technical knowledge.
             </p>
           </motion.div>

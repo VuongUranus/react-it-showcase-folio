@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,26 +29,30 @@ const Navbar: React.FC = () => {
               <path d="M6 8L3 5H9L6 8Z" fill="currentColor"/>
             </svg>
           </button>
-          <div className="absolute hidden group-hover:block bg-darkbg border border-gray-800 rounded-md p-2 mt-2 min-w-[150px] z-10">
+          <div className="absolute hidden group-hover:block bg-darkbg border border-gray-800 rounded-md p-2 mt-2 min-w-[150px] z-10 dark:bg-gray-900">
             <Link to="#" className="block py-1 px-2 hover:text-primaryblue">Services</Link>
             <Link to="#" className="block py-1 px-2 hover:text-primaryblue">FAQ</Link>
           </div>
         </div>
+        <ThemeSwitcher />
       </div>
 
       {/* Mobile Menu Button */}
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        className="md:hidden"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </Button>
+      <div className="md:hidden flex items-center gap-2">
+        <ThemeSwitcher />
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </Button>
+      </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 right-0 left-0 bg-darkbg border-t border-gray-800 z-50">
+        <div className="md:hidden absolute top-16 right-0 left-0 bg-darkbg border-t border-gray-800 z-50 dark:bg-gray-900">
           <div className="flex flex-col p-4">
             <Link to="/" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/about" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>About</Link>
