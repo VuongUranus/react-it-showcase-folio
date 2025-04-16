@@ -16,7 +16,7 @@ const projects = [
     {
         id: 2,
         title: "Cloud Management Platform",
-        tags: ["Golang", "Chat Application"],
+        tags: ["Golang", "SSH", "VNC", "..."],
         logo: "http://beta-cmp.tgdd.vn/assets/img/logo_1-16198ed6.svg",
         image: "/lovable-uploads/vmconnect.png",
         href: "/portfolio/cmp"
@@ -24,7 +24,7 @@ const projects = [
     {
         id: 3,
         title: "Zalo CRM Bridge",
-        tags: ["Golang", "Chat Application", "Zalo OA", "NATS", "..."],
+        tags: ["Golang", "Chat Application", "Zalo OA", "PostgreSQL", "..."],
         logo: "https://stc-oa.zdn.vn/resources/zoa-landing/v122023/images//logo.svg",
         image: "/lovable-uploads/oa_hub.png",
         href: "/portfolio/zalo-crm-bridge"

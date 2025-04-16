@@ -33,6 +33,14 @@ const certificates = [
     credentialId: "WHMZRBH32BZ6",
     image: "/lovable-uploads/kafka_cert.jpeg",
     link: "https://www.coursera.org/account/accomplishments/specialization/WHMZRBH32BZ6"
+  },
+  {
+    title: "Linux for Developers",
+    issuer: "The Linux Foundation",
+    date: "April 16, 2025",
+    credentialId: "7KOH97P0M2DR",
+    image: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~7KOH97P0M2DR/CERTIFICATE_LANDING_PAGE~7KOH97P0M2DR.jpeg",
+    link: "https://www.coursera.org/account/accomplishments/verify/7KOH97P0M2DR"
   }
 ];
 
@@ -70,7 +78,7 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
               {date}
             </span>
           </div>
-          <motion.h3 
+          <motion.h3
             className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300"
           >
             {title}
@@ -146,7 +154,7 @@ const CertificatesSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="relative">
-            <div 
+            <div
               className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm"
             >
               AWARDS & CERTIFICATIONS
@@ -158,7 +166,7 @@ const CertificatesSection: React.FC = () => {
               Professional certifications that validate my expertise and technical knowledge.
             </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             whileHover={{ rotate: 360 }}
             transition={{ duration: 1 }}

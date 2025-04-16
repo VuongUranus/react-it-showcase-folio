@@ -5,31 +5,30 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
-// Blog post sample data (same structure as in Blog.tsx but fewer posts)
 const blogPosts = [
   {
     id: 1,
-    title: "The Future of Web Development in 2025",
-    excerpt: "Exploring the trends that will shape the future of web development in the coming years.",
-    date: "April 5, 2025",
+    title: "How I Scaled a Go Backend to Handle 1 Million Requests per Second",
+    excerpt: "From 100 Requests to 1 Milion: My Journey in Scaling a Go Backend.",
+    date: "Apr 16, 2025",
     category: "ARTICLES",
-    slug: "future-web-development-2025"
+    slug: "how-i-scaled-a-go-backend-to-handle-1-million-requests-per-second"
   },
   {
     id: 2,
-    title: "How to Master Frontend Frameworks",
-    excerpt: "A comprehensive guide to mastering modern frontend frameworks like React, Vue, and Angular.",
-    date: "March 20, 2025",
+    title: "Fine-Tuning LLaMA 2: A Step-by-Step Guide to Customizing the Large Language Model",
+    excerpt: "Learn how to fine-tune Llama-2 on Colab using new techniques to overcome memory and computing limitations to make open-source large language models more accessible.",
+    date: "March 16, 2025",
     category: "TUTORIALS",
-    slug: "master-frontend-frameworks"
+    slug: "fine-tuning-llama-2-a-step-by-step-guide-to-customizing-the-large-language-model"
   },
   {
     id: 3,
-    title: "Building Scalable Backend Systems",
-    excerpt: "Best practices for designing and implementing scalable backend systems for your applications.",
+    title: "This One Kafka Design Pattern Changed Everything for Us",
+    excerpt: "When we first adopted Kafka, we treated it like a message queue. Producers dumped events, consumers picked them up, and life went on — until it didn’t.",
     date: "March 8, 2025",
     category: "ARTICLES",
-    slug: "scalable-backend-systems"
+    slug: "this-one-kafka-design-pattern-changed-everything-for-us"
   }
 ];
 
@@ -109,7 +108,7 @@ const BlogPreviewSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">AWARDS</div>
+            <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">BLOGS</div>
             <h2
               className="text-4xl font-bold mb-6"
             >
