@@ -10,6 +10,7 @@ const MusicPlayer: React.FC = () => {
       allowFullScreen
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
+      scrolling='no'
       className="w-full lg:h-[500px] rounded-[15px]"
     ></iframe >
 

@@ -1,26 +1,40 @@
 
 import React from 'react';
 import {
-  Building,
-  Server,
-  Database,
-  Search,
-  MessageSquare,
-  Terminal,
-  Package,
-  GitBranch,
-  Cloud,
-  Cpu,
-  HardDrive,
-  Network,
-  Settings,
   ArrowRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { link } from 'fs';
+
+const projects = [
+  {
+    id: 1,
+    title: "Project 1",
+    description: "Description of Project 1",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+    tags: ["Tag 1", "Tag 2", "Tag 3"],
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Project 2",
+    description: "Description of Project 2",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+    tags: ["Tag 1", "Tag 2", "Tag 3"],
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Project 3",
+    description: "Description of Project 3",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+    tags: ["Tag 1", "Tag 2", "Tag 3"],
+    link: "#"
+  },
+]
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -87,36 +101,35 @@ const WorkSection: React.FC = () => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          {[1, 2, 3].map((item) => (
+          {projects.map((item) => (
             <motion.div
-              key={item}
+              key={item.id}
               variants={fadeInUp}
               className="group"
             >
               <Card className="overflow-hidden border-gray-800 bg-black/30 transition-all duration-300 hover:border-primaryblue hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                 <div className="relative overflow-hidden h-64">
                   <img
-                    src={`/lovable-uploads/49493ab1-737b-4e21-a11d-5c399fed5bfd.png`}
-                    alt={`Project ${item}`}
+                    src={item.image}
+                    alt={`Project ${item.title}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6">
                       <div className="flex gap-2 mb-3">
-                        <Badge className="bg-primaryblue">Golang</Badge>
-                        <Badge className="bg-gray-700">Postgresql</Badge>
+                        {item.tags.map((tag, index) => (
+                          <Badge className={index % 2 === 1 ? 'bg-primaryblue' : 'bg-gray-700'} key={tag}>{tag}</Badge>
+                        ))}
                       </div>
-                      <h3 className="text-xl font-bold mb-1">{`Project Title ${item}`}</h3>
-                      <p className="text-lightgray text-sm">Web Application Design & Development</p>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{`Project Title ${item}`}</h3>
+                  <h3 className="text-xl font-bold mb-3">{`Project Title ${item.title}`}</h3>
                   <p className="text-lightgray mb-4 text-sm">
-                    A modern web application with advanced features and optimized performance.
+                    {item.description}
                   </p>
-                  <Button variant="link" className="group text-primaryblue px-0 hover:no-underline">
+                  <Button variant="link" className="group text-primaryblue px-0 hover:no-underline" onClick={() => window.open(item.link, '_blank')}>
                     View Project <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </div>
