@@ -11,7 +11,7 @@ const projects = [
   {
     id: 1,
     title: "Crypto Website Development for DeFi X",
-    slug: "defi-x",
+    slug: "internal-chat-application",
     category: "Web Development",
     tags: ["React JS", "Web Development"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3",

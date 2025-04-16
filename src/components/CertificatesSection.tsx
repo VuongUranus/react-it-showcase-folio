@@ -146,14 +146,11 @@ const CertificatesSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="relative">
-            <motion.div 
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.5, type: "spring" }}
-              className="inline-block bg-blue-500/20 text-blue-400 px-6 py-2 rounded-full mb-6 font-medium backdrop-blur-sm border border-blue-500/30"
+            <div 
+              className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm"
             >
               AWARDS & CERTIFICATIONS
-            </motion.div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent pb-2">
               Certificates
             </h2>

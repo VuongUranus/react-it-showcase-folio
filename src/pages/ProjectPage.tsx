@@ -6,9 +6,9 @@ import ProjectDetail from '@/components/ProjectDetail';
 // Project data with detailed information
 const projectsData = [
   {
-    slug: "defi-x",
-    title: "Crypto Website Development for DeFi X",
-    client: "DeFi X",
+    slug: "internal-chat-application",
+    title: "Internal Chat Application (XCHAT)",
+    client: "MWG (TheGioiDiDong)",
     services: ["Web Development"],
     technologies: ["React JS"],
     website: "https://example.com/defi-x",

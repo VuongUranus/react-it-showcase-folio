@@ -7,27 +7,27 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 const projects = [
     {
         id: 1,
-        title: "Agency Website Development for Dev X",
-        tags: ["React JS", "Web Development"],
-        logo: "https://cdn.prod.website-files.com/622fbc5a718ac357e4cd3da3/623227559d5ce413c3045d1e_dev-project-logo-developer-webflow-ecommerce-template.png",
-        image: "https://cdn.prod.website-files.com/622fbc5a718ac357e4cd3da3/6232276ecb324b5c3d0c3276_dev-thumbnail-image-developer-webflow-ecommerce-template.png",
-        href: "/portfolio/agency-website-development-for-dev-x"
+        title: "Enterprise Chat System (XCHAT)",
+        tags: ["Golang", "Chat Application", "Mattermost", "..."],
+        logo: "/lovable-uploads/xchat_logo.png",
+        image: "/lovable-uploads/xchat.png",
+        href: "/portfolio/xchat"
     },
     {
         id: 2,
-        title: "Crypto Website Development for DeFi X",
-        tags: ["React JS", "Web Development"],
-        logo: "https://cdn.prod.website-files.com/622fbc5a718ac357e4cd3da3/6232279759ed2980aff418c9_defi-project-logo-developer-webflow-ecommerce-template.png",
-        image: "https://cdn.prod.website-files.com/622fbc5a718ac357e4cd3da3/623227a7644f41349873cd60_defi-thumbnail-image-developer-webflow-ecommerce-template.png",
-        href: "/portfolio/crypto-website-development-for-defi-x"
+        title: "Clound Management Platform",
+        tags: ["Golang", "Chat Application"],
+        logo: "http://beta-cmp.tgdd.vn/assets/img/logo_1-16198ed6.svg",
+        image: "/lovable-uploads/vmconnect.png",
+        href: "/portfolio/cmp"
     },
     {
         id: 3,
-        title: "Trading Website Development for Dark X",
-        tags: ["Webflow", "Web Development"],
-        logo: "https://cdn.prod.website-files.com/622fbc5a718ac357e4cd3da3/623226cfc08f430a864a33ca_dark-project-logo-developer-webflow-ecommerce-template.png",
-        image: "https://cdn.prod.website-files.com/622fbc5a718ac357e4cd3da3/623226da502a8939ea536581_dark-thumbnail-image-developer-webflow-ecommerce-template.png",
-        href: "/portfolio/trading-website-development-for-dark-x"
+        title: "Zalo CRM Bridge",
+        tags: ["Golang", "Chat Application", "Zalo OA", "NATS", "..."],
+        logo: "https://stc-oa.zdn.vn/resources/zoa-landing/v122023/images//logo.svg",
+        image: "/lovable-uploads/oa_hub.png",
+        href: "/portfolio/zalo-crm-bridge"
     },
 ];
 
