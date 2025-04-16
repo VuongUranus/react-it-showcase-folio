@@ -15,7 +15,7 @@ const projects = [
     },
     {
         id: 2,
-        title: "Clound Management Platform",
+        title: "Cloud Management Platform",
         tags: ["Golang", "Chat Application"],
         logo: "http://beta-cmp.tgdd.vn/assets/img/logo_1-16198ed6.svg",
         image: "/lovable-uploads/vmconnect.png",
