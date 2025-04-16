@@ -66,14 +66,14 @@ const blogPosts = [
     category: "ARTICLES",
     slug: "web-development-languages"
   },
-  // {
-  //   id: 8,
-  //   title: "8 Tips to Improve your Web Development Skills in 2025",
-  //   excerpt: "Practical tips and strategies to level up your web development skills this year.",
-  //   date: "January 5, 2025",
-  //   category: "ARTICLES",
-  //   slug: "improve-web-development-skills"
-  // }
+  {
+    id: 8,
+    title: "8 Tips to Improve your Web Development Skills in 2025",
+    excerpt: "Practical tips and strategies to level up your web development skills this year.",
+    date: "January 5, 2025",
+    category: "ARTICLES",
+    slug: "improve-web-development-skills"
+  }
 ];
 
 interface BlogCardProps {

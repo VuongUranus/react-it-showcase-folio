@@ -10,6 +10,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import BlogPreviewSection from '@/components/BlogPreviewSection';
+import PortfolioSection from '@/components/PortfolioSection';
 
 const About: React.FC = () => {
   return (
@@ -23,7 +24,8 @@ const About: React.FC = () => {
         <AboutSection />
 
         {/* Portfolio showcase section */}
-        <WorkSection />
+        {/* <WorkSection /> */}
+        <PortfolioSection />
 
         {/* Awards Section */}
         <AwardsSection />

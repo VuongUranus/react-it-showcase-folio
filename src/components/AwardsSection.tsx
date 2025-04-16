@@ -68,9 +68,10 @@ const AwardsSection: React.FC = () => {
           animate={controls}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="flex items-center">
-            <Trophy size={30} className="mr-4" />
-            <h2 className="text-4xl font-bold">Honors & Awards</h2>
+
+          <motion.div variants={itemVariants}>
+            <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">AWARDS</div>
+            <h2 className="text-4xl font-bold mb-8 leading-tight">Honors & Awards</h2>
           </motion.div>
         </motion.div>
 

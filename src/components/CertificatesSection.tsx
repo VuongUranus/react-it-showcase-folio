@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Badge, FileCheck, ShieldCheck } from 'lucide-react';
 import {
@@ -46,39 +45,56 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
   link
 }) => {
   return (
-    <div className="relative dark:bg-black/50 backdrop-blur rounded-lg overflow-hidden h-[400px] group">
-      <div className="absolute inset-0">
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className="relative bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-xl overflow-hidden h-[400px] group border border-white/10 shadow-lg"
+    >
+      <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10" />
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity duration-300"
+          className="w-full h-full object-cover opacity-40 group-hover:opacity-30 transition-all duration-500"
         />
       </div>
-      <div className="relative p-6 h-full flex flex-col justify-between z-10">
+      <div className="relative p-8 h-full flex flex-col justify-between z-20">
         <div>
-          <div className="flex justify-between items-start mb-4">
-            <FileCheck className="text-primaryblue h-8 w-8" />
-            <span className="text-primaryblue text-sm font-medium">{date}</span>
+          <div className="flex justify-between items-start mb-6">
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="p-2 bg-white/10 rounded-lg backdrop-blur-sm"
+            >
+              <FileCheck className="text-blue-400 h-8 w-8" />
+            </motion.div>
+            <span className="text-blue-400 text-sm font-medium bg-blue-400/10 px-4 py-1 rounded-full">
+              {date}
+            </span>
           </div>
-          <h3 className="text-xl font-bold text-white dark:text-white mb-2">{title}</h3>
-          <p className="text-lightgray dark:text-lightgray">{issuer}</p>
+          <motion.h3 
+            className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300"
+          >
+            {title}
+          </motion.h3>
+          <p className="text-gray-300/90">{issuer}</p>
         </div>
-        <div className="mt-auto">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground/60 dark:text-white/60">Credential ID</span>
-            <span className="text-sm text-foreground/80 dark:text-white/80">{credentialId}</span>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between p-3 bg-white/5 backdrop-blur-sm rounded-lg">
+            <span className="text-sm text-gray-400">Credential ID</span>
+            <span className="text-sm text-white font-mono">{credentialId}</span>
           </div>
-          <a
-            className="inline-flex items-center justify-center mt-4 w-full py-2 border border-primaryblue text-primaryblue rounded hover:bg-primaryblue hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primaryblue focus:ring-offset-2"
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center justify-center w-full py-3 bg-blue-500/20 text-blue-400 rounded-lg hover:bg-blue-500/30 transition-all duration-300 border border-blue-500/30 backdrop-blur-sm hover:border-blue-400/50"
             href={link}
             target="_blank"
             rel="noopener noreferrer"
           >
             View Certificate
-          </a>
+          </motion.a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -121,22 +137,36 @@ const CertificatesSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding py-20">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} className="py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="flex flex-col md:flex-row md:items-center md:justify-between mb-16"
           initial="hidden"
           animate={controls}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants}>
-            <h2 className="heading-line text-4xl font-bold text-foreground dark:text-white"> Certificates</h2>
-            <p className="text-muted-foreground dark:text-lightgray mt-4 max-w-xl">
+          <motion.div variants={itemVariants} className="relative">
+            <motion.div 
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.5, type: "spring" }}
+              className="inline-block bg-blue-500/20 text-blue-400 px-6 py-2 rounded-full mb-6 font-medium backdrop-blur-sm border border-blue-500/30"
+            >
+              AWARDS & CERTIFICATIONS
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent pb-2">
+              Certificates
+            </h2>
+            <p className="text-gray-400 mt-4 max-w-xl">
               Professional certifications that validate my expertise and technical knowledge.
             </p>
           </motion.div>
-          <motion.div variants={itemVariants}>
-            <Badge size={80} className="text-primaryblue/20 mt-6 md:mt-0" />
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 1 }}
+          >
+            <Badge size={80} className="text-blue-400/20" />
           </motion.div>
         </motion.div>
 
@@ -144,6 +174,7 @@ const CertificatesSection: React.FC = () => {
           initial="hidden"
           animate={controls}
           variants={containerVariants}
+          className="relative"
         >
           <Carousel
             opts={{
@@ -162,8 +193,8 @@ const CertificatesSection: React.FC = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="static transform-none mx-2" />
-              <CarouselNext className="static transform-none mx-2" />
+              <CarouselPrevious className="static transform-none mx-2 bg-white/10 hover:bg-white/20 border-white/20" />
+              <CarouselNext className="static transform-none mx-2 bg-white/10 hover:bg-white/20 border-white/20" />
             </div>
           </Carousel>
         </motion.div>

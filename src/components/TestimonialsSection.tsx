@@ -90,12 +90,13 @@ const TestimonialsSection: React.FC = () => {
         <motion.div
           initial="hidden"
           animate={controls}
-          variants={containerVariants}
+          variants={itemVariants}
         >
-          <motion.h2 variants={itemVariants} className="heading-line text-4xl font-bold mb-4">Testimonials</motion.h2>
-          <motion.p variants={itemVariants} className="text-lightgray max-w-2xl mb-16">
+          <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">TESTIMONIAL</div>
+          <h2 className="text-4xl font-bold mb-4">Testimonials</h2>
+          <p className="text-lightgray max-w-2xl mb-16">
             What people say about my work and collaboration experience.
-          </motion.p>
+          </p>
         </motion.div>
 
         <motion.div
@@ -126,7 +127,7 @@ const TestimonialsSection: React.FC = () => {
           </Carousel>
         </motion.div>
       </div>
-    </section>
+    </section >
   );
 };
 

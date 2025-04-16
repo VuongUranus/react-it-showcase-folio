@@ -108,12 +108,14 @@ const BlogPreviewSection: React.FC = () => {
           animate={controls}
           variants={containerVariants}
         >
-          <motion.h2
-            variants={itemVariants}
-            className="heading-line text-4xl font-bold mb-6"
-          >
-            Blog & Articles
-          </motion.h2>
+          <motion.div variants={itemVariants}>
+            <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">AWARDS</div>
+            <h2
+              className="text-4xl font-bold mb-6"
+            >
+              Blog & Articles
+            </h2>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div variants={itemVariants}>
