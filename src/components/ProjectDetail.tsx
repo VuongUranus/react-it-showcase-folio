@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, ArrowLeft } from 'lucide-react';
 import Navbar from './Navbar';
@@ -18,107 +17,151 @@ interface ProjectDetailProps {
     results: string;
     mainImage: string;
     galleryImages: string[];
+    executionDescription?: string;
   };
 }
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+
+    // Add animation to elements when they come into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-darkbg text-white">
       <Navbar />
-      
+
+      {/* Hero Section with Project Title */}
+      <section className="bg-darkbg-darker py-16 border-b border-darkbg-lighter">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-8 animate-on-scroll opacity-0">
+            <div className="w-12 h-1 bg-blue mb-6"></div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
+            <p className="text-lightgray max-w-3xl">
+              Designing a modern cryptocurrency platform with focus on user experience and visual appeal
+            </p>
+          </div>
+        </div>
+      </section>
+
       <main className="flex-1">
         {/* Back to portfolio button */}
         <div className="max-w-7xl mx-auto pt-8 px-6">
-          <Link to="/portfolio" className="inline-flex items-center text-lightgray hover:text-white">
+          <Link to="/portfolio" className="inline-flex items-center text-lightgray hover:text-blue transition-colors">
             <ArrowLeft size={16} className="mr-2" />
             Back to Portfolio
           </Link>
         </div>
-        
+
         {/* Project Header */}
-        <section className="py-12 px-6 md:px-12 lg:px-24">
+        <section className="py-12 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Client Info */}
-            <div className="mb-8 md:mb-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-                <div>
-                  <div className="mb-6">
+            {/* Client Info & About Project */}
+            <div className="mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16">
+                <div className="md:col-span-4 animate-on-scroll opacity-0">
+                  <div className="mb-8">
                     <h3 className="text-sm uppercase text-lightgray font-medium mb-2">CLIENT</h3>
                     <p className="text-xl font-medium">{project.client}</p>
                   </div>
-                  
-                  <div className="mb-6">
+
+                  <div className="mb-8">
                     <h3 className="text-sm uppercase text-lightgray font-medium mb-2">SERVICES</h3>
                     {project.services.map((service, index) => (
                       <p key={index} className="text-xl font-medium">{service}</p>
                     ))}
                   </div>
-                  
-                  <div className="mb-6">
+
+                  <div className="mb-8">
                     <h3 className="text-sm uppercase text-lightgray font-medium mb-2">TECHNOLOGIES</h3>
-                    {project.technologies.map((tech, index) => (
-                      <p key={index} className="text-xl font-medium">{tech}</p>
-                    ))}
+                    <div className="flex flex-wrap">
+                      {project.technologies.map((tech, index) => (
+                        <p key={index} className="text-xl font-medium mr-4">{tech}</p>
+                      ))}
+                    </div>
                   </div>
-                  
+
                   {project.website && (
                     <div>
                       <h3 className="text-sm uppercase text-lightgray font-medium mb-2">WEBSITE</h3>
-                      <Link to={project.website} className="text-xl font-medium flex items-center">
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xl font-medium flex items-center text-blue hover:text-blue-light transition-colors"
+                      >
                         Live preview <ExternalLink size={16} className="ml-2" />
-                      </Link>
+                      </a>
                     </div>
                   )}
                 </div>
-                
-                <div>
+
+                <div className="md:col-span-8 animate-on-scroll opacity-0">
                   <h2 className="text-3xl font-bold mb-6">About the project</h2>
                   <p className="text-lightgray mb-8">{project.description}</p>
-                  
+
                   <h3 className="text-xl font-bold mb-4">What was the goal of the project?</h3>
-                  <p className="text-lightgray">{project.goal}</p>
+                  <p className="text-lightgray" style={{whiteSpace: 'pre-line'}}>{project.goal}</p>
                 </div>
               </div>
             </div>
-            
+
             {/* Main Project Image */}
-            <div className="mb-16">
+            <div className="mb-16 rounded-lg overflow-hidden animate-on-scroll opacity-0 transform transition-all duration-700 hover:scale-[1.01]">
               <img
                 src={project.mainImage}
                 alt={project.title}
-                className="w-full rounded-lg object-cover"
+                className="w-full h-auto"
               />
-              <p className="text-lightgray text-center mt-3">{project.title} - Main view</p>
             </div>
-            
+
             {/* Project Execution */}
-            <div className="mb-16">
+            <div className="mb-16 animate-on-scroll opacity-0">
               <h2 className="text-3xl font-bold mb-6">Project execution</h2>
               <p className="text-lightgray mb-8">
-                Our approach to this project was methodical and client-focused. We followed a proven
-                development process with regular check-ins and iterations based on feedback.
+                {project.executionDescription}
               </p>
-              
-              <ul className="list-disc pl-5 text-lightgray space-y-2 mb-8">
+
+              <div className="space-y-6">
                 {project.execution.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <div key={index} className="flex items-start group transform transition-all duration-300 hover:translate-x-2">
+                    <div className="bg-blue w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold mr-4 flex-shrink-0 mt-1 group-hover:bg-blue-light transition-colors">
+                      {index + 1}
+                    </div>
+                    <p className="text-lightgray group-hover:text-white transition-colors">{item}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-            
+
             {/* Project Results */}
-            <div className="mb-16">
+            <div className="mb-16 animate-on-scroll opacity-0">
               <h2 className="text-3xl font-bold mb-6">Project results</h2>
-              <p className="text-lightgray mb-8">{project.results}</p>
-              
+              <p className="text-lightgray mb-8" style={{ whiteSpace: 'pre-line' }}>{project.results}</p>
+
               {/* Gallery Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {project.galleryImages.map((image, index) => (
-                  <div key={index} className="overflow-hidden rounded-lg">
+                  <div key={index} className="overflow-hidden rounded-lg transform transition-all duration-500 hover:shadow-xl hover:shadow-blue/10">
                     <img
                       src={image}
                       alt={`${project.title} - Image ${index + 1}`}
-                      className="w-full h-auto object-cover"
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                 ))}
@@ -127,7 +170,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -19,7 +19,7 @@ const projects = [
         tags: ["Golang", "SSH", "VNC", "..."],
         logo: "http://beta-cmp.tgdd.vn/assets/img/logo_1-16198ed6.svg",
         image: "/lovable-uploads/vmconnect.png",
-        href: "/portfolio/cmp"
+        href: "/portfolio/vmconnect"
     },
     {
         id: 3,
