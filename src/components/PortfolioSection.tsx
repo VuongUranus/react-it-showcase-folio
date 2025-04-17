@@ -17,7 +17,7 @@ const projects = [
         id: 2,
         title: "Cloud Management Platform",
         tags: ["Golang", "SSH", "VNC", "..."],
-        logo: "http://beta-cmp.tgdd.vn/assets/img/logo_1-16198ed6.svg",
+        logo: "https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-The-Gioi-Di-Dong-MWG.png",
         image: "/lovable-uploads/vmconnect.png",
         href: "/portfolio/vmconnect"
     },
