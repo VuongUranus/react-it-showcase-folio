@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             </Avatar>
             <div>
               <h2 className="text-3xl font-bold">Doan Minh Vuong</h2>
-              <p className="text-lightgray text-lg">Software Engineer</p>
+              <p className="dark:text-lightgray text-[#475569] text-lg">Software Engineer</p>
             </div>
           </div>
 
@@ -60,14 +60,14 @@ const Footer: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <p className="text-lightgray mb-2">EMAIL ME:</p>
+                <p className="dark:text-lightgray text-[#475569] mb-2">EMAIL ME:</p>
                 <a href="mailto:minhvuongday@gmail" className="text-lg border-b border-gray-700 pb-1 flex items-center gap-2 hover:border-primaryblue transition-colors">
                   minhvuongday@gmail.com <ArrowRight size={16} />
                 </a>
               </div>
 
               <div>
-                <p className="text-lightgray mb-2">CALL ME:</p>
+                <p className="dark:text-lightgray text-[#475569] mb-2">CALL ME:</p>
                 <a href="tel:+84767129183" className="text-lg border-b border-gray-700 pb-1 flex items-center gap-2 hover:border-primaryblue transition-colors">
                   +84 767 129 183 <ArrowRight size={16} />
                 </a>
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
             <Link to="/contact" className="hover:text-primaryblue transition-colors">Contact</Link>
           </div>
 
-          <div className="text-lightgray">
+          <div className="dark:text-lightgray text-[#475569]">
             Copyright © Doan Minh Vuong | All rights reserved.
           </div>
         </div>

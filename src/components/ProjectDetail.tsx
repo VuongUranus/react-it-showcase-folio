@@ -43,7 +43,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-darkbg text-white">
+    <div className="min-h-screen flex flex-col dark:bg-darkbg dark:text-white">
       <Navbar />
 
       {/* Hero Section with Project Title */}
@@ -52,7 +52,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           <div className="mb-8 animate-on-scroll opacity-0">
             <div className="w-12 h-1 bg-blue mb-6"></div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
-            <p className="text-lightgray max-w-3xl">
+            <p className="dark:text-lightgray text-[#475569] max-w-3xl">
               Designing a modern cryptocurrency platform with focus on user experience and visual appeal
             </p>
           </div>
@@ -62,7 +62,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
       <main className="flex-1">
         {/* Back to portfolio button */}
         <div className="max-w-7xl mx-auto pt-8 px-6">
-          <Link to="/portfolio" className="inline-flex items-center text-lightgray hover:text-blue transition-colors">
+          <Link to="/portfolio" className="inline-flex items-center dark:text-lightgray text-[#475569] hover:text-blue transition-colors">
             <ArrowLeft size={16} className="mr-2" />
             Back to Portfolio
           </Link>
@@ -76,19 +76,19 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16">
                 <div className="md:col-span-4 animate-on-scroll opacity-0">
                   <div className="mb-8">
-                    <h3 className="text-sm uppercase text-lightgray font-medium mb-2">CLIENT</h3>
+                    <h3 className="text-sm uppercase dark:text-lightgray text-[#475569] font-medium mb-2">CLIENT</h3>
                     <p className="text-xl font-medium">{project.client}</p>
                   </div>
 
                   <div className="mb-8">
-                    <h3 className="text-sm uppercase text-lightgray font-medium mb-2">SERVICES</h3>
+                    <h3 className="text-sm uppercase dark:text-lightgray  text-[#475569] font-medium mb-2">SERVICES</h3>
                     {project.services.map((service, index) => (
                       <p key={index} className="text-xl font-medium">{service}</p>
                     ))}
                   </div>
 
                   <div className="mb-8">
-                    <h3 className="text-sm uppercase text-lightgray font-medium mb-2">TECHNOLOGIES</h3>
+                    <h3 className="text-sm uppercase dark: text-lightgray text-[#475569] font-medium mb-2">TECHNOLOGIES</h3>
                     <div className="flex flex-wrap">
                       {project.technologies.map((tech, index) => (
                         <p key={index} className="text-xl font-medium mr-4">{tech}</p>
@@ -98,7 +98,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
                   {project.website && (
                     <div>
-                      <h3 className="text-sm uppercase text-lightgray font-medium mb-2">WEBSITE</h3>
+                      <h3 className="text-sm uppercase dark:text-lightgray text-[#475569] font-medium mb-2">WEBSITE</h3>
                       <a
                         href={project.website}
                         target="_blank"
@@ -113,10 +113,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
                 <div className="md:col-span-8 animate-on-scroll opacity-0">
                   <h2 className="text-3xl font-bold mb-6">About the project</h2>
-                  <p className="text-lightgray mb-8">{project.description}</p>
+                  <p className="dark:text-lightgray text-[#475569] mb-8">{project.description}</p>
 
                   <h3 className="text-xl font-bold mb-4">What was the goal of the project?</h3>
-                  <p className="text-lightgray" style={{whiteSpace: 'pre-line'}}>{project.goal}</p>
+                  <p className="dark:text-lightgray text-[#475569]" style={{whiteSpace: 'pre-line'}}>{project.goal}</p>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             {/* Project Execution */}
             <div className="mb-16 animate-on-scroll opacity-0">
               <h2 className="text-3xl font-bold mb-6">Project execution</h2>
-              <p className="text-lightgray mb-8">
+              <p className="dark:text-lightgray text-[#475569] mb-8">
                 {project.executionDescription}
               </p>
 
@@ -143,7 +143,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     <div className="bg-blue w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold mr-4 flex-shrink-0 mt-1 group-hover:bg-blue-light transition-colors">
                       {index + 1}
                     </div>
-                    <p className="text-lightgray group-hover:text-white transition-colors">{item}</p>
+                    <p className="dark:text-lightgray text-[#475569] group-hover:text-white transition-colors">{item}</p>
                   </div>
                 ))}
               </div>
@@ -152,7 +152,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             {/* Project Results */}
             <div className="mb-16 animate-on-scroll opacity-0">
               <h2 className="text-3xl font-bold mb-6">Project results</h2>
-              <p className="text-lightgray mb-8" style={{ whiteSpace: 'pre-line' }}>{project.results}</p>
+              <p className="dark:text-lightgray text-[#475569] mb-8" style={{ whiteSpace: 'pre-line' }}>{project.results}</p>
 
               {/* Gallery Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

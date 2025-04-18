@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     return (
         <Link
             to={project.href}
-            className="block bg-neutral-800/50 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+            className="block dark:bg-neutral-800/50 bg-[#F3F4F6] rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
         >
             <div className="p-6">
                 {/* Tags */}
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     {project.tags.map((tag, index) => (
                         <span
                             key={index}
-                            className="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full"
+                            className="px-3 py-1 dark:bg-purple-500/20 bg-[#7C3AED] text-white/80 dark:text-purple-300 text-sm rounded-full"
                         >
                             {tag}
                         </span>
@@ -40,7 +40,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                             className="h-full w-auto object-contain"
                         />
                     </div>
-                    <h3 className="text-2xl font-semibold text-white">
+                    <h3 className="text-2xl font-semibold dark:text-white">
                         {project.title}
                     </h3>
                 </div>

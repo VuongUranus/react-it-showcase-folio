@@ -55,7 +55,7 @@ const CertificateCard: React.FC<(typeof certificates)[0]> = ({
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="relative bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-xl overflow-hidden h-[400px] group border border-white/10 shadow-lg"
+      className="relative bg-gradient-to-br dark:from-black/80 dark:to-black/40 dark:backdrop-blur-lg rounded-xl overflow-hidden h-[400px] group border dark:border-white/10 border-black/10 shadow-lg"
     >
       <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10" />
@@ -157,12 +157,12 @@ const CertificatesSection: React.FC = () => {
             <div
               className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm"
             >
-              AWARDS & CERTIFICATIONS
+              CERTIFICATIONS
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent pb-2">
+            <h2 className="text-4xl md:text-5xl font-bold pb-2">
               Certificates
             </h2>
-            <p className="text-gray-400 mt-4 max-w-xl">
+            <p className="dark:text-gray-400 mt-4 max-w-xl text-[#475569]">
               Professional certifications that validate my expertise and technical knowledge.
             </p>
           </motion.div>
@@ -198,8 +198,8 @@ const CertificatesSection: React.FC = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="static transform-none mx-2 bg-white/10 hover:bg-white/20 border-white/20" />
-              <CarouselNext className="static transform-none mx-2 bg-white/10 hover:bg-white/20 border-white/20" />
+              <CarouselPrevious className="static transform-none mx-2 dark:bg-white/10 bg-black/10 hover:bg-white/20 border-white/20" />
+              <CarouselNext className="static transform-none mx-2 dark:bg-white/10 bg-black/10 hover:bg-white/20 border-white/20" />
             </div>
           </Carousel>
         </motion.div>

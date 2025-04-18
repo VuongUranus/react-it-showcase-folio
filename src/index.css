@@ -73,7 +73,7 @@
   }
 
   body {
-    @apply bg-background text-foreground dark:bg-darkbg dark:text-white;
+    @apply bg-background text-foreground dark:bg-[#1c2026] dark:text-white;
   }
   
   .section-padding {

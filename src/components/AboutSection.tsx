@@ -125,7 +125,7 @@ const AboutSection: React.FC = () => {
                 Passionate Developer<br />
                 and Problem Solver
               </h2>
-              <p className="text-lightgray mb-8 leading-relaxed">
+              <p className="dark:text-lightgray text-[#4B5563] mb-8 leading-relaxed">
                 I’m a Software Engineer with nearly 3 years of experience in building distributed systems and designing
                 microservice architectures for real-time chat platforms. I focus on stability, performance, and scalability, and I
                 work primarily with Golang, PostgreSQL, Elasticsearch, Hazelcast, Kafka, and NATS. With a foundational
@@ -140,14 +140,14 @@ const AboutSection: React.FC = () => {
 
           <div className="lg:w-3/5">
             <Tabs defaultValue="experience" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-12 bg-black/20">
-                <TabsTrigger value="experience" className="text-lg font-medium data-[state=active]:bg-primaryblue">
+              <TabsList className="grid grid-cols-3 mb-12 dark:bg-black/20 bg-[#F3F4F6]">
+                <TabsTrigger value="experience" className="text-lg font-medium dark:data-[state=active]:bg-primaryblue data-[state=active]:bg-[#2563EB] data-[state=active]:text-white text-[#6B7280]">
                   <Briefcase size={16} className="mr-2" /> Experience
                 </TabsTrigger>
-                <TabsTrigger value="education" className="text-lg font-medium data-[state=active]:bg-primaryblue">
+                <TabsTrigger value="education" className="text-lg font-medium dark:data-[state=active]:bg-primaryblue data-[state=active]:bg-[#2563EB] data-[state=active]:text-white text-[#6B7280]">
                   <GraduationCap size={16} className="mr-2" /> Education
                 </TabsTrigger>
-                <TabsTrigger value="skills" className="text-lg font-medium data-[state=active]:bg-primaryblue">
+                <TabsTrigger value="skills" className="text-lg font-medium dark:data-[state=active]:bg-primaryblue data-[state=active]:bg-[#2563EB] data-[state=active]:text-white text-[#6B7280]">
                   <Code size={16} className="mr-2" /> Skills
                 </TabsTrigger>
               </TabsList>
@@ -157,7 +157,7 @@ const AboutSection: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
+                  className="p-8 dark:bg-black/20 bg-[#F3F4F6] rounded-xl border border-[#E5E7EB] dark:border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-start gap-4">
@@ -225,7 +225,7 @@ const AboutSection: React.FC = () => {
                     </div>
                     <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">Nov 2022 - Present</Badge>
                   </div>
-                  <ul className="list-disc list-inside text-lightgray space-y-2 ml-4">
+                  <ul className="list-disc list-inside dark:text-lightgray text-[#4B5563] space-y-2 ml-4">
                     <li>I led the development of internal chat and customer support systems, greatly enhancing
                       communication and productivity.</li>
                     <li>I designed a secure WebSocket-based layer for virtual machine access (SSH, RDP, VNC),
@@ -240,7 +240,7 @@ const AboutSection: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
+                  className="p-8 dark:bg-black/20 bg-[#F3F4F6] rounded-xl border border-[#E5E7EB] dark:border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-start gap-4">
@@ -308,7 +308,7 @@ const AboutSection: React.FC = () => {
                     </div>
                     <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">Jul 2022 - Nov 2022</Badge>
                   </div>
-                  <ul className="list-disc list-inside text-lightgray space-y-2 ml-4">
+                  <ul className="list-disc list-inside dark:text-lightgray text-[#4B5563] space-y-2 ml-4">
                     <li>Implemented minor backend features and contributed to bug fixes in existing systems.</li>
                     <li>Supported senior engineers in designing and testing scalable APIs.</li>
                     <li>Participated in code reviews and team discussions, gradually gaining confidence in clean code and system design.</li>
@@ -322,7 +322,7 @@ const AboutSection: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="p-8 bg-black/20 rounded-xl border border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
+                  className="p-8 dark:bg-black/20 bg-[#F3F4F6] rounded-xl border border-[#E5E7EB] dark:border-gray-800 hover:border-primaryblue/50 transition-colors duration-300"
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-start gap-4">
@@ -336,11 +336,9 @@ const AboutSection: React.FC = () => {
                     </div>
                     <Badge className="bg-primaryblue/20 text-primaryblue hover:bg-primaryblue/30">Aug 2019 - Oct 2024</Badge>
                   </div>
-                  <p className="text-lightgray mb-4 mt-4">Major in Information Technology.</p>
+                  <p className="dark:text-lightgray text-[#4B5563] mb-4 mt-4">Major in Information Technology.</p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="text-white">GPA: 7.18/10</Badge>
-                    {/* <Badge variant="outline" className="text-white">Research Assistant</Badge> */}
-                    {/* <Badge variant="outline" className="text-white">Dean's List</Badge> */}
+                    <Badge variant="outline" className="dark:text-white text-[#4B5563]">GPA: 7.18/10</Badge>
                   </div>
                 </motion.div>
               </TabsContent>

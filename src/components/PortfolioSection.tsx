@@ -86,7 +86,7 @@ const PortfolioSection = () => {
                             </h2>
                             <Link
                                 to="/portfolio"
-                                className="group inline-flex items-center text-lg text-white hover:text-blue-400 transition-colors"
+                                className="group inline-flex items-center text-lg text-[#4B5563] dark:text-white hover:text-blue-400 transition-colors"
                             >
                                 <span className="mr-2">Browse all projects</span>
                                 <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />

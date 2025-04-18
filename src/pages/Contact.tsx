@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col bg-black"
+      className="min-h-screen flex flex-col"
       variants={pageVariants}
       initial="initial"
       animate="animate"

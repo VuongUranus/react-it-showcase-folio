@@ -6,7 +6,7 @@ import MusicPlayer from '@/components/MusicPlayer';
 const HeroSection: React.FC = () => {
     return (
         <section className="relative py-24 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
             <div className="absolute inset-0 overflow-hidden">
                 <div
                     className="w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
                         transform: "scale(1.1)"
                     }}
                 ></div>
-            </div>
+            </div> */}
 
             <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
                             I'm Vuong a<br />
                             <span className="text-primaryblue">Software Engineer</span>
                         </h1>
-                        <p className="text-lightgray text-lg mb-10 leading-relaxed">
+                        <p className="dark:text-lightgray text-lg mb-10 leading-relaxed text-[#475569]">
                             With nearly 3 years of experience in building distributed systems and designing microservice architectures for real-time chat platforms. I focus on performance, stability, and scalability to bring impactful technology to life.
                         </p>
 
@@ -61,7 +61,7 @@ const HeroSection: React.FC = () => {
                                         <span className="text-primaryblue text-2xl font-bold ml-2 absolute top-0 right-[-20px]">+</span>
                                     </div>
                                 </div>
-                                <p className="text-sm text-lightgray mt-1">Years of<br />experience</p>
+                                <p className="text-sm dark:text-lightgray mt-1 text-[#475569]">Years of<br />experience</p>
                             </motion.div>
 
                             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
@@ -71,16 +71,16 @@ const HeroSection: React.FC = () => {
                                         <span className="text-primaryblue text-2xl font-bold ml-2 absolute top-0 right-[-20px]">+</span>
                                     </div>
                                 </div>
-                                <p className="text-sm text-lightgray mt-1">Company<br />projects</p>
+                                <p className="text-sm dark:text-lightgray mt-1 text-[#475569]">Company<br />projects</p>
                             </motion.div>
                         </div>
 
                         <div className="flex flex-wrap gap-4">
-                            <Button variant="default" size="lg">
+                            <Button size="lg" className="bg-[#295e8a] hover:bg-[#1e4a6e] text-white font-semibold px-6 py-3 rounded-xl shadow">
                                 Get My Resume
                             </Button>
 
-                            <Button variant="secondary" size="lg"
+                            <Button variant="secondary" size="lg" className="border dark:border-none border-[#c9ddee] text-[#295e8a] hover:bg-[#e4f0f7] dark:text-white dark:hover:text-black"
                                 onClick={() => window.location.href = '/portfolio'}
                             >
                                 My Portfolio
@@ -110,7 +110,7 @@ const HeroSection: React.FC = () => {
                             ></motion.div>
 
                             {/* Music section */}
-                            <div className="hidden lg:flex gap-8 max-w-sm w-[400px] z-10 rounded-2xl overflow-hidden border-2 border-primaryblue/30 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                            <div className="hidden lg:flex gap-8 max-w-sm w-[400px] z-10 rounded-2xl overflow-hidden border-2 border-[#c9ddee] shadow-[0_0_30px_rgba(41,94,138,0.2)] bg-white">
                                 <MusicPlayer />
                             </div>
 

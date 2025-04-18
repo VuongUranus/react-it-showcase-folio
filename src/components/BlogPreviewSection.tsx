@@ -46,7 +46,7 @@ const BlogCard: React.FC<{
 }) => {
     return (
       <article className="border-t border-gray-800 py-6 group">
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-2">
+        <div className="flex items-center gap-2 text-sm dark:text-gray-400 text-[#475569] mb-2">
           <span>{date}</span>
           <span className="mx-2">•</span>
           <span className="uppercase">{category}</span>
@@ -118,7 +118,7 @@ const BlogPreviewSection: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div variants={itemVariants}>
-              <p className="text-lightgray max-w-xl">
+              <p className="dark:text-lightgray text-[#475569] max-w-xl">
                 My thoughts and insights on backend development, system design, and scalable architecture.
               </p>
             </motion.div>

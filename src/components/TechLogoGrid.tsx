@@ -69,7 +69,7 @@ const TechLogoGrid: React.FC<TechLogoGridProps> = ({ categories }) => {
                   boxShadow: "0 0 20px rgba(59,130,246,0.3)"
                 }}
                 transition={{ duration: 0.3 }}
-                className="bg-black/30 rounded-lg border border-gray-800 hover:border-primaryblue overflow-hidden transition-all duration-300 group"
+                className="dark:bg-black/30 bg-[#F3F4F6] rounded-lg border border-[#E5E7EB] dark:border-gray-800 boder-[#] hover:border-primaryblue overflow-hidden transition-all duration-300 group"
               >
                 <div className="p-4">
                   <div className="h-16 flex items-center justify-center mb-3 overflow-hidden">

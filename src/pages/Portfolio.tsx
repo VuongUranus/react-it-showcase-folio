@@ -300,7 +300,7 @@ interface TagProps {
 const Tag: React.FC<TagProps> = ({ label }) => {
   return (
     <motion.span
-      className="px-4 py-2 rounded-full bg-gray-800 text-lightgray text-sm"
+      className="px-4 py-2 rounded-full bg-[#ffffff] dark:bg-gray-800 dark:text-lightgray text-[#475569] text-sm"
       whileHover={{ scale: 1.05, backgroundColor: "rgba(59,130,246,0.2)" }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
@@ -316,7 +316,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <motion.div
-      className="bg-[#1e2230] rounded-lg overflow-hidden flex flex-col"
+      className="dark:bg-[#1e2230] bg-[#f2f3f5] rounded-lg overflow-hidden flex flex-col"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -444,7 +444,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col bg-black"
+      className="min-h-screen flex flex-col"
       variants={pageVariants}
       initial="initial"
       animate="animate"
@@ -464,7 +464,7 @@ const Portfolio: React.FC = () => {
               Portfolio
             </motion.h1>
             <motion.p
-              className="text-lightgray text-center max-w-2xl mx-auto mb-16"
+              className="dark:text-lightgray text-[475569] text-center max-w-2xl mx-auto mb-16"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -483,7 +483,7 @@ const Portfolio: React.FC = () => {
                   key={category}
                   className={`px-4 py-2 rounded-full ${filter === category
                     ? 'bg-primaryblue text-white'
-                    : 'bg-gray-800 text-lightgray hover:bg-gray-700'
+                    : 'dark:bg-gray-800 bg-[#f2f3f5] dark:text-lightgray dark:hover:bg-gray-700 hover:bg-gray-300'
                     } transition-colors`}
                   onClick={() => setFilter(category)}
                   whileHover={{ scale: 1.05 }}

@@ -16,7 +16,7 @@ const ContactSection: React.FC = () => {
                     >
                         <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">GET IN TOUCH</div>
                         <h2 className="text-4xl font-bold mb-8">Let's work together on your next project</h2>
-                        <p className="text-lightgray mb-10">
+                        <p className="dark:text-lightgray text-[#475569] mb-10">
                             I'm currently available for freelance work and new opportunities.
                             If you have a project that needs some creative thinking, I'd love to hear about it.
                         </p>
@@ -31,7 +31,7 @@ const ContactSection: React.FC = () => {
                                     <Phone size={20} className="text-primaryblue" />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-400">Phone</p>
+                                    <p className="text-sm dark:text-gray-400 text-[#475569]">Phone</p>
                                     <p className="font-semibold">+84 767 129 183</p>
                                 </div>
                             </motion.div>
@@ -45,7 +45,7 @@ const ContactSection: React.FC = () => {
                                     <Mail size={20} className="text-primaryblue" />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-400">Email</p>
+                                    <p className="text-sm dark:text-gray-400 text-[#475569]">Email</p>
                                     <p className="font-semibold">minhvuongday@gmail.com</p>
                                 </div>
                             </motion.div>
@@ -59,7 +59,7 @@ const ContactSection: React.FC = () => {
                                     <Globe size={20} className="text-primaryblue" />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-400">Website</p>
+                                    <p className="text-sm dark:text-gray-400 text-[#475569]">Website</p>
                                     <p className="font-semibold">www.doanminhvuong.com</p>
                                 </div>
                             </motion.div>
@@ -77,7 +77,7 @@ const ContactSection: React.FC = () => {
                                     key={index}
                                     href={social.link}
                                     target='_blank'
-                                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-colors hover:bg-primaryblue"
+                                    className="w-10 h-10 rounded-full dark:bg-gray-800 bg-[#F3F4F6] flex items-center justify-center transition-colors dark:hover:bg-primaryblue hover:bg-primaryblue/30 hover:text-[#3b82f5]"
                                     whileHover={{ y: -5, scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 >
@@ -92,7 +92,7 @@ const ContactSection: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="bg-black/30 p-8 rounded-2xl border border-gray-800 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.3)] backdrop-blur-sm"
+                        className="dark:bg-black/30 bg-[#F3F4F6] p-8 rounded-2xl border border-gray-800 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.3)] backdrop-blur-sm"
                     >
                         <h3 className="text-2xl font-bold mb-8 flex items-center">
                             <div className="w-8 h-8 rounded-full bg-primaryblue/20 flex items-center justify-center mr-3">
@@ -107,7 +107,7 @@ const ContactSection: React.FC = () => {
                                     <label className="block text-gray-400 text-sm mb-2">Name</label>
                                     <input
                                         type="text"
-                                        className="w-full p-3 bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition"
+                                        className="w-full p-3 dark:bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition"
                                         placeholder="Your name"
                                     />
                                 </div>
@@ -115,7 +115,7 @@ const ContactSection: React.FC = () => {
                                     <label className="block text-gray-400 text-sm mb-2">Email</label>
                                     <input
                                         type="email"
-                                        className="w-full p-3 bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition"
+                                        className="w-full p-3 dark:bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition"
                                         placeholder="Your email"
                                     />
                                 </div>
@@ -124,14 +124,14 @@ const ContactSection: React.FC = () => {
                                 <label className="block text-gray-400 text-sm mb-2">Subject</label>
                                 <input
                                     type="text"
-                                    className="w-full p-3 bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition"
+                                    className="w-full p-3 dark:bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition"
                                     placeholder="Project discussion"
                                 />
                             </div>
                             <div>
                                 <label className="block text-gray-400 text-sm mb-2">Message</label>
                                 <textarea
-                                    className="w-full p-3 bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition h-32 resize-none"
+                                    className="w-full p-3 dark:bg-black/30 border border-gray-700 rounded-lg focus:border-primaryblue focus:ring-1 focus:ring-primaryblue outline-none transition h-32 resize-none"
                                     placeholder="Tell me about your project..."
                                 ></textarea>
                             </div>

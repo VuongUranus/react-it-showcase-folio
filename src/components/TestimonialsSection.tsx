@@ -29,16 +29,16 @@ const TestimonialCard: React.FC<(typeof testimonials)[0]> = ({
   avatar
 }) => {
   return (
-    <div className="bg-black/30 p-6 rounded-lg h-full flex flex-col">
+    <div className="dark:bg-black/30 bg-[#f2f3f5] p-6 rounded-lg h-full flex flex-col">
       <Quote className="text-primaryblue/80 h-10 w-10 mb-4" />
-      <p className="text-white/90 italic mb-6 flex-grow">{text}</p>
+      <p className="dark:text-white/90 text-[#475569]/90 italic mb-6 flex-grow">{text}</p>
       <div className="flex items-center mt-4">
         <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
           <img src={avatar} alt={author} className="w-full h-full object-cover" />
         </div>
         <div>
-          <h4 className="font-bold text-white">{author}</h4>
-          <p className="text-sm text-lightgray">{position}</p>
+          <h4 className="font-bold dark:text-white">{author}</h4>
+          <p className="text-sm dark:text-lightgray text-[#475569]">{position}</p>
         </div>
       </div>
     </div>
@@ -94,7 +94,7 @@ const TestimonialsSection: React.FC = () => {
         >
           <div className="inline-block bg-primaryblue/20 text-primaryblue px-4 py-1 rounded-full mb-4 font-medium text-sm">TESTIMONIAL</div>
           <h2 className="text-4xl font-bold mb-4">Testimonials</h2>
-          <p className="text-lightgray max-w-2xl mb-16">
+          <p className="dark:text-lightgray text-[#475569] max-w-2xl mb-16">
             What people say about my work and collaboration experience.
           </p>
         </motion.div>

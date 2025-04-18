@@ -103,7 +103,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
       className={`${featured ? 'border-l-0' : 'border-t border-gray-800'} group`}
     >
       <div className={`py-8 ${!featured && 'pl-0'}`}>
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
+        <div className="flex items-center gap-2 text-sm dark:text-gray-400 text-[#475569] mb-3">
           <span>{date}</span>
           <span className="mx-2">•</span>
           <span className="uppercase">{category}</span>
@@ -119,7 +119,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </h3>
         
         {featured && (
-          <p className="text-gray-400 mb-4">{excerpt}</p>
+          <p className="dark:text-gray-400 text-[#475569] mb-4">{excerpt}</p>
         )}
       </div>
     </motion.article>
@@ -215,9 +215,9 @@ const Blog: React.FC = () => {
                 </div>
                 
                 {/* Newsletter Signup */}
-                <div className="mt-16 p-6 bg-black/30 rounded-lg">
+                <div className="mt-16 p-6 dark:bg-black/30 bg-[#f2f3f5] rounded-lg">
                   <h3 className="text-2xl font-bold mb-4">Subscribe to my newsletter today</h3>
-                  <p className="text-gray-400 mb-6">Get the latest articles and news directly in your inbox.</p>
+                  <p className="dark:text-gray-400 text-[#475569] mb-6">Get the latest articles and news directly in your inbox.</p>
                   
                   <form className="space-y-4">
                     <Input 
@@ -240,7 +240,7 @@ const Blog: React.FC = () => {
                       <BlogCard key={post.id} {...post} />
                     ))
                   ) : (
-                    <p className="py-8 text-gray-400">No articles found in this category.</p>
+                    <p className="py-8 dark:text-gray-400 text-[#475569]">No articles found in this category.</p>
                   )}
                 </div>
               </div>
