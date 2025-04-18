@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between gap-6">
           <div className="flex flex-wrap gap-8">
             <Link to="/" className="hover:text-primaryblue transition-colors">Home</Link>
-            <Link to="/about" className="hover:text-primaryblue transition-colors">About</Link>
+            {/* <Link to="/about" className="hover:text-primaryblue transition-colors">About</Link> */}
             <Link to="/portfolio" className="hover:text-primaryblue transition-colors">Portfolio</Link>
             <Link to="/blog" className="hover:text-primaryblue transition-colors">Blog</Link>
             <Link to="/contact" className="hover:text-primaryblue transition-colors">Contact</Link>

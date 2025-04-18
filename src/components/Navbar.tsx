@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-8 items-center">
         <Link to="/" className="hover:text-primaryblue transition-colors">Home</Link>
-        <Link to="/about" className="hover:text-primaryblue transition-colors">About</Link>
+        {/* <Link to="/about" className="hover:text-primaryblue transition-colors">About</Link> */}
         <Link to="/blog" className="hover:text-primaryblue transition-colors">Blog</Link>
         <Link to="/portfolio" className="hover:text-primaryblue transition-colors">Portfolio</Link>
         <Link to="/contact" className="hover:text-primaryblue transition-colors">Contact</Link>
@@ -52,10 +52,10 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 right-0 left-0 bg-gray-900 border-t border-gray-800 z-50 dark:bg-gray-900">
+        <div className="md:hidden absolute top-16 right-0 left-0 dark:bg-gray-900 bg-white border-t border-gray-800 z-50">
           <div className="flex flex-col p-4">
             <Link to="/" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link to="/about" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>About</Link>
+            {/* <Link to="/about" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>About</Link> */}
             <Link to="/blog" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Blog</Link>
             <Link to="/portfolio" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Portfolio</Link>
             <Link to="/contact" className="py-2 hover:text-primaryblue" onClick={() => setIsOpen(false)}>Contact</Link>
