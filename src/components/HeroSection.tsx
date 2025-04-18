@@ -110,8 +110,7 @@ const HeroSection: React.FC = () => {
                             ></motion.div>
 
                             {/* Music section */}
-                            <div className="hidden lg:flex gap-8 max-w-sm w-[400px] z-10 rounded-2xl overflow-hidden border-2 border-[#c9ddee] shadow-[0_0_30px_rgba(41,94,138,0.2)] bg-white">
-                                <MusicPlayer />
+                            <div className="hidden lg:flex gap-8 max-w-sm w-[400px] z-10 rounded-2xl overflow-hidden border-2 border-primaryblue/30 shadow-[0_0_30px_rgba(59,130,246,0.3)]">                                <MusicPlayer />
                             </div>
 
                             <motion.div
