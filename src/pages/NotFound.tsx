@@ -45,7 +45,7 @@ const NotFound = () => {
         
         <div className="max-w-2xl mx-auto text-center relative z-10 py-12 md:py-16">
           {/* Small decorative line */}
-          <div className="w-20 sm:w-32 h-1 bg-white mx-auto mb-6 md:mb-8"></div>
+          <div className="w-20 sm:w-32 h-1 dark:bg-white bg-black mx-auto mb-6 md:mb-8"></div>
           
           {/* Main heading - responsive text sizes */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8">
@@ -53,7 +53,7 @@ const NotFound = () => {
           </h1>
           
           {/* Description - responsive text and spacing */}
-          <p className="text-lg sm:text-xl text-gray-300 mb-8 md:mb-12 px-4 sm:px-0">
+          <p className="text-lg sm:text-xl dark:text-gray-300 text-gray-600 mb-8 md:mb-12 px-4 sm:px-0">
             It seems the page you're looking for no longer
             exists on this website.
           </p>
@@ -61,7 +61,7 @@ const NotFound = () => {
           {/* Back to homepage button with animation */}
           <Link
             to="/"
-            className="inline-flex items-center text-white border-b-2 border-primaryblue pb-1 text-base sm:text-lg font-medium hover:text-primaryblue transition-colors group"
+            className="inline-flex items-center dark:text-white text-gray-600 border-b-2 border-primaryblue pb-1 text-base sm:text-lg font-medium hover:text-primaryblue transition-colors group"
           >
             Back to Homepage
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />

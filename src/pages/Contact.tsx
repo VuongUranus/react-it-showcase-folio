@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                   Get In Touch
                 </motion.h2>
                 <motion.p
-                  className="text-lightgray mb-8"
+                  className="dark:text-lightgray text-[#475569] mb-8"
                   variants={formControlVariants}
                   transition={{ delay: 0.2 }}
                 >
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h3 className="font-bold mb-1">Phone</h3>
-                      <p className="text-lightgray">+84 767 129 183</p>
+                      <p className="dark:text-lightgray text-[#475569]">+84 767 129 183</p>
                     </div>
                   </motion.div>
 
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h3 className="font-bold mb-1">Email</h3>
-                      <p className="text-lightgray">minhvuongday@gmail.com</p>
+                      <p className="dark:text-lightgray text-[#475569]">minhvuongday@gmail.com</p>
                     </div>
                   </motion.div>
 
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h3 className="font-bold mb-1">Location</h3>
-                      <p className="text-lightgray">Ho Chi Minh City, Vietnam</p>
+                      <p className="dark:text-lightgray text-[#475569]">Ho Chi Minh City, Vietnam</p>
                     </div>
                   </motion.div>
                   <div className="flex gap-4">
@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
                         key={index}
                         href={social.link}
                         target='_blank'
-                        className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-colors hover:bg-primaryblue"
+                        className="w-10 h-10 rounded-full dark:bg-gray-800 bg-[#F3F4F6] flex items-center justify-center transition-colors dark:hover:bg-primaryblue hover:bg-primaryblue/30 hover:text-primaryblue"
                         whileHover={{ y: -5, scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       >
@@ -169,7 +169,7 @@ const Contact: React.FC = () => {
               </motion.div>
 
               <motion.div
-                className="bg-black/20 p-8 rounded-lg"
+                className="dark:bg-black/20 bg-[#f2f3f5] p-8 rounded-lg"
                 variants={itemVariants}
                 transition={{ delay: 0.3 }}
               >
@@ -187,7 +187,7 @@ const Contact: React.FC = () => {
                       whileHover={{ y: -2 }}
                     >
                       <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
-                      <Input id="name" className="bg-black/30 border-gray-700" placeholder="Your name" />
+                      <Input id="name" className="dark:bg-black/30 border-gray-700" placeholder="Your name" />
                     </motion.div>
                     <motion.div
                       variants={formControlVariants}
@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                       whileHover={{ y: -2 }}
                     >
                       <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                      <Input id="email" type="email" className="bg-black/30 border-gray-700" placeholder="Your email" />
+                      <Input id="email" type="email" className="dark:bg-black/30 border-gray-700" placeholder="Your email" />
                     </motion.div>
                   </div>
                   <motion.div
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
                     whileHover={{ y: -2 }}
                   >
                     <label htmlFor="subject" className="block text-sm font-medium mb-1">Subject</label>
-                    <Input id="subject" className="bg-black/30 border-gray-700" placeholder="Project discussion" />
+                    <Input id="subject" className="dark:bg-black/30 border-gray-700" placeholder="Project discussion" />
                   </motion.div>
                   <motion.div
                     variants={formControlVariants}
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
                     <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
                     <Textarea
                       id="message"
-                      className="bg-black/30 border-gray-700 min-h-[150px]"
+                      className="dark:bg-black/30 border-gray-700 min-h-[150px]"
                       placeholder="Tell me about your project or idea..."
                     />
                   </motion.div>
