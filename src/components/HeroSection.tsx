@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
                 ></div>
             </div> */}
 
-            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div className="relative -z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
                     <motion.div
                         className="lg:w-1/2"
