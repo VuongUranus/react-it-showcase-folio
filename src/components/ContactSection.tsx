@@ -77,7 +77,7 @@ const ContactSection: React.FC = () => {
                                     key={index}
                                     href={social.link}
                                     target='_blank'
-                                    className="w-10 h-10 rounded-full dark:bg-gray-800 bg-[#F3F4F6] flex items-center justify-center transition-colors dark:hover:bg-primaryblue hover:bg-primaryblue/30 hover:text-[#3b82f5]"
+                                    className="w-10 h-10 rounded-full dark:bg-gray-800 bg-[#F3F4F6] flex items-center justify-center transition-colors hover:bg-primaryblue/30 hover:text-[#3b82f5]"
                                     whileHover={{ y: -5, scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 >
